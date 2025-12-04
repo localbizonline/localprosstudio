@@ -19,6 +19,7 @@ import FieldCardPage from './components/FieldCardPage';
 import ReachMaxPage from './components/ReachMaxPage';
 import ReputationManagementPage from './components/ReputationManagementPage';
 import ReviewCollectionPage from './components/ReviewCollectionPage';
+import AboutPage from './components/AboutPage';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
 const Navigation = () => {
@@ -30,8 +31,8 @@ const Navigation = () => {
     { name: 'Web Design', href: '/web-design' },
     { name: 'Google Ads', href: '/google-ads' },
     { name: 'Reputation', href: '/reputation' },
-    { name: 'Reviews', href: '/reputation/reviews' },
     { name: 'Social', href: '/social-media' },
+    { name: 'About', href: '/about' },
   ];
 
   const isActive = (href: string) => {
@@ -161,6 +162,7 @@ const AppContent = () => {
           <Route path="/social-media" element={<SocialMediaPage />} />
           <Route path="/fieldcard" element={<FieldCardPage />} />
           <Route path="/reachmax" element={<ReachMaxPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/gallery" element={<ImageGallery />} />
         </Routes>
       </main>
