@@ -17,6 +17,8 @@ import Home2Page from './components/Home2Page';
 import Footer from './components/Footer';
 import FieldCardPage from './components/FieldCardPage';
 import ReachMaxPage from './components/ReachMaxPage';
+import ReputationManagementPage from './components/ReputationManagementPage';
+import ReviewCollectionPage from './components/ReviewCollectionPage';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
 const Navigation = () => {
@@ -27,9 +29,9 @@ const Navigation = () => {
     { name: 'Services', href: '/#services' },
     { name: 'Web Design', href: '/web-design' },
     { name: 'Google Ads', href: '/google-ads' },
-    { name: 'Social Media', href: '/social-media' },
-    { name: 'ReachMax', href: '/reachmax' },
-    { name: 'FieldCard', href: '/fieldcard' },
+    { name: 'Reputation', href: '/reputation' },
+    { name: 'Reviews', href: '/reputation/reviews' },
+    { name: 'Social', href: '/social-media' },
   ];
 
   const isActive = (href: string) => {
@@ -72,7 +74,7 @@ const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
             <a
-              href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20Local%20Pros%20Studio"
+              href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20Local%20Pros%20Studio"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
@@ -115,7 +117,7 @@ const Navigation = () => {
                 </Link>
               ))}
               <a
-                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20Local%20Pros%20Studio"
+                href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20Local%20Pros%20Studio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary mt-4 mx-4"
@@ -154,6 +156,8 @@ const AppContent = () => {
           <Route path="/web-design" element={<WebDesignPage />} />
           <Route path="/web-design-alt" element={<AlternativeWebDesignPage />} />
           <Route path="/google-ads" element={<GoogleAdsPage />} />
+          <Route path="/reputation" element={<ReputationManagementPage />} />
+          <Route path="/reputation/reviews" element={<ReviewCollectionPage />} />
           <Route path="/social-media" element={<SocialMediaPage />} />
           <Route path="/fieldcard" element={<FieldCardPage />} />
           <Route path="/reachmax" element={<ReachMaxPage />} />

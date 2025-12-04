@@ -98,7 +98,7 @@ const WebDesignPage = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <a
-                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20a%20website"
+                href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20a%20website"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"
@@ -248,7 +248,7 @@ const WebDesignPage = () => {
               </ul>
 
               <a
-                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20the%20Pro%20Website%20Package"
+                href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20the%20Pro%20Website%20Package"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary w-full justify-center"
@@ -289,7 +289,7 @@ const WebDesignPage = () => {
               </ul>
 
               <a
-                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20the%20Growth%20Retainer"
+                href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20the%20Growth%20Retainer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100 w-full justify-center"
@@ -337,7 +337,7 @@ const WebDesignPage = () => {
             about how we can help.
           </p>
           <a
-            href="https://wa.me/27787869161?text=Hi%2C%20I'd%20like%20to%20discuss%20a%20website%20project"
+            href="https://wa.me/27832336716?text=Hi%2C%20I'd%20like%20to%20discuss%20a%20website%20project"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"

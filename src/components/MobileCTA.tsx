@@ -34,7 +34,7 @@ const MobileCTA = () => {
 
         {/* WhatsApp button */}
         <a
-          href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20Local%20Pros%20Studio"
+          href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20Local%20Pros%20Studio"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-14 h-14 bg-neutral-900 text-white rounded-full shadow-soft-xl hover:bg-neutral-800 transition-colors"

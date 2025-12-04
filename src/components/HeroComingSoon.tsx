@@ -3,21 +3,13 @@ Changes made:
 - Removed duplicate export default statement at the end of the file
 */
 
-import React, { useState } from 'react';
-import { ArrowRight, Sparkles, Rocket } from 'lucide-react';
+import React from 'react';
+import { Sparkles, Rocket } from 'lucide-react';
 import HeroImage from './HeroImage';
 
 import iPhoneImage from '../assets/images/mockups/white-iphone-6-plus-being-held-by-a-black-man-a10999 (1) (1) (1).png';
 
 const HeroComingSoon = () => {
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle email submission
-    console.log('Email submitted:', email);
-    setEmail('');
-  };
 
   return (
     <div className="relative pt-24 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
@@ -57,11 +49,11 @@ const HeroComingSoon = () => {
             We're building something new to help you win more jobs and simplify your business. Local Pros Studio combines practical tools for managing leads, creating professional quotes, building your online presence, and collecting reviews - all designed based on your feedback.
           </p>
           
-          {/* Email signup form */}
+          {/* WhatsApp CTA */}
           <div className="flex flex-col items-center mb-12">
             <div className="flex justify-center">
               <a
-                href="https://wa.me/27787869161?text=Interested%20in%20Local%20Pros%20Studio"
+                href="https://wa.me/27832336716?text=Interested%20in%20Local%20Pros%20Studio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-lg font-medium hover:from-primary-500 hover:to-secondary-500 transition-all"

@@ -1,65 +1,94 @@
 import React from 'react';
-import { ArrowRight, Check, Camera, Calendar, TrendingUp, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Check, Camera, Calendar, TrendingUp, Zap, Clock, Image, Video, Sparkles } from 'lucide-react';
 import SocialProofSection from './SocialProofSection';
 
 const benefits = [
   {
-    icon: Camera,
-    title: "Professional Content",
-    description: "Custom graphics and posts that showcase your work beautifully."
+    icon: Zap,
+    title: "60-Second Posts",
+    description: "Create posts in under a minute with our simple posting form."
   },
   {
     icon: Calendar,
-    title: "Consistent Posting",
-    description: "Regular content keeps you visible and top of mind."
+    title: "We Handle Consistency",
+    description: "Weekly service posts, holiday content, and review highlights — automatic."
+  },
+  {
+    icon: Sparkles,
+    title: "AI Text Polishing",
+    description: "We make everything sound professional and engaging."
   },
   {
     icon: TrendingUp,
-    title: "Brand Building",
-    description: "Build credibility and trust with a professional presence."
-  },
-  {
-    icon: MessageCircle,
-    title: "Engagement",
-    description: "We interact with your audience to build community."
+    title: "Stay Visible",
+    description: "Never go silent — even during your busiest weeks."
   }
 ];
 
 const included = [
-  "12 custom posts per month",
-  "Professional graphic design",
-  "Caption writing & hashtags",
-  "Content calendar planning",
-  "Story content",
-  "Review & testimonial posts",
-  "Holiday & special day content",
-  "Monthly performance report",
-  "Platform optimization",
-  "Direct WhatsApp support"
+  "Quick 60-second posting form",
+  "5 post templates to choose from",
+  "AI text polishing",
+  "Unlimited posts from your submissions",
+  "4 service promotion posts/month (we create)",
+  "Public holiday posts (automatic)",
+  "Review highlight posts (automatic)",
+  "Posts to Facebook, Instagram & Google",
+  "Dashboard access",
+  "Monthly check-ins"
 ];
 
 const platforms = [
   "Facebook Business Page",
-  "Instagram Business",
-  "Google Business Profile"
+  "Instagram Business Account",
+  "Google Business Profile (Maps)"
+];
+
+const postTypes = [
+  {
+    type: "Recent Job",
+    description: "Show off completed work",
+    photos: "1-8"
+  },
+  {
+    type: "Before & After",
+    description: "Transformation shots",
+    photos: "2-8"
+  },
+  {
+    type: "Service Highlight",
+    description: "Promote a specific service",
+    photos: "2-8"
+  },
+  {
+    type: "Special Offer",
+    description: "Promotions and deals",
+    photos: "1-4"
+  },
+  {
+    type: "Tips & Updates",
+    description: "Helpful info for customers",
+    photos: "1-4"
+  }
 ];
 
 const faqs = [
   {
-    question: "Which platforms do you manage?",
-    answer: "We focus on Facebook, Instagram, and Google Business Profile - the platforms that matter most for local service businesses. We can discuss others based on your needs."
+    question: "How do I create a post?",
+    answer: "Use your posting form — it takes about 60 seconds. Upload photos, add a quick description, and we handle the rest. We polish the text, create the visuals, and send you a preview before it goes live."
   },
   {
-    question: "Do I need to provide photos?",
-    answer: "Photos of your work help a lot, but we can also use stock images and create graphics. We'll guide you on what photos work best and make it easy to share them."
-  },
-  {
-    question: "How often will you post?",
-    answer: "Our standard package includes 12 posts per month (about 3 per week). This keeps you visible without overwhelming your audience."
+    question: "What if I'm too busy to submit content?",
+    answer: "No problem! We create 4 service promotion posts per month for you automatically, plus public holiday posts and review highlights. You'll always have content going out, even during your busiest weeks."
   },
   {
     question: "Can I approve posts before they go live?",
-    answer: "Yes, we can set up an approval workflow if you prefer. Many clients trust us to post directly, but the choice is yours."
+    answer: "Yes! You receive a WhatsApp notification when your post is ready. Go to your dashboard to preview the text and image/video. You can approve, edit, or delete it — you have full control."
+  },
+  {
+    question: "What do you create from my photos?",
+    answer: "1-2 photos become an image post. 4-8 photos become BOTH a gallery post AND a video reel for maximum reach. Real work photos perform better than anything else."
   }
 ];
 
@@ -72,20 +101,27 @@ const SocialMediaPage = () => {
         
         <div className="container-md relative">
           <div className="text-center">
-            <span className="badge-dark mb-6">Social Media Management</span>
+            <Link 
+              to="/reputation" 
+              className="inline-flex items-center text-neutral-400 hover:text-white text-sm mb-6 transition-colors"
+            >
+              ← Back to Reputation Management
+            </Link>
+
+            <span className="badge-dark mb-6">Social Posting</span>
             
             <h1 className="text-white mb-6 text-balance">
-              Build Your Brand<br className="hidden sm:block" /> On Social Media
+              Stay Visible.<br className="hidden sm:block" /> Never Go Silent.
             </h1>
 
             <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-8">
-              Professional social media management that keeps your business visible 
-              and builds trust with potential customers.
+              Create posts in 60 seconds. We handle the consistency with weekly service posts, 
+              holiday content, and review highlights — all automatic.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <a
-                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20social%20media%20management"
+                href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20Social%20Posting"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"
@@ -99,18 +135,18 @@ const SocialMediaPage = () => {
             </div>
 
             {/* Quick stats */}
-            <div className="flex items-center justify-center gap-8 text-neutral-400 text-sm">
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 text-neutral-400 text-sm">
               <div className="flex items-center">
                 <Check className="w-4 h-4 mr-2 text-green-500" />
-                12 posts/month
+                60-second posts
               </div>
               <div className="flex items-center">
                 <Check className="w-4 h-4 mr-2 text-green-500" />
-                Custom graphics
+                Unlimited submissions
               </div>
               <div className="flex items-center">
                 <Check className="w-4 h-4 mr-2 text-green-500" />
-                No contracts
+                AI polishing
               </div>
             </div>
           </div>
@@ -141,20 +177,54 @@ const SocialMediaPage = () => {
         </div>
       </section>
 
-      {/* What's Included */}
+      {/* We Handle Consistency */}
       <section className="section bg-neutral-50">
         <div className="container-md">
           <div className="text-center mb-16">
-            <span className="badge mb-4">What's Included</span>
-            <h2 className="text-neutral-900 mb-4">Everything You Need</h2>
+            <span className="badge mb-4">We Handle Consistency</span>
+            <h2 className="text-neutral-900 mb-4">You'll Always Have Content Going Out</h2>
             <p className="text-neutral-600 max-w-2xl mx-auto">
-              We handle your entire social media presence so you can focus on your work.
+              Even if you're too busy to submit anything, we keep you visible.
             </p>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white rounded-2xl p-6 shadow-soft text-center">
+              <div className="text-3xl font-bold text-neutral-900 mb-2">4x</div>
+              <div className="text-sm text-neutral-600 mb-1">Service promotion posts</div>
+              <div className="text-xs text-neutral-400">Weekly — we create everything</div>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-soft text-center">
+              <div className="text-3xl font-bold text-neutral-900 mb-2">Every</div>
+              <div className="text-sm text-neutral-600 mb-1">Public holiday</div>
+              <div className="text-xs text-neutral-400">Automatic — relevant, timely posts</div>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-soft text-center">
+              <div className="text-3xl font-bold text-neutral-900 mb-2">Every</div>
+              <div className="text-sm text-neutral-600 mb-1">Positive review</div>
+              <div className="text-xs text-neutral-400">Automatic — shared to your socials</div>
+            </div>
+          </div>
+
+          <div className="bg-neutral-900 rounded-2xl p-8 text-white text-center">
+            <p className="text-neutral-300 text-lg">
+              <span className="text-white font-semibold">Anything YOU submit is bonus content</span> on top of this. 
+              Your job photos make the best content — real work photos perform better than anything else.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included */}
+      <section className="section bg-white">
+        <div className="container-md">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="bg-white rounded-2xl p-8 shadow-soft">
-              <h3 className="text-lg font-semibold text-neutral-900 mb-6">Monthly Deliverables</h3>
+            <div>
+              <span className="badge mb-4">What's Included</span>
+              <h2 className="text-neutral-900 mb-4">Everything You Need</h2>
+              <p className="text-neutral-600 mb-8">
+                We handle your entire social media presence so you can focus on your work.
+              </p>
               <ul className="space-y-3">
                 {included.map((item, index) => (
                   <li key={index} className="flex items-center text-sm">
@@ -166,8 +236,8 @@ const SocialMediaPage = () => {
             </div>
 
             <div>
-              <div className="bg-white rounded-2xl p-8 shadow-soft mb-6">
-                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Platforms We Manage</h3>
+              <div className="bg-neutral-50 rounded-2xl p-8 mb-6">
+                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Platforms We Post To</h3>
                 <ul className="space-y-3">
                   {platforms.map((platform, index) => (
                     <li key={index} className="flex items-center text-sm">
@@ -178,20 +248,56 @@ const SocialMediaPage = () => {
                 </ul>
               </div>
 
-              <div className="bg-neutral-900 rounded-2xl p-8 text-white">
-                <h3 className="text-lg font-semibold mb-2">Content That Works</h3>
-                <p className="text-neutral-400 text-sm mb-4">
-                  We create content specifically designed for home service businesses:
+              <div className="bg-neutral-50 rounded-2xl p-8">
+                <h3 className="text-lg font-semibold text-neutral-900 mb-4">What We Create From Your Photos</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-3 bg-white rounded-lg">
+                    <div className="flex items-center gap-3">
+                      <Image className="w-5 h-5 text-neutral-500" />
+                      <span className="text-sm text-neutral-700">1-2 photos</span>
+                    </div>
+                    <span className="text-sm font-medium text-neutral-900">→ Image post</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-white rounded-lg">
+                    <div className="flex items-center gap-3">
+                      <Camera className="w-5 h-5 text-neutral-500" />
+                      <span className="text-sm text-neutral-700">4-8 photos</span>
+                    </div>
+                    <span className="text-sm font-medium text-neutral-900">→ Gallery post</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-white rounded-lg">
+                    <div className="flex items-center gap-3">
+                      <Video className="w-5 h-5 text-neutral-500" />
+                      <span className="text-sm text-neutral-700">4-8 photos</span>
+                    </div>
+                    <span className="text-sm font-medium text-neutral-900">→ Video reel</span>
+                  </div>
+                </div>
+                <p className="text-xs text-neutral-500 mt-4">
+                  Upload 4-8 photos and we create BOTH a gallery AND a reel for maximum reach.
                 </p>
-                <ul className="space-y-2 text-sm text-neutral-300">
-                  <li>• Before & after project photos</li>
-                  <li>• Customer testimonials & reviews</li>
-                  <li>• Tips and educational content</li>
-                  <li>• Behind-the-scenes of your work</li>
-                  <li>• Seasonal promotions</li>
-                </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Post Types */}
+      <section className="section-sm bg-neutral-50">
+        <div className="container-md">
+          <div className="text-center mb-12">
+            <span className="badge mb-4">Post Types</span>
+            <h2 className="text-neutral-900 mb-4">5 Templates to Choose From</h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {postTypes.map((post, index) => (
+              <div key={index} className="bg-white rounded-xl p-4 text-center shadow-soft">
+                <h4 className="font-semibold text-neutral-900 text-sm mb-1">{post.type}</h4>
+                <p className="text-neutral-500 text-xs mb-2">{post.description}</p>
+                <span className="text-xs text-neutral-400">{post.photos} photos</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -203,26 +309,26 @@ const SocialMediaPage = () => {
             <span className="badge mb-4">Pricing</span>
             <h2 className="text-neutral-900 mb-4">Simple Monthly Pricing</h2>
             <p className="text-neutral-600 max-w-2xl mx-auto">
-              One flat fee for complete social media management. No hidden costs.
+              One flat fee for complete social posting. Setup fee waived with 6-month commitment.
             </p>
           </div>
 
           <div className="max-w-lg mx-auto">
             <div className="bg-neutral-900 rounded-2xl p-8 text-white text-center">
-              <h3 className="text-xl font-semibold mb-2">Social Media Management</h3>
-              <p className="text-neutral-400 text-sm mb-6">Complete monthly management</p>
+              <h3 className="text-xl font-semibold mb-2">Social Posting</h3>
+              <p className="text-neutral-400 text-sm mb-6">Complete social media management</p>
 
-              <div className="mb-6">
-                <span className="text-5xl font-bold">R1,500</span>
+              <div className="mb-2">
+                <span className="text-5xl font-bold">R2,000</span>
                 <span className="text-neutral-400 ml-2">/month</span>
               </div>
 
-              <p className="text-neutral-400 text-sm mb-8">
-                12 posts per month across all platforms
+              <p className="text-neutral-500 text-sm mb-8">
+                Setup: R2,500 (waived with 6-month commitment)
               </p>
 
               <a
-                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20social%20media%20management"
+                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20Social%20Posting"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100 w-full justify-center"
@@ -232,9 +338,23 @@ const SocialMediaPage = () => {
               </a>
 
               <p className="text-neutral-500 text-xs mt-4">
-                No long-term contract. Cancel anytime.
+                No long-term contract required. Cancel anytime.
               </p>
             </div>
+          </div>
+
+          {/* Combined Package Upsell */}
+          <div className="mt-8 text-center">
+            <p className="text-neutral-600 mb-4">
+              Want review collection too? Get both services for less.
+            </p>
+            <Link 
+              to="/reputation" 
+              className="inline-flex items-center text-neutral-900 font-medium hover:underline"
+            >
+              View Combined Package
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -268,12 +388,12 @@ const SocialMediaPage = () => {
       {/* Final CTA */}
       <section className="section-sm bg-neutral-950">
         <div className="container-md text-center">
-          <h2 className="text-white mb-4">Ready to Build Your Brand?</h2>
+          <h2 className="text-white mb-4">Ready to Stay Visible?</h2>
           <p className="text-neutral-400 mb-8 max-w-xl mx-auto">
-            Let's discuss how we can help you build a professional social media presence.
+            Let's discuss how we can help you build a consistent social media presence.
           </p>
           <a
-            href="https://wa.me/27787869161?text=Hi%2C%20I'd%20like%20to%20discuss%20social%20media%20management"
+            href="https://wa.me/27787869161?text=Hi%2C%20I'd%20like%20to%20discuss%20Social%20Posting"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"

@@ -9,19 +9,15 @@ const Footer = () => {
   const services = [
     { name: 'Web Design', href: '/web-design' },
     { name: 'Google Ads', href: '/google-ads' },
+    { name: 'Reputation Management', href: '/reputation' },
+    { name: 'Review Collection', href: '/reputation/reviews' },
     { name: 'Social Media', href: '/social-media' },
-  ];
-
-  const company = [
-    { name: 'About Us', href: '/#about' },
-    { name: 'Our Work', href: '/web-design#portfolio' },
-    { name: 'Reviews', href: '/#testimonials' },
   ];
 
   return (
     <footer className="bg-neutral-950 text-white">
       <div className="container-lg section-sm">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
@@ -58,24 +54,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              Company
-            </h4>
-            <ul className="space-y-3">
-              {company.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    to={item.href}
-                    className="text-neutral-400 hover:text-white transition-colors text-sm"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Contact */}
           <div>
@@ -85,13 +63,13 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="https://wa.me/27787869161"
+                  href="https://wa.me/27832336716"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-neutral-400 hover:text-white transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
-                  +27 78 786 9161
+                  +27 83 233 6716
                 </a>
               </li>
               <li>
@@ -117,14 +95,6 @@ const Footer = () => {
             <p className="text-neutral-500 text-sm">
               © {currentYear} Local Pros Studio. All rights reserved.
             </p>
-            <div className="flex items-center space-x-6">
-              <a href="#" className="text-neutral-500 hover:text-white transition-colors text-sm">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-neutral-500 hover:text-white transition-colors text-sm">
-                Terms of Service
-              </a>
-            </div>
           </div>
         </div>
       </div>

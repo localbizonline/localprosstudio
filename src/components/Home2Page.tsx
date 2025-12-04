@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Check, Globe, BarChart2, MessageSquare, Star, Phone, Sparkles } from 'lucide-react';
+import { ArrowRight, Check, Globe, BarChart2, Shield, Zap, FileText, Star, Share2, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SocialProofSection from './SocialProofSection';
 import localProsImage from '../assets/images/mockups/localprospeople.jpg';
@@ -8,45 +8,69 @@ const services = [
   {
     icon: Globe,
     title: "Website Design",
-    description: "Professional websites that convert visitors into customers. Mobile-friendly, fast-loading, and built to generate leads.",
+    description: "Modern, mobile-friendly websites that turn visitors into customers. Delivered in 5-7 days with proven templates that have generated 100,000+ leads.",
     price: "From R4,900",
-    features: ["5-7 day delivery", "Mobile responsive", "Lead capture forms", "WhatsApp integration"],
+    features: ["5-7 day delivery", "Mobile responsive", "Content included", "30 days free support"],
     link: "/web-design",
+    linkText: "View website packages",
     featured: true,
-  },
-  {
-    icon: MessageSquare,
-    title: "Social Media",
-    description: "Build your brand presence with consistent, professional content that keeps you top of mind.",
-    price: "R1,500/month",
-    features: ["Content creation", "Regular posting", "Brand building", "Review showcasing"],
-    link: "/social-media",
   },
   {
     icon: BarChart2,
     title: "Google Ads",
-    description: "Get your phone ringing with targeted advertising that reaches customers actively searching for your services.",
+    description: "Targeted advertising that puts your business in front of customers actively searching for your services. Pay only for results.",
     price: "R2,499/month",
-    features: ["Campaign management", "Local targeting", "ROI tracking", "Monthly reporting"],
+    features: ["Campaign setup & management", "Keyword targeting", "Conversion tracking", "Monthly reports"],
     link: "/google-ads",
+    linkText: "Start getting leads",
   },
-];
-
-const upcomingFeatures = [
   {
-    icon: Phone,
-    title: "Local Pros App",
-    description: "Manage leads, quotes, and appointments from your phone.",
+    icon: Shield,
+    title: "Reputation Management",
+    description: "Complete online reputation solution. Automated reviews + consistent social posting in one discounted package.",
+    price: "From R1,250/month",
+    features: ["Review collection", "Social posting", "Save R950/month combined", "Priority support"],
+    link: "/reputation",
+    linkText: "See reputation packages",
+    isNew: true,
   },
   {
     icon: Star,
     title: "Review Collection",
-    description: "Automatically collect and showcase customer reviews.",
+    description: "Automated review requests via WhatsApp & email. Smart filtering catches unhappy customers privately before they go public.",
+    price: "R1,200/month",
+    features: ["WhatsApp + email requests", "Smart filtering", "AI review responses", "Real-time alerts"],
+    link: "/reputation/reviews",
+    linkText: "Get more 5-star reviews",
+    isNew: true,
   },
   {
-    icon: Sparkles,
-    title: "AI Automation",
-    description: "Smart follow-ups and lead qualification on autopilot.",
+    icon: Share2,
+    title: "Social Posting",
+    description: "Create posts in 60 seconds. We handle consistency with 4 service posts/month, holiday content, and review highlights—all automatic.",
+    price: "R2,000/month",
+    features: ["60-second posting form", "4 posts/month included", "Holiday posts automatic", "Facebook, Instagram & Google"],
+    link: "/social-media",
+    linkText: "Stay visible online",
+    isNew: true,
+  },
+  {
+    icon: MessageSquare,
+    title: "ReachMax",
+    description: "WhatsApp marketing platform with bulk messaging, smart automation, and shared team inbox. 98% open rates.",
+    price: "Custom pricing",
+    features: ["Bulk WhatsApp messaging", "Smart automation", "Shared team inbox", "CRM integration"],
+    link: "/reachmax",
+    linkText: "Explore WhatsApp marketing",
+  },
+  {
+    icon: FileText,
+    title: "FieldCard",
+    description: "Job management app for contractors. Create quotes in 60 seconds, track jobs, and get customer sign-off—as easy as WhatsApp.",
+    price: "Free to start",
+    features: ["Instant quotes", "Digital job cards", "Mobile-first design", "Customer sign-off"],
+    link: "/fieldcard",
+    linkText: "Try FieldCard free",
   },
 ];
 
@@ -89,7 +113,7 @@ const Home2Page = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-200">
               <a
-                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20your%20services"
+                href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20your%20services"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"
@@ -138,7 +162,7 @@ const Home2Page = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -147,12 +171,19 @@ const Home2Page = () => {
                   to={service.link}
                   className={`group card-hover flex flex-col ${
                     service.featured ? 'ring-2 ring-neutral-900' : ''
-                  }`}
+                  } ${service.isNew ? 'ring-2 ring-green-500' : ''}`}
                 >
                   {service.featured && (
                     <div className="absolute -top-3 left-6">
                       <span className="bg-neutral-900 text-white text-xs font-medium px-3 py-1 rounded-full">
                         Most Popular
+                      </span>
+                    </div>
+                  )}
+                  {service.isNew && (
+                    <div className="absolute -top-3 left-6">
+                      <span className="bg-green-500 text-white text-xs font-medium px-3 py-1 rounded-full">
+                        New
                       </span>
                     </div>
                   )}
@@ -186,44 +217,11 @@ const Home2Page = () => {
 
                   <div className="mt-auto pt-4 border-t border-neutral-100">
                     <span className="inline-flex items-center text-sm font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors">
-                      Learn more
+                      {service.linkText}
                       <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
                 </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Coming Soon Section */}
-      <section className="section-sm bg-neutral-50">
-        <div className="container-lg">
-          <div className="text-center mb-12">
-            <span className="badge mb-4">Coming June 2025</span>
-            <h2 className="text-neutral-900 mb-4">More Tools on the Way</h2>
-            <p className="text-neutral-600 max-w-2xl mx-auto">
-              We're building new features based on your feedback to help you manage 
-              and grow your business even more efficiently.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {upcomingFeatures.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div key={index} className="bg-white rounded-2xl p-6 border border-neutral-200">
-                  <div className="w-10 h-10 bg-neutral-100 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-neutral-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-neutral-600 text-sm">
-                    {feature.description}
-                  </p>
-                </div>
               );
             })}
           </div>
@@ -257,7 +255,7 @@ const Home2Page = () => {
               </ul>
 
               <a
-                href="https://wa.me/27787869161?text=Hi%2C%20I'd%20like%20to%20learn%20more%20about%20your%20services"
+                href="https://wa.me/27832336716?text=Hi%2C%20I'd%20like%20to%20learn%20more%20about%20your%20services"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -291,7 +289,7 @@ const Home2Page = () => {
             Get in touch today and let's discuss how we can help you attract more customers.
           </p>
           <a
-            href="https://wa.me/27787869161?text=Hi%2C%20I'm%20ready%20to%20get%20started"
+            href="https://wa.me/27832336716?text=Hi%2C%20I'm%20ready%20to%20get%20started"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"

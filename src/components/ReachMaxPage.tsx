@@ -104,7 +104,7 @@ const ReachMaxPage = () => {
                 <ExternalLink className="ml-2 w-4 h-4" />
               </a>
               <a
-                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20ReachMax%20WhatsApp%20automation"
+                href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20ReachMax%20WhatsApp%20automation"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary border-emerald-500/50 text-white hover:bg-emerald-500/20 hover:border-emerald-400"
@@ -434,7 +434,7 @@ const ReachMaxPage = () => {
               <ExternalLink className="ml-2 w-4 h-4" />
             </a>
             <a
-              href="https://wa.me/27787869161?text=Hi%2C%20I'd%20like%20to%20book%20a%20ReachMax%20demo"
+              href="https://wa.me/27832336716?text=Hi%2C%20I'd%20like%20to%20book%20a%20ReachMax%20demo"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary border-emerald-500/50 text-white hover:bg-emerald-500/20 hover:border-emerald-400"

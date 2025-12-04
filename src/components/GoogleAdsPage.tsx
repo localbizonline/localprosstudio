@@ -79,7 +79,7 @@ const GoogleAdsPage = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <a
-                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20Google%20Ads%20management"
+                href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20Google%20Ads%20management"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"
@@ -230,7 +230,7 @@ const GoogleAdsPage = () => {
               </p>
 
               <a
-                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20Google%20Ads%20management"
+                href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20Google%20Ads%20management"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100 w-full justify-center"
@@ -281,7 +281,7 @@ const GoogleAdsPage = () => {
             Let's discuss your advertising goals and create a strategy that works for your business.
           </p>
           <a
-            href="https://wa.me/27787869161?text=Hi%2C%20I'd%20like%20to%20discuss%20Google%20Ads%20for%20my%20business"
+            href="https://wa.me/27832336716?text=Hi%2C%20I'd%20like%20to%20discuss%20Google%20Ads%20for%20my%20business"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"
