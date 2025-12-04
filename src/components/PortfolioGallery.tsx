@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, ArrowRight, X } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Import portfolio images
 import mockup1 from '../assets/images/Compressed/MacBook iPhone 8 Mockup (1).png';
@@ -10,106 +10,135 @@ import mockup5 from '../assets/images/Compressed/MacBook iPhone 8 mockup (5).png
 import mockup6 from '../assets/images/Compressed/MacBook iPhone 8 mockup (6).png';
 
 const portfolioItems = [
-  { image: mockup1, title: 'Modern Business Website' },
-  { image: mockup2, title: 'E-commerce Platform' },
-  { image: mockup3, title: 'Service Provider Website' },
-  { image: mockup4, title: 'Professional Portfolio' },
-  { image: mockup5, title: 'Corporate Website' },
-  { image: mockup6, title: 'Digital Agency Website' }
+  { image: mockup1, title: 'Maramba Fence & Gates', category: 'Home Services' },
+  { image: mockup2, title: 'LAK Security', category: 'Security Services' },
+  { image: mockup3, title: 'Pool Pro', category: 'Pool Services' },
+  { image: mockup4, title: 'Clean Home', category: 'Cleaning Services' },
+  { image: mockup5, title: 'Garden Masters', category: 'Landscaping' },
+  { image: mockup6, title: 'Fix It Right', category: 'Handyman Services' }
 ];
 
 interface ImageModalProps {
   image: string;
   title: string;
   onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  hasPrev: boolean;
+  hasNext: boolean;
 }
 
-const ImageModal: React.FC<ImageModalProps> = ({ image, title, onClose }) => {
+const ImageModal: React.FC<ImageModalProps> = ({ 
+  image, 
+  title, 
+  onClose, 
+  onPrev, 
+  onNext,
+  hasPrev,
+  hasNext 
+}) => {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
-      <div className="relative max-w-6xl w-full">
+    <div 
+      className="fixed inset-0 bg-neutral-950/95 z-50 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        className="absolute top-6 right-6 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+        aria-label="Close"
+      >
+        <X className="w-5 h-5 text-white" />
+      </button>
+
+      {hasPrev && (
         <button
-          onClick={onClose}
-          className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+          onClick={(e) => { e.stopPropagation(); onPrev(); }}
+          className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+          aria-label="Previous"
         >
-          <X className="w-8 h-8" />
+          <ChevronLeft className="w-6 h-6 text-white" />
         </button>
+      )}
+
+      {hasNext && (
+        <button
+          onClick={(e) => { e.stopPropagation(); onNext(); }}
+          className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+          aria-label="Next"
+        >
+          <ChevronRight className="w-6 h-6 text-white" />
+        </button>
+      )}
+
+      <div 
+        className="max-w-5xl w-full"
+        onClick={(e) => e.stopPropagation()}
+      >
         <img
           src={image}
           alt={title}
-          className="w-full h-auto rounded-lg shadow-2xl"
-          width={1200}
-          height={800}
+          className="w-full h-auto rounded-lg"
         />
+        <p className="text-white text-center mt-4 font-medium">{title}</p>
       </div>
     </div>
   );
 };
 
 const PortfolioGallery = () => {
-  const [selectedImage, setSelectedImage] = useState<{ image: string; title: string } | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  const totalPages = Math.ceil(portfolioItems.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const displayedItems = portfolioItems.slice(startIndex, startIndex + itemsPerPage);
+  const handlePrev = () => {
+    if (selectedIndex !== null && selectedIndex > 0) {
+      setSelectedIndex(selectedIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (selectedIndex !== null && selectedIndex < portfolioItems.length - 1) {
+      setSelectedIndex(selectedIndex + 1);
+    }
+  };
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {displayedItems.map((item, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {portfolioItems.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:-translate-y-2"
-            onClick={() => setSelectedImage(item)}
+            className="group cursor-pointer"
+            onClick={() => setSelectedIndex(index)}
           >
-            <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+            <div className="relative bg-neutral-100 rounded-2xl overflow-hidden aspect-[4/3]">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                width={800}
-                height={500}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity flex items-center justify-center">
-                <span className="text-white text-lg font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/60 transition-colors duration-300 flex items-center justify-center">
+                <span className="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   View Project
                 </span>
               </div>
+            </div>
+            <div className="mt-4">
+              <h3 className="font-medium text-neutral-900">{item.title}</h3>
+              <p className="text-sm text-neutral-500">{item.category}</p>
             </div>
           </div>
         ))}
       </div>
 
-      {totalPages > 1 && (
-        <div className="flex justify-center items-center space-x-4 mt-12">
-          <button
-            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-            disabled={currentPage === 1}
-            className="p-2 rounded-full bg-white shadow hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </button>
-          <span className="text-gray-600">
-            Page {currentPage} of {totalPages}
-          </span>
-          <button
-            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-            disabled={currentPage === totalPages}
-            className="p-2 rounded-full bg-white shadow hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
-      )}
-
-      {selectedImage && (
+      {selectedIndex !== null && (
         <ImageModal
-          image={selectedImage.image}
-          title={selectedImage.title}
-          onClose={() => setSelectedImage(null)}
+          image={portfolioItems[selectedIndex].image}
+          title={portfolioItems[selectedIndex].title}
+          onClose={() => setSelectedIndex(null)}
+          onPrev={handlePrev}
+          onNext={handleNext}
+          hasPrev={selectedIndex > 0}
+          hasNext={selectedIndex < portfolioItems.length - 1}
         />
       )}
     </div>

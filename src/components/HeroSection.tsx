@@ -1,5 +1,4 @@
 import React from 'react';
-import { getCdnUrl } from '../lib/cdn';
 import GradientButton from './GradientButton';
 import BrowserMockup from './BrowserMockup';
 import HeroImage from './HeroImage';

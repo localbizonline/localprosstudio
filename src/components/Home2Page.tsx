@@ -1,297 +1,306 @@
-import React, { useState } from 'react';
-import { ArrowRight, Check, Star, Phone, Calendar, MessageSquare, Globe, BarChart2, Users } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Check, Globe, BarChart2, MessageSquare, Star, Phone, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import GradientButton from './GradientButton';
 import SocialProofSection from './SocialProofSection';
-import HeroComingSoon from './HeroComingSoon';
 import localProsImage from '../assets/images/mockups/localprospeople.jpg';
-import ImageOptimizer from './ImageOptimizer'; 
 
-const premiumServices = [
-  {
-    icon: Phone,
-    title: "Local Pros App",
-    subtitle: "Run your business from your pocket",
-    description: "Manage your entire business directly from your phone.",
-    features: [
-      "Track leads from first contact to finished job",
-      "Create and send professional quotes in seconds",
-      "Set appointments in your built-in calendar",
-      "Get daily reminders about jobs and follow-ups",
-      "Send quotes via WhatsApp with automatic follow-ups"
-    ],
-    link: "/app",
-    color: "from-blue-500 to-indigo-600"
-  },
-  {
-    icon: MessageSquare,
-    title: "Social Media Management",
-    subtitle: "Be everywhere without the effort",
-    description: "Let us create a professional social media presence that attracts new customers.",
-    features: [
-      "AI-assisted or fully managed posting options",
-      "Custom graphics that showcase your business",
-      "Regular posting schedule to keep you visible",
-      "Holiday and special day posts",
-      "Review highlights and service promotions"
-    ],
-    link: "/social-media",
-    color: "from-pink-500 to-rose-600"
-  },
+const services = [
   {
     icon: Globe,
     title: "Website Design",
-    subtitle: "Your 24/7 sales representative",
-    description: "Professional websites that convert visitors into customers.",
-    features: [
-      "Modern or fully customized design options",
-      "Easy-to-use call and WhatsApp buttons",
-      "Mobile-friendly for all devices",
-      "Showcase your services and recent projects",
-      "Build instant credibility with potential customers"
-    ],
+    description: "Professional websites that convert visitors into customers. Mobile-friendly, fast-loading, and built to generate leads.",
+    price: "From R4,900",
+    features: ["5-7 day delivery", "Mobile responsive", "Lead capture forms", "WhatsApp integration"],
     link: "/web-design",
-    color: "from-emerald-500 to-teal-600"
-  },
-  {
-    icon: Star,
-    title: "Review Growth Service",
-    subtitle: "Turn happy customers into new business",
-    description: "Build trust and win more jobs with powerful online reviews.",
-    features: [
-      "Automatically collect reviews after completed jobs",
-      "Display testimonials on your website and social media",
-      "Share reviews when sending quotes to prospects",
-      "Build credibility that helps you charge premium prices",
-      "Stand out from competitors with visible social proof"
-    ],
-    link: "/reviews",
-    color: "from-amber-500 to-orange-600"
-  },
-  {
-    icon: BarChart2,
-    title: "Google Ads Management",
-    subtitle: "The fast track to more customers",
-    description: "Get your phone ringing with expertly managed Google Ads.",
-    features: [
-      "Target the exact people looking for your services",
-      "Maximize your budget with optimized campaigns",
-      "Track leads and measure return on investment",
-      "Continuous improvement and monthly refinements",
-      "Quick results compared to other marketing methods"
-    ],
-    link: "/google-ads",
-    color: "from-red-500 to-rose-600"
-  },
-  {
-    icon: Users,
-    title: "All-in-One Digital Marketing",
-    subtitle: "Your complete solution",
-    description: "For larger businesses ready to dominate their market.",
-    features: [
-      "Comprehensive strategy across all digital channels",
-      "Consistent brand messaging and regular content updates",
-      "Professional marketing materials for all your needs",
-      "Improved search rankings to boost organic traffic",
-      "Regular reporting and strategy adjustments"
-    ],
-    link: "/all-in-one",
-    color: "from-violet-500 to-purple-600"
-  }
-];
-
-const productCards = [
-  {
-    icon: Phone,
-    title: "Local Pros App",
-    price: "R1,500",
-    period: "per month",
-    description: "Run your business from your smartphone. Track leads, send quotes, and manage jobs with ease.",
-    features: [
-      "Lead tracking system",
-      "Appointment calendar",
-      "WhatsApp integration",
-      "Project photo storage",
-      "Customer messaging"
-    ],
-    link: "/app"
-  },
-  {
-    icon: Globe,
-    title: "Website Design",
-    price: "R4,900",
-    period: "once-off",
-    description: "Professional websites that convert visitors into customers with mobile-friendly designs.",
-    features: [
-      "Custom design",
-      "Mobile responsive",
-      "Lead capture forms",
-      "Google Maps integration",
-      "Project gallery"
-    ],
-    link: "/web-design"
+    featured: true,
   },
   {
     icon: MessageSquare,
     title: "Social Media",
-    price: "R1,500",
-    period: "per month",
-    description: "Done-for-you social media management to keep your business visible online.",
-    features: [
-      "Content creation",
-      "Regular posting",
-      "Review showcasing",
-      "Holiday promotions",
-      "Brand building"
-    ],
-    link: "/social-media"
+    description: "Build your brand presence with consistent, professional content that keeps you top of mind.",
+    price: "R1,500/month",
+    features: ["Content creation", "Regular posting", "Brand building", "Review showcasing"],
+    link: "/social-media",
   },
   {
     icon: BarChart2,
     title: "Google Ads",
-    price: "R2,499",
-    period: "per month",
-    description: "Targeted advertising that brings qualified leads directly to your business.",
-    features: [
-      "Campaign management",
-      "ROI tracking",
-      "Local targeting",
-      "Competitor analysis",
-      "Monthly reporting"
-    ],
-    link: "/google-ads"
-  }
+    description: "Get your phone ringing with targeted advertising that reaches customers actively searching for your services.",
+    price: "R2,499/month",
+    features: ["Campaign management", "Local targeting", "ROI tracking", "Monthly reporting"],
+    link: "/google-ads",
+  },
+];
+
+const upcomingFeatures = [
+  {
+    icon: Phone,
+    title: "Local Pros App",
+    description: "Manage leads, quotes, and appointments from your phone.",
+  },
+  {
+    icon: Star,
+    title: "Review Collection",
+    description: "Automatically collect and showcase customer reviews.",
+  },
+  {
+    icon: Sparkles,
+    title: "AI Automation",
+    description: "Smart follow-ups and lead qualification on autopilot.",
+  },
 ];
 
 const benefits = [
-  "Proven results – Helping South African businesses grow since 2015",
-  "Local expertise – We understand your market and customers",
-  "Integrated solutions – All our services work together seamlessly",
-  "Ongoing support – We're your partner, not just a service provider",
-  "Flexible options – Start with what you need most and grow from there",
-  "Industry knowledge – Specialized in home service businesses",
-  "Growth focused – Strategies designed to increase your revenue",
-  "Time-saving – Let us handle marketing while you focus on your work"
+  "10+ years helping South African businesses grow",
+  "Hundreds of websites delivered",
+  "Proven templates that generate leads",
+  "Ongoing support, not just a one-time service",
 ];
 
 const Home2Page = () => {
-  const [showAllServices, setShowAllServices] = useState(false);
-
-  // Show first 4 services by default, show all when showAllServices is true
-  const visibleServices = showAllServices ? premiumServices : premiumServices.slice(0, 4);
-
   return (
     <div className="min-h-screen bg-white">
-      {/* Dark Hero Section */}
-      <HeroComingSoon />
+      {/* Hero Section - Clean & Minimal */}
+      <section className="section bg-neutral-950 relative overflow-hidden">
+        {/* Subtle grid background */}
+        <div className="absolute inset-0 bg-grid opacity-30"></div>
+        
+        <div className="container-md relative">
+          <div className="text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center mb-8 animate-fade-in">
+              <span className="badge-dark">
+                <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                Available Now
+              </span>
+            </div>
 
-      {/* Dark Products Section - EXISTING DESIGN */}
-      <section className="py-16 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Headline */}
+            <h1 className="text-white mb-6 animate-fade-in-up text-balance">
+              Grow Your Business<br className="hidden sm:block" /> With Digital Marketing
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100">
+              Professional websites, social media management, and Google Ads 
+              for South African home service businesses.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-200">
+              <a
+                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"
+              >
+                Get Started
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
+              <Link to="/web-design" className="btn-secondary border-neutral-700 text-white hover:bg-neutral-800 hover:border-neutral-600">
+                View Our Work
+              </Link>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="mt-16 pt-8 border-t border-neutral-800 animate-fade-in-up delay-300">
+              <p className="text-neutral-500 text-sm mb-4">Trusted by businesses across South Africa</p>
+              <div className="flex items-center justify-center gap-8 text-neutral-400">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">500+</div>
+                  <div className="text-xs">Websites Built</div>
+                </div>
+                <div className="w-px h-8 bg-neutral-800"></div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">10+</div>
+                  <div className="text-xs">Years Experience</div>
+                </div>
+                <div className="w-px h-8 bg-neutral-800"></div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">4.9★</div>
+                  <div className="text-xs">HelloPeter Rating</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="section bg-white">
+        <div className="container-lg">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Why We Created These Services?
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Hey there! 👋 After years of sending leads your way, we noticed something important. Your customers told us they want to see more reviews and better online presence before hiring. Meanwhile, you've shared how hard it is to juggle admin, follow up on quotes, and find time for marketing while actually doing the work.
+            <span className="badge mb-4">Our Services</span>
+            <h2 className="text-neutral-900 mb-4">Everything You Need to Grow</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto">
+              From professional websites to ongoing marketing, we handle your digital presence 
+              so you can focus on running your business.
             </p>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-6 leading-relaxed">
-              We've been listening to these challenges and have developed Local Pros Studio ✨ – practical tools to help with day-to-day business operations, admin, and building your online presence.
-            </p>
-            <p className="text-lg text-primary-400 mt-8 font-medium">
-              All these new tools will be available starting June 2025
-            </p>
+          </div>
 
-            <div className="space-y-8 mt-12">
-              {visibleServices.map((service, index) => {
-                const Icon = service.icon;
-                return (
-                  <div 
-                    key={index} 
-                    className="group bg-black rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 border border-white/10 hover:border-primary-500/50"
-                  >
-                    <div className="flex flex-col md:flex-row">
-                      {/* Left side with gradient and icon */}
-                      <div className="w-full md:w-1/4 p-8 bg-gradient-to-br from-primary-500/20 to-secondary-500/20 text-white flex flex-col justify-center items-center md:items-start">
-                        <div className="w-20 h-20 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl flex items-center justify-center mb-4">
-                          <Icon className="w-10 h-10" />
-                        </div>
-                        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left">{service.title}</h3>
-                      </div>
-                      
-                      {/* Right side with description and features */}
-                      <div className="p-8 md:p-10 w-full md:w-3/4 bg-white/5 backdrop-blur-sm">
-                        <p className="text-lg mb-6 text-white">{service.description}</p>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                          {service.features.map((feature, i) => (
-                            <div key={i} className="flex items-start">
-                              <div className="p-1 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white mr-3 flex-shrink-0 mt-1">
-                                <Check className="w-4 h-4" />
-                              </div>
-                              <span className="text-gray-200 text-left">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Link
+                  key={index}
+                  to={service.link}
+                  className={`group card-hover flex flex-col ${
+                    service.featured ? 'ring-2 ring-neutral-900' : ''
+                  }`}
+                >
+                  {service.featured && (
+                    <div className="absolute -top-3 left-6">
+                      <span className="bg-neutral-900 text-white text-xs font-medium px-3 py-1 rounded-full">
+                        Most Popular
+                      </span>
                     </div>
+                  )}
+                  
+                  <div className="w-12 h-12 bg-neutral-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-neutral-200 transition-colors">
+                    <Icon className="w-6 h-6 text-neutral-700" />
                   </div>
-                );
-              })}
-              
-              {/* Show More Button */}
-              {!showAllServices && (
-                <div className="text-center mt-12">
-                  <button
-                    onClick={() => setShowAllServices(true)}
-                    className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium hover:opacity-90 transition-all"
-                  >
-                    Show More Services
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </button>
-                </div>
-              )}
-            </div>
+
+                  <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-neutral-600 text-sm mb-4 flex-grow">
+                    {service.description}
+                  </p>
+
+                  <div className="mb-4">
+                    <span className="text-lg font-semibold text-neutral-900">
+                      {service.price}
+                    </span>
+                  </div>
+
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-center text-sm text-neutral-600">
+                        <Check className="w-4 h-4 text-neutral-400 mr-2 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto pt-4 border-t border-neutral-100">
+                    <span className="inline-flex items-center text-sm font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors">
+                      Learn more
+                      <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <img
-              src={localProsImage}
-              alt="Performance Chart"
-              className="mx-auto mb-8 rounded-lg shadow-xl"
-              width={800}
-              height={400}
-            />
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Choose Local Pros Premium
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We're committed to helping your business succeed.
+      {/* Coming Soon Section */}
+      <section className="section-sm bg-neutral-50">
+        <div className="container-lg">
+          <div className="text-center mb-12">
+            <span className="badge mb-4">Coming June 2025</span>
+            <h2 className="text-neutral-900 mb-4">More Tools on the Way</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto">
+              We're building new features based on your feedback to help you manage 
+              and grow your business even more efficiently.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="bg-primary-500/20 p-1 rounded-full mr-3 flex-shrink-0 mt-1">
-                    <Check className="w-5 h-5 text-primary-400" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {upcomingFeatures.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div key={index} className="bg-white rounded-2xl p-6 border border-neutral-200">
+                  <div className="w-10 h-10 bg-neutral-100 rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5 text-neutral-600" />
                   </div>
-                  <p className="text-gray-300">{benefit}</p>
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-neutral-600 text-sm">
+                    {feature.description}
+                  </p>
                 </div>
-              ))}
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Us Section */}
+      <section className="section bg-white">
+        <div className="container-lg">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <span className="badge mb-4">Why Choose Us</span>
+              <h2 className="text-neutral-900 mb-6">
+                Your Partner in Growth
+              </h2>
+              <p className="text-neutral-600 mb-8">
+                We're not just another agency. We've spent over a decade helping 
+                South African home service businesses succeed online. We understand 
+                your challenges and build solutions that actually work.
+              </p>
+
+              <ul className="space-y-4 mb-8">
+                {benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-start">
+                    <div className="w-5 h-5 bg-neutral-900 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                      <Check className="w-3 h-3 text-white" />
+                    </div>
+                    <span className="text-neutral-700">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="https://wa.me/27787869161?text=Hi%2C%20I'd%20like%20to%20learn%20more%20about%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Let's Talk
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="relative">
+              <img
+                src={localProsImage}
+                alt="Local Pros team"
+                className="rounded-2xl shadow-soft-xl w-full"
+                width={600}
+                height={400}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social Proof Section */}
+      {/* Social Proof */}
       <SocialProofSection />
+
+      {/* Final CTA */}
+      <section className="section-sm bg-neutral-950">
+        <div className="container-md text-center">
+          <h2 className="text-white mb-4">Ready to Grow Your Business?</h2>
+          <p className="text-neutral-400 mb-8 max-w-xl mx-auto">
+            Get in touch today and let's discuss how we can help you attract more customers.
+          </p>
+          <a
+            href="https://wa.me/27787869161?text=Hi%2C%20I'm%20ready%20to%20get%20started"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"
+          >
+            Start a Conversation
+            <ArrowRight className="ml-2 w-4 h-4" />
+          </a>
+        </div>
+      </section>
     </div>
   );
 };

@@ -1,50 +1,153 @@
-/*
-Changes made:
-- Moved useLocation hook inside a new component called AppContent that's rendered within BrowserRouter
-- Restructured the component hierarchy to ensure all routing hooks are used within Router context
-*/
-
-import React from 'react';
-import { BrowserRouter, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import GradientButton from './components/GradientButton'; 
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import HeroSection from './components/HeroSection';
 import CallToAction from './components/CallToAction';
-import PainPoints from './components/PainPoints';
 import ServicesSection from './components/ServicesSection';
 import SocialProofSection from './components/SocialProofSection';
-import BrowserMockup from './components/BrowserMockup';
 import LeadGenSection from './components/LeadGenSection';
 import WebDesignPage from './components/WebDesignPage';
 import GoogleAdsPage from './components/GoogleAdsPage';
-import AssetManager from './components/AssetManager';
 import AlternativeWebDesignPage from './components/AlternativeWebDesignPage';
 import ImageGallery from './components/ImageGallery';
 import MobileCTA from './components/MobileCTA';
 import ScrollToTop from './components/ScrollToTop';
 import SocialMediaPage from './components/SocialMediaPage';
 import Home2Page from './components/Home2Page';
+import Footer from './components/Footer';
+import FieldCardPage from './components/FieldCardPage';
+import ReachMaxPage from './components/ReachMaxPage';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
 const Navigation = () => {
-  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  
+  // Check if we're on a dark-themed page
+  const isDarkPage = location.pathname === '/fieldcard';
+
+  const navLinks = [
+    { name: 'Services', href: '/#services' },
+    { name: 'Web Design', href: '/web-design' },
+    { name: 'Google Ads', href: '/google-ads' },
+    { name: 'Social Media', href: '/social-media' },
+    { name: 'ReachMax', href: '/reachmax' },
+    { name: 'FieldCard', href: '/fieldcard' },
+  ];
+
+  const isActive = (href: string) => {
+    if (href.startsWith('/#')) return false;
+    return location.pathname === href;
+  };
 
   return (
-    <nav className="sticky top-0 w-full bg-black z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className={`sticky top-0 w-full backdrop-blur-lg z-50 ${
+      isDarkPage 
+        ? 'bg-neutral-950/90 border-b border-neutral-800' 
+        : 'bg-white/80 border-b border-neutral-100'
+    }`}>
+      <div className="container-lg">
         <div className="flex justify-between h-16 items-center">
+          {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Local Pros Studio" className="h-8 w-auto" width="120" height="32" />
+            <img 
+              src={logo} 
+              alt="Local Pros Studio" 
+              className={`h-8 w-auto ${isDarkPage ? 'brightness-0 invert' : ''}`}
+              width="120" 
+              height="32" 
+            />
           </Link>
-          <div className="flex items-center space-x-4">
-            <GradientButton 
-              href="https://wa.me/27787869161?text=Interested%20in%20Local%20Pros%20Studio"
-              className="!py-2 !px-6 !text-base hidden md:inline-flex"
-            >
-              Chat on WhatsApp
-            </GradientButton>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                  isActive(link.href)
+                    ? isDarkPage
+                      ? 'text-white bg-neutral-800'
+                      : 'text-neutral-900 bg-neutral-100'
+                    : isDarkPage
+                      ? 'text-neutral-300 hover:text-white hover:bg-neutral-800'
+                      : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
+
+          {/* CTA Button */}
+          <div className="hidden md:flex items-center">
+            <a
+              href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20Local%20Pros%20Studio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Get Started
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              isDarkPage 
+                ? 'hover:bg-neutral-800' 
+                : 'hover:bg-neutral-100'
+            }`}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? (
+              <X className={`w-6 h-6 ${isDarkPage ? 'text-white' : 'text-neutral-900'}`} />
+            ) : (
+              <Menu className={`w-6 h-6 ${isDarkPage ? 'text-white' : 'text-neutral-900'}`} />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className={`md:hidden py-4 border-t ${
+            isDarkPage ? 'border-neutral-800' : 'border-neutral-100'
+          }`}>
+            <div className="flex flex-col space-y-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                    isActive(link.href)
+                      ? isDarkPage
+                        ? 'text-white bg-neutral-800'
+                        : 'text-neutral-900 bg-neutral-100'
+                      : isDarkPage
+                        ? 'text-neutral-300 hover:text-white hover:bg-neutral-800'
+                        : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <a
+                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20Local%20Pros%20Studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary mt-4 mx-4"
+                onClick={() => setIsOpen(false)}
+              >
+                Get Started
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
@@ -60,16 +163,12 @@ const HomePage = () => (
   </>
 );
 
-
 const AppContent = () => {
-  const location = useLocation();
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       <ScrollToTop />
       <Navigation />
-      <MobileCTA />
-      <main>
+      <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home2Page />} />
           <Route path="/home-classic" element={<HomePage />} />
@@ -77,10 +176,13 @@ const AppContent = () => {
           <Route path="/web-design-alt" element={<AlternativeWebDesignPage />} />
           <Route path="/google-ads" element={<GoogleAdsPage />} />
           <Route path="/social-media" element={<SocialMediaPage />} />
+          <Route path="/fieldcard" element={<FieldCardPage />} />
+          <Route path="/reachmax" element={<ReachMaxPage />} />
           <Route path="/gallery" element={<ImageGallery />} />
-          <Route path="/asset-manager" element={<AssetManager />} />
         </Routes>
       </main>
+      <Footer />
+      <MobileCTA />
     </div>
   );
 };

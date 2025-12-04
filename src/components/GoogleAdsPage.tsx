@@ -1,210 +1,133 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Target, TrendingUp, Users, DollarSign, LineChart, Shield } from 'lucide-react';
+import { ArrowRight, Check, Target, TrendingUp, BarChart3, Users } from 'lucide-react';
 import SocialProofSection from './SocialProofSection';
 
 const benefits = [
   {
     icon: Target,
-    title: "Reach Ready-to-Buy Customers",
-    description: "Show up exactly when local customers are searching for your services"
+    title: "Targeted Reach",
+    description: "Reach customers actively searching for your services in your area."
   },
   {
     icon: TrendingUp,
-    title: "Fast Results",
-    description: "Start getting leads within days, not months like traditional marketing"
+    title: "Measurable Results",
+    description: "Track every lead and see exactly what your investment returns."
+  },
+  {
+    icon: BarChart3,
+    title: "Optimized Campaigns",
+    description: "Continuous optimization to maximize your budget efficiency."
   },
   {
     icon: Users,
-    title: "Target Your Local Area",
-    description: "Only pay for clicks from customers in your service area"
-  },
-  {
-    icon: DollarSign,
-    title: "Control Your Budget",
-    description: "Start small and scale up as you see results"
-  },
-  {
-    icon: LineChart,
-    title: "Track Every Rand",
-    description: "See exactly how many leads and sales your ads generate"
-  },
-  {
-    icon: Shield,
-    title: "No Long-Term Contracts",
-    description: "Flexible month-to-month management with no lock-in"
+    title: "Qualified Leads",
+    description: "Attract customers ready to buy, not just browsers."
   }
 ];
 
-const successStories = [
-  {
-    business: "Local Plumber",
-    location: "Cape Town",
-    before: "Struggling to compete with larger companies",
-    after: "Now booking 15-20 new jobs per week from Google Ads",
-    roi: "R8.50 return for every R1 spent"
-  },
-  {
-    business: "Electrician",
-    location: "Johannesburg",
-    before: "Relying only on word-of-mouth referrals",
-    after: "Doubled monthly revenue within 3 months",
-    roi: "R7.20 return for every R1 spent"
-  },
-  {
-    business: "Security Company",
-    location: "Durban",
-    before: "Wasting budget on poorly targeted ads",
-    after: "Cut cost per lead by 64% while increasing quality",
-    roi: "R9.30 return for every R1 spent"
-  }
+const included = [
+  "Campaign strategy & setup",
+  "Keyword research & targeting",
+  "Ad copywriting & testing",
+  "Landing page recommendations",
+  "Conversion tracking setup",
+  "Monthly performance reports",
+  "Budget optimization",
+  "Competitor analysis",
+  "Ongoing campaign management",
+  "Direct support via WhatsApp"
 ];
 
-const packages = [
+const faqs = [
   {
-    name: "Starter",
-    price: "R2,499/month",
-    adBudget: "R5,000 - R10,000",
-    ideal: "Perfect for small local service businesses",
-    features: [
-      "Campaign setup & optimization",
-      "Keyword research & targeting",
-      "Ad copywriting",
-      "Monthly performance report",
-      "Phone & email support",
-      "Lead tracking setup"
-    ]
+    question: "How much should I budget for Google Ads?",
+    answer: "We recommend starting with R3,000-R5,000 per month in ad spend, plus our management fee. This gives enough data to optimize effectively. We can scale up once we find what works."
   },
   {
-    name: "Growth",
-    price: "R3,999/month",
-    adBudget: "R10,000 - R25,000",
-    ideal: "Best for established businesses ready to scale",
-    features: [
-      "Everything in Starter",
-      "Advanced conversion tracking",
-      "Competitor analysis",
-      "A/B testing",
-      "Landing page recommendations",
-      "Bi-weekly optimization",
-      "Priority support"
-    ],
-    recommended: true
+    question: "How quickly will I see results?",
+    answer: "You can start receiving leads within days of launching. However, campaigns typically need 2-4 weeks of optimization to reach peak performance."
   },
   {
-    name: "Premium",
-    price: "Custom",
-    adBudget: "R25,000+",
-    ideal: "For businesses with multiple locations/services",
-    features: [
-      "Everything in Growth",
-      "Multiple campaign management",
-      "Custom reporting dashboard",
-      "Weekly strategy calls",
-      "Landing page design",
-      "Cross-platform remarketing",
-      "Dedicated account manager"
-    ]
+    question: "What's included in the management fee?",
+    answer: "Everything from strategy to execution: campaign setup, ongoing optimization, A/B testing, reporting, and direct support. No hidden fees."
+  },
+  {
+    question: "Can I pause or stop anytime?",
+    answer: "Yes, there's no long-term contract. You can pause or cancel your campaign at any time. We believe in earning your business every month."
   }
 ];
 
 const GoogleAdsPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative pt-24 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
-        {/* Background gradient circles */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-to-br from-primary-500/20 to-secondary-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-tr from-secondary-500/20 to-primary-500/20 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto relative z-10 flex flex-col h-full">
-            <div className="flex items-center justify-center space-x-2 text-white font-bold text-xl mb-8">
-              <h1 className="text-base sm:text-sm font-sans">Google Ads Management</h1>
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight text-center">
-              <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Get More Local Customers with Google Ads
-              </span>
+      {/* Hero Section */}
+      <section className="section bg-neutral-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-30"></div>
+        
+        <div className="container-md relative">
+          <div className="text-center">
+            <span className="badge-dark mb-6">Google Ads Management</span>
+            
+            <h1 className="text-white mb-6 text-balance">
+              Get More Customers<br className="hidden sm:block" /> With Google Ads
             </h1>
-            <p className="text-lg sm:text-xl text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto">
-              Show up first when customers search for your services. Our clients see an average of
-              <span className="font-semibold text-primary-300"> 300% return on ad spend</span>.
+
+            <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+              Targeted advertising that puts your business in front of customers 
+              actively searching for your services. Pay only for results.
             </p>
-            <div className="flex flex-col gap-4 justify-center mb-8 sm:mb-16">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium rounded-lg text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 transition-colors w-full sm:w-auto"
-                >
-                  Get Your Free Ad Strategy
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
-                <a
-                  href="#success-stories"
-                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-base sm:text-lg font-medium rounded-lg text-white hover:bg-white/10 transition-colors w-full sm:w-auto"
-                >
-                  See Success Stories
-                </a>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              <a
+                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20Google%20Ads%20management"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"
+              >
+                Get Started
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
+              <a href="#pricing" className="btn-secondary border-neutral-700 text-white hover:bg-neutral-800 hover:border-neutral-600">
+                View Pricing
+              </a>
+            </div>
+
+            {/* Quick stats */}
+            <div className="flex items-center justify-center gap-8 text-neutral-400 text-sm">
+              <div className="flex items-center">
+                <Check className="w-4 h-4 mr-2 text-green-500" />
+                No long-term contracts
+              </div>
+              <div className="flex items-center">
+                <Check className="w-4 h-4 mr-2 text-green-500" />
+                Transparent reporting
+              </div>
+              <div className="flex items-center">
+                <Check className="w-4 h-4 mr-2 text-green-500" />
+                Local expertise
               </div>
             </div>
-            
-            {/* Hero Image */}
-            <div className="relative mx-auto max-w-5xl">
-              <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200"
-                alt="Google Ads Analytics Dashboard"
-                className="w-full h-auto object-contain rounded-lg shadow-2xl"
-              />
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Pain Points Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Tired of...
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-red-50 p-6 rounded-lg">
-              <p className="text-red-800">Watching competitors show up above you in Google searches?</p>
-            </div>
-            <div className="bg-red-50 p-6 rounded-lg">
-              <p className="text-red-800">Waiting for the phone to ring while your crew sits idle?</p>
-            </div>
-            <div className="bg-red-50 p-6 rounded-lg">
-              <p className="text-red-800">Wasting money on marketing that doesn't bring results?</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Grid */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Google Ads Work for Local Businesses
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get in front of customers actively looking for your services, right when they need you.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Benefits */}
+      <section className="section-sm bg-white">
+        <div className="container-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
-                <div key={index} className="bg-white rounded-lg p-6 shadow-lg">
-                  <div className="inline-block p-3 bg-indigo-50 rounded-lg text-indigo-600 mb-4">
-                    <Icon className="w-6 h-6" />
+                <div key={index} className="text-center p-6">
+                  <div className="w-12 h-12 bg-neutral-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Icon className="w-6 h-6 text-neutral-700" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.description}</p>
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-neutral-600 text-sm">
+                    {benefit.description}
+                  </p>
                 </div>
               );
             })}
@@ -212,125 +135,162 @@ const GoogleAdsPage = () => {
         </div>
       </section>
 
-      {/* Success Stories */}
-      <section id="success-stories" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* How It Works */}
+      <section className="section bg-neutral-50">
+        <div className="container-md">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Local Businesses Like Yours
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how other service businesses are growing with Google Ads
+            <span className="badge mb-4">How It Works</span>
+            <h2 className="text-neutral-900 mb-4">Your Ads, Managed Properly</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto">
+              We handle everything from strategy to execution, so you can focus on 
+              serving your customers.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {successStories.map((story, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-6 border border-gray-100">
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">{story.business}</h3>
-                  <p className="text-indigo-600">{story.location}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-medium mr-4 flex-shrink-0">
+                    1
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-900 mb-1">Strategy Session</h3>
+                    <p className="text-neutral-600 text-sm">We learn about your business, target customers, and goals to create a winning strategy.</p>
+                  </div>
                 </div>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900">Before:</h4>
-                    <p className="text-gray-600">{story.before}</p>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-medium mr-4 flex-shrink-0">
+                    2
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-900">After:</h4>
-                    <p className="text-green-600 font-medium">{story.after}</p>
+                    <h3 className="font-semibold text-neutral-900 mb-1">Campaign Setup</h3>
+                    <p className="text-neutral-600 text-sm">We build your campaigns with targeted keywords, compelling ads, and proper tracking.</p>
                   </div>
-                  <div className="pt-4 border-t border-gray-100">
-                    <p className="text-lg font-bold text-indigo-600">{story.roi}</p>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-medium mr-4 flex-shrink-0">
+                    3
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-900 mb-1">Launch & Optimize</h3>
+                    <p className="text-neutral-600 text-sm">Your campaigns go live and we continuously optimize for better results.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-medium mr-4 flex-shrink-0">
+                    4
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-900 mb-1">Report & Scale</h3>
+                    <p className="text-neutral-600 text-sm">Monthly reports show your ROI, and we scale what works to grow your business.</p>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-soft">
+              <h3 className="text-lg font-semibold text-neutral-900 mb-6">What's Included</h3>
+              <ul className="space-y-3">
+                {included.map((item, index) => (
+                  <li key={index} className="flex items-center text-sm">
+                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="text-neutral-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Pricing */}
+      <section id="pricing" className="section bg-white">
+        <div className="container-md">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Simple, Transparent Pricing
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              All packages include campaign setup, management, and regular optimization
+            <span className="badge mb-4">Pricing</span>
+            <h2 className="text-neutral-900 mb-4">Simple Monthly Pricing</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto">
+              One flat fee for complete campaign management. No hidden costs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <div
-                key={index}
-                className={`relative bg-white rounded-lg shadow-lg border ${
-                  pkg.recommended ? 'border-indigo-600' : 'border-gray-100'
-                }`}
+          <div className="max-w-lg mx-auto">
+            <div className="bg-neutral-900 rounded-2xl p-8 text-white text-center">
+              <h3 className="text-xl font-semibold mb-2">Google Ads Management</h3>
+              <p className="text-neutral-400 text-sm mb-6">Complete campaign management</p>
+
+              <div className="mb-6">
+                <span className="text-5xl font-bold">R2,499</span>
+                <span className="text-neutral-400 ml-2">/month</span>
+              </div>
+
+              <p className="text-neutral-400 text-sm mb-8">
+                + your ad spend budget (recommended R3,000-R5,000/month to start)
+              </p>
+
+              <a
+                href="https://wa.me/27787869161?text=Hi%2C%20I'm%20interested%20in%20Google%20Ads%20management"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100 w-full justify-center"
               >
-                {pkg.recommended && (
-                  <div className="absolute top-0 right-0 bg-indigo-600 text-white px-4 py-1 rounded-bl-lg rounded-tr-lg text-sm font-medium">
-                    Most Popular
-                  </div>
-                )}
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
-                  <div className="flex items-baseline mb-4">
-                    <span className="text-4xl font-bold text-indigo-600">{pkg.price}</span>
-                  </div>
-                  <p className="text-gray-600 mb-2">{pkg.ideal}</p>
-                  <p className="text-sm text-gray-500 mb-6">Recommended ad budget: {pkg.adBudget}</p>
+                Get Started
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
 
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <CheckCircle2 className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+              <p className="text-neutral-500 text-xs mt-4">
+                No long-term contract. Cancel anytime.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                  <a
-                    href="#contact"
-                    className={`block text-center px-6 py-3 rounded-lg transition-colors ${
-                      pkg.recommended
-                        ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                        : 'bg-white text-indigo-600 border-2 border-indigo-600 hover:bg-indigo-50'
-                    }`}
-                  >
-                    Get Started
-                  </a>
-                </div>
+      {/* FAQ */}
+      <section className="section bg-neutral-50">
+        <div className="container-md">
+          <div className="text-center mb-16">
+            <span className="badge mb-4">FAQ</span>
+            <h2 className="text-neutral-900 mb-4">Common Questions</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+            {faqs.map((faq, index) => (
+              <div key={index}>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  {faq.question}
+                </h3>
+                <p className="text-neutral-600 text-sm leading-relaxed">
+                  {faq.answer}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-indigo-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Grow Your Business?
-          </h2>
-          <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-            Get a free Google Ads strategy session and competitor analysis worth R2,500. No obligations, just actionable insights for your business.
+      {/* Social Proof */}
+      <SocialProofSection />
+
+      {/* Final CTA */}
+      <section className="section-sm bg-neutral-950">
+        <div className="container-md text-center">
+          <h2 className="text-white mb-4">Ready to Get More Leads?</h2>
+          <p className="text-neutral-400 mb-8 max-w-xl mx-auto">
+            Let's discuss your advertising goals and create a strategy that works for your business.
           </p>
           <a
-            href="#contact"
-            className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-medium rounded-lg text-white hover:bg-white hover:text-indigo-600 transition-colors"
+            href="https://wa.me/27787869161?text=Hi%2C%20I'd%20like%20to%20discuss%20Google%20Ads%20for%20my%20business"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"
           >
-            Book Your Free Strategy Session
-            <ArrowRight className="ml-2 w-6 h-6" />
+            Start a Conversation
+            <ArrowRight className="ml-2 w-4 h-4" />
           </a>
         </div>
       </section>
-
-      {/* Social Proof Section */}
-      <SocialProofSection />
-
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Copy, Check, Upload } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { Copy, Check } from 'lucide-react';
 
 // Import Folder icon
 import { Folder } from 'lucide-react';
@@ -199,37 +198,8 @@ const images = [
 const ImageGallery = () => {
   const [copiedPath, setCopiedPath] = useState<string | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isUploading, setIsUploading] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const fileInputRef = React.useRef<HTMLInputElement>(null);
-
-  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files;
-    if (!files?.length) return;
-
-    setIsUploading(true);
-    try {
-      for (const file of Array.from(files)) {
-        const filePath = `compressed/${Date.now()}-${file.name}`;
-        
-        // Upload to Supabase storage
-        const { error: uploadError } = await supabase.storage
-          .from('assets')
-          .upload(filePath, file);
-
-        if (uploadError) throw uploadError;
-      }
-      
-      // Refresh the page to show new images
-      window.location.reload();
-    } catch (err) {
-      console.error('Upload error:', err);
-      setError('Failed to upload file');
-    } finally {
-      setIsUploading(false);
-    }
-  };
 
   const copyToClipboard = async (path: string) => {
     try {
@@ -292,26 +262,6 @@ const ImageGallery = () => {
     <div>
       <div className="mb-8 flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-900">Local Images</h2>
-        <div>
-          <input
-            type="file"
-            ref={fileInputRef}
-            onChange={handleFileUpload}
-            className="hidden"
-            multiple
-            accept="image/*"
-          />
-          <button
-            onClick={() => fileInputRef.current?.click()}
-            className={`inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors ${
-              isUploading ? 'opacity-50 cursor-not-allowed' : ''
-            }`}
-            disabled={isUploading}
-          >
-            <Upload className="w-5 h-5 mr-2" />
-            {isUploading ? 'Uploading...' : 'Upload Image'}
-          </button>
-        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
