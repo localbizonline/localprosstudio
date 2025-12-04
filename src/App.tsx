@@ -22,9 +22,6 @@ import logo from './assets/images/Compressed/Local Pros Studio logo transparent.
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  
-  // Check if we're on a dark-themed page
-  const isDarkPage = location.pathname === '/fieldcard';
 
   const navLinks = [
     { name: 'Services', href: '/#services' },
@@ -41,11 +38,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`sticky top-0 w-full backdrop-blur-lg z-50 ${
-      isDarkPage 
-        ? 'bg-neutral-950/90 border-b border-neutral-800' 
-        : 'bg-white/80 border-b border-neutral-100'
-    }`}>
+    <nav className="sticky top-0 w-full backdrop-blur-lg z-50 bg-neutral-950/90 border-b border-neutral-800">
       <div className="container-lg">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -53,7 +46,7 @@ const Navigation = () => {
             <img 
               src={logo} 
               alt="Local Pros Studio" 
-              className={`h-8 w-auto ${isDarkPage ? 'brightness-0 invert' : ''}`}
+              className="h-8 w-auto"
               width="120" 
               height="32" 
             />
@@ -67,12 +60,8 @@ const Navigation = () => {
                 to={link.href}
                 className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
                   isActive(link.href)
-                    ? isDarkPage
-                      ? 'text-white bg-neutral-800'
-                      : 'text-neutral-900 bg-neutral-100'
-                    : isDarkPage
-                      ? 'text-neutral-300 hover:text-white hover:bg-neutral-800'
-                      : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50'
+                    ? 'text-white bg-neutral-800'
+                    : 'text-neutral-300 hover:text-white hover:bg-neutral-800'
                 }`}
               >
                 {link.name}
@@ -96,26 +85,20 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 rounded-lg transition-colors ${
-              isDarkPage 
-                ? 'hover:bg-neutral-800' 
-                : 'hover:bg-neutral-100'
-            }`}
+            className="md:hidden p-2 rounded-lg transition-colors hover:bg-neutral-800"
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <X className={`w-6 h-6 ${isDarkPage ? 'text-white' : 'text-neutral-900'}`} />
+              <X className="w-6 h-6 text-white" />
             ) : (
-              <Menu className={`w-6 h-6 ${isDarkPage ? 'text-white' : 'text-neutral-900'}`} />
+              <Menu className="w-6 h-6 text-white" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className={`md:hidden py-4 border-t ${
-            isDarkPage ? 'border-neutral-800' : 'border-neutral-100'
-          }`}>
+          <div className="md:hidden py-4 border-t border-neutral-800">
             <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <Link
@@ -124,12 +107,8 @@ const Navigation = () => {
                   onClick={() => setIsOpen(false)}
                   className={`px-4 py-3 text-base font-medium rounded-lg transition-colors ${
                     isActive(link.href)
-                      ? isDarkPage
-                        ? 'text-white bg-neutral-800'
-                        : 'text-neutral-900 bg-neutral-100'
-                      : isDarkPage
-                        ? 'text-neutral-300 hover:text-white hover:bg-neutral-800'
-                        : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50'
+                      ? 'text-white bg-neutral-800'
+                      : 'text-neutral-300 hover:text-white hover:bg-neutral-800'
                   }`}
                 >
                   {link.name}

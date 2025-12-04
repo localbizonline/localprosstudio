@@ -28,7 +28,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="Local Pros Studio" 
-                className="h-8 w-auto brightness-0 invert" 
+                className="h-8 w-auto" 
                 width="120" 
                 height="32" 
               />
@@ -96,11 +96,11 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="mailto:hello@localprosstudio.com"
+                  href="mailto:hello@localpros.co.za"
                   className="flex items-center text-neutral-400 hover:text-white transition-colors text-sm"
                 >
                   <Mail className="w-4 h-4 mr-2 flex-shrink-0" />
-                  hello@localprosstudio.com
+                  hello@localpros.co.za
                 </a>
               </li>
               <li className="flex items-start text-neutral-400 text-sm">
