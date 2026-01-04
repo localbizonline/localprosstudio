@@ -1,0 +1,533 @@
+import React from 'react';
+import {
+  ArrowRight,
+  Star,
+  ShieldCheck,
+  MessageSquare,
+  Mail,
+  CheckCircle2,
+  AlertTriangle,
+  BarChart3,
+  Quote,
+} from 'lucide-react';
+import helloPeterLogo from '../assets/images/hellopeterlogo.png';
+
+import heroImage from '../assets/images/review-screen-focus.jpg';
+import whatsappImage from '../assets/images/review-whatsapp.jpg';
+import unhappyImage from '../assets/images/review-hand-closeup.jpg';
+import happyCustomer from '../assets/images/review-customer.jpg';
+import rankingsImage from '../assets/images/social-analytics-dashboard.jpg';
+
+const stats = [
+  { label: '96%', desc: 'of homeowners check reviews before calling.' },
+  { label: '3.5★', desc: 'is the minimum rating most will accept.' },
+  { label: '1 bad', desc: 'recent 1-star review can cut calls for months.' },
+];
+
+const pains = [
+  {
+    title: 'One bad review sits on top',
+    copy: 'A fresh 1-star can bury your good work. Homeowners see it first and call a competitor.',
+    image: unhappyImage,
+  },
+  {
+    title: 'Happy customers stay silent',
+    copy: "Busy crews don't ask consistently. You deliver great work, but only unhappy customers speak up.",
+    image: whatsappImage,
+  },
+  {
+    title: 'Everyone checks before they call',
+    copy: 'Nearly every homeowner Googles you first. A weak or stale rating costs jobs before you get a chance to quote.',
+    image: heroImage,
+  },
+];
+
+const steps = [
+  {
+    title: 'Feed us your jobs',
+    desc: 'WhatsApp, email, or BCC invoices. No new software rollout for your team.',
+    icon: Mail,
+  },
+  {
+    title: 'Smart requests go out',
+    desc: 'Sequenced WhatsApp + email with your branding. We stop if they already replied.',
+    icon: MessageSquare,
+  },
+  {
+    title: 'Filter the unhappy privately',
+    desc: '1–3 star responses trigger a private form and instant alert to you.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Publish the wins',
+    desc: '4–5 star customers are sent straight to Google and Facebook to post.',
+    icon: Star,
+  },
+];
+
+const inclusions = [
+  'Automated WhatsApp + email review asks',
+  'Smart filtering so unhappy customers stay private',
+  'Instant alerts for any low score or negative wording',
+  'AI-drafted replies for 5-star reviews (you approve)',
+  'Past-90-day outreach to kickstart volume fast',
+  'Simple weekly recap: new reviews, rating trend, unresolved flags',
+];
+
+// Reputation-focused testimonials
+const reputationReviews = [
+  {
+    name: "Bradley M.",
+    business: "Plumbing Services",
+    content: "Our Google rating jumped from 3.8 to 4.7 in three months. The automated follow-ups mean we actually get reviews now instead of hoping customers remember.",
+    stars: 5
+  },
+  {
+    name: "Ntombi K.",
+    business: "Electrical Contractor",
+    content: "We caught a potential 1-star review before it went public. The private feedback system gave us a chance to fix the issue first. That alone was worth it.",
+    stars: 5
+  },
+  {
+    name: "Johan V.",
+    business: "HVAC Installation",
+    content: "Went from 12 reviews to over 80 in six months. Now when customers search 'aircon installation near me', we show up with the best rating in our area.",
+    stars: 5
+  },
+  {
+    name: "Lindiwe S.",
+    business: "Roofing Contractor",
+    content: "The weekly reports show exactly where we stand. We can see which techs get the best feedback and who needs coaching. Real data, not guesses.",
+    stars: 5
+  },
+];
+
+// Platform logos (inline SVGs for crisp rendering)
+const GoogleLogo = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6">
+    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+  </svg>
+);
+
+const FacebookLogo = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6">
+    <path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+  </svg>
+);
+
+const WhatsAppLogo = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6">
+    <path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+);
+
+const HelloPeterLogo = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6">
+    <circle cx="12" cy="12" r="12" fill="#00BCD4"/>
+    <text x="12" y="16" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">HP</text>
+  </svg>
+);
+
+const platforms = [
+  { name: 'Google', Logo: GoogleLogo },
+  { name: 'Facebook', Logo: FacebookLogo },
+  { name: 'HelloPeter', Logo: HelloPeterLogo },
+  { name: 'WhatsApp', Logo: WhatsAppLogo },
+];
+
+const ReviewFunnelPage = () => {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-neutral-950 text-white">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Customer reading reviews" className="w-full h-full object-cover opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/90 to-neutral-900/60" />
+        </div>
+        <div className="container-md relative z-10 py-20 md:py-24">
+          <div className="max-w-3xl space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs uppercase tracking-[0.2em] text-white/80">
+              Reputation Engine • Reviews only
+            </div>
+            <h1 className="text-white text-balance">
+              One bad review can cost you the next job.
+              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">
+                We get you more 5-star reviews.
+              </span>
+            </h1>
+            <div className="flex items-center gap-1 pt-2">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-8 h-8 md:w-10 md:h-10 text-yellow-400 fill-yellow-400 drop-shadow-lg" />
+              ))}
+            </div>
+            <p className="text-lg md:text-xl text-neutral-200 max-w-2xl">
+              We built the Reputation Engine internally to generate 500+ reviews in 6 months. Now we're opening it up to help you do the same.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://wa.me/27832336716?text=Hi%2C%20I%20need%20help%20protecting%20and%20growing%20our%20reviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100 animate-bounce-soft"
+              >
+                Book a 15-min fit call
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
+              <a href="#how-it-works" className="btn-secondary border-white/40 text-white hover:bg-white/10">
+                How it works
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Platforms bar */}
+      <section className="py-10 bg-white border-b border-neutral-100">
+        <div className="container-lg">
+          <p className="text-center text-neutral-500 text-sm mb-6 uppercase tracking-wider font-medium">
+            We collect reviews on
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {platforms.map((platform) => (
+              <div key={platform.name} className="flex items-center gap-3 bg-neutral-50 border border-neutral-200 px-5 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow">
+                <platform.Logo />
+                <span className="font-medium text-neutral-900 text-sm">{platform.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pain */}
+      <section className="section bg-neutral-50">
+        <div className="container-lg">
+          <div className="text-center mb-12">
+            <span className="badge mb-4">Bad reviews cost calls</span>
+            <h2 className="text-neutral-900 mb-4">Negative reviews make people hesitate</h2>
+            <p className="text-neutral-600 max-w-3xl mx-auto">
+              96% of homeowners check reviews before they call. One fresh 1-star can stop them or send them to a competitor. AI tools like ChatGPT now surface your reviews when people search—nothing is hidden.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {pains.map((pain, idx) => (
+              <div key={idx} className="bg-white rounded-2xl border border-neutral-100 shadow-soft hover:shadow-soft-lg transition-all overflow-hidden">
+                <div className="relative h-48 md:h-52">
+                  <img src={pain.image} alt={pain.title} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/0 via-neutral-900/8 to-neutral-900/20" />
+                </div>
+                <div className="p-6 space-y-3">
+                  <h3 className="text-lg font-semibold text-neutral-900">{pain.title}</h3>
+                  <p className="text-neutral-600 text-sm leading-relaxed">{pain.copy}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Intro to Engine */}
+      <section className="section bg-white">
+        <div className="container-md text-center">
+          <span className="badge mb-4">The Solution</span>
+          <h2 className="text-neutral-900 mb-6">Introducing the Reputation Engine</h2>
+          <p className="text-neutral-600 max-w-2xl mx-auto mb-8 text-lg">
+            We spent two years refining this system internally to generate over 500 reviews in just 6 months. Now, we've opened it up as a done-for-you service to help other businesses get the same results.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            <div className="p-4 bg-neutral-50 rounded-xl border border-neutral-100">
+              <div className="text-3xl font-bold text-neutral-900 mb-1">500+</div>
+              <div className="text-sm text-neutral-500">Reviews generated internally</div>
+            </div>
+            <div className="p-4 bg-neutral-50 rounded-xl border border-neutral-100">
+              <div className="text-3xl font-bold text-neutral-900 mb-1">2 Years</div>
+              <div className="text-sm text-neutral-500">Refining the workflow</div>
+            </div>
+            <div className="p-4 bg-neutral-50 rounded-xl border border-neutral-100">
+              <div className="text-3xl font-bold text-neutral-900 mb-1">100%</div>
+              <div className="text-sm text-neutral-500">Done-for-you service</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* How it works */}
+      <section id="how-it-works" className="section bg-neutral-950 text-white">
+        <div className="container-md">
+          <div className="text-center mb-14">
+            <span className="badge mb-4 bg-white/10 text-white border border-white/20">How it works</span>
+            <h2 className="text-white mb-4">How the Reputation Engine works</h2>
+            <p className="text-neutral-300 max-w-3xl mx-auto">
+              Automated WhatsApp + email asks go to every customer. Happy ones get sent to Google/Facebook. Unhappy ones go to a private form—and you get an instant alert.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {steps.map((step, idx) => {
+              const Icon = step.icon;
+              return (
+                <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-6 flex gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 text-amber-300" />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-white">{step.title}</h3>
+                    <p className="text-sm text-neutral-300 leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Smart filtering highlight (inspired by reviews page) */}
+      <section className="section bg-white">
+        <div className="container-md">
+          <div className="bg-neutral-900 rounded-2xl p-8 md:p-12 text-white">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="space-y-4">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-200 text-xs font-semibold">
+                  Smart filtering
+                </span>
+                <h2 className="text-white">Unhappy customers go private—you get warned</h2>
+                <p className="text-neutral-300">
+                  Every customer rates you first. If they're happy (4–5 stars) they're sent straight to Google/Facebook. If they're not, they're shown a feedback form and you get an instant WhatsApp alert so you can call before they post anywhere.
+                </p>
+                <ul className="space-y-3 text-sm text-neutral-200">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-0.5" />
+                    4–5 stars → Direct link to Google & Facebook
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-0.5" />
+                    1–3 stars → Private form + WhatsApp alert to you
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-0.5" />
+                    AI suggests responses; you approve before posting
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-neutral-800 rounded-xl p-4 md:p-6 space-y-4">
+                <div className="p-4 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
+                  <div className="flex items-center gap-3">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                      ))}
+                    </div>
+                    <span className="text-sm text-neutral-200 flex-1">Happy customer</span>
+                    <span className="text-xs font-semibold text-emerald-300 bg-emerald-500/20 px-2 py-1 rounded">Public review</span>
+                  </div>
+                </div>
+                <div className="p-4 bg-amber-500/10 rounded-lg border border-amber-500/20">
+                  <div className="flex items-center gap-3">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className={`w-4 h-4 ${i < 2 ? 'text-yellow-400 fill-yellow-400' : 'text-neutral-600'}`} />
+                      ))}
+                    </div>
+                    <span className="text-sm text-neutral-200 flex-1">Unhappy customer</span>
+                    <span className="text-xs font-semibold text-amber-300 bg-amber-500/20 px-2 py-1 rounded">Private + alert</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's included */}
+      <section className="section bg-neutral-50">
+        <div className="container-md">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="bg-white rounded-2xl border border-neutral-200 shadow-soft p-8 space-y-6">
+              <div className="flex items-center gap-3">
+                <BarChart3 className="w-6 h-6 text-neutral-800" />
+                <h2 className="text-neutral-900">What the Reputation Engine includes</h2>
+              </div>
+            <p className="text-neutral-600">
+              No new software to learn. We send the asks, filter the responses, draft replies, and report back. You approve and keep working.
+            </p>
+              <ul className="space-y-3">
+                {inclusions.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-neutral-800">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-neutral-900 text-white rounded-2xl p-8 space-y-6">
+              <div className="flex items-center gap-3">
+                <AlertTriangle className="w-6 h-6 text-amber-300" />
+                <h3 className="text-xl font-semibold">No reviews? Low rating? We fix both.</h3>
+              </div>
+              <p className="text-neutral-300">
+                We hit your last 90 days of customers for quick wins, then keep weekly asks going so your profile never looks old.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                  <div className="text-sm text-neutral-200">Fresh reviews in first 2 weeks</div>
+                  <div className="text-2xl font-bold text-white mt-1">Yes</div>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                  <div className="text-sm text-neutral-200">Min rating we aim to sustain</div>
+                  <div className="text-2xl font-bold text-white mt-1">4.7★</div>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://wa.me/27832336716?text=Hi%2C%20I%20want%20a%2090-day%20review%20plan%20only"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"
+                >
+                  Start a 90-day review sprint
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+                <a href="mailto:hello@localprosstudio.com" className="btn-secondary border-white/40 text-white hover:bg-white/10">
+                  Email the team
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section bg-white">
+        <div className="container-md">
+          <div className="text-center mb-12">
+            <span className="badge mb-4">Common questions</span>
+            <h2 className="text-neutral-900 mb-4">FAQ</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
+            <div>
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">Is this review gating?</h3>
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                No. Every customer can still leave a public review if they choose—we never block anyone. We simply encourage unhappy customers to share feedback via a private form first so you get a chance to fix it. This is fully compliant with Google's guidelines, which only prohibit "discouraging or blocking negative reviews." Our approach gives you a heads-up without removing the customer's option to post.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">How quickly will I see results?</h3>
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                We start by reaching out to your past 90 days of customers. Most clients see new reviews within the first week or two. After that, outreach runs automatically after every job you send us.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">Do you offer rewards for reviews?</h3>
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                Never. Incentivised reviews violate Google and Facebook rules. We don't offer discounts, entries, or gifts in exchange for ratings—period.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">What platforms do you collect reviews on?</h3>
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                Google and Facebook by default. If you need HelloPeter, Trustpilot, or another platform, let us know and we can add it.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">How do I send you customer info?</h3>
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                Whatever works for you: WhatsApp us, email invoices, BCC us on your invoice send, or we can connect directly to your billing software.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">What if I get a negative public review?</h3>
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                You'll get an instant alert. We'll draft a professional response for you to approve, then post it on your behalf so it looks like it came from you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reputation testimonials */}
+      <section className="section bg-neutral-50">
+        <div className="container-lg">
+          <div className="text-center mb-12">
+            <span className="badge mb-4">Results</span>
+            <h2 className="text-neutral-900 mb-4">
+              Real Results from Real Contractors
+            </h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto">
+              See how home service businesses like yours turned reviews into their biggest competitive advantage.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {reputationReviews.map((review, index) => (
+              <div 
+                key={index} 
+                className="bg-white rounded-2xl p-6 shadow-soft hover:shadow-soft-lg transition-shadow duration-300"
+              >
+                <Quote className="w-8 h-8 text-neutral-200 mb-4" />
+                <p className="text-neutral-700 leading-relaxed mb-6">
+                  "{review.content}"
+                </p>
+                <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-neutral-900 rounded-full flex items-center justify-center text-white mr-3">
+                      <span className="text-sm font-medium">{review.name.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-neutral-900 text-sm">{review.name}</h4>
+                      <p className="text-neutral-500 text-xs">{review.business}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    {[...Array(review.stars)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        className="w-4 h-4 text-amber-400 fill-current" 
+                        strokeWidth={0}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <div className="flex items-center mt-4 pt-4 border-t border-neutral-100">
+                  <img
+                    src={helloPeterLogo}
+                    alt="HelloPeter"
+                    className="h-4 w-auto opacity-50 mr-2"
+                  />
+                  <span className="text-xs text-neutral-400">Verified on HelloPeter</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="section-sm bg-neutral-950">
+        <div className="container-md text-center">
+          <h2 className="text-white mb-4">Ready to protect and grow your rating?</h2>
+          <p className="text-neutral-400 max-w-2xl mx-auto mb-6">
+            Share your current average rating and review count. We’ll map the first 90 days and run it for you.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="https://wa.me/27832336716?text=Hi%2C%20I%20need%20help%20with%20reviews%20only"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary bg-white text-neutral-900 hover:bg-neutral-100"
+            >
+              Start the review plan
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </a>
+            <a href="#how-it-works" className="btn-secondary border-neutral-700 text-white hover:bg-neutral-800 hover:border-neutral-600">
+              See how it works
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default ReviewFunnelPage;

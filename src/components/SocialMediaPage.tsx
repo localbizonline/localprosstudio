@@ -101,13 +101,6 @@ const SocialMediaPage = () => {
         
         <div className="container-md relative">
           <div className="text-center">
-            <Link 
-              to="/reputation" 
-              className="inline-flex items-center text-neutral-400 hover:text-white text-sm mb-6 transition-colors"
-            >
-              ← Back to Reputation Management
-            </Link>
-
             <span className="badge-dark mb-6">Social Posting</span>
             
             <h1 className="text-white mb-6 text-balance">
@@ -348,13 +341,15 @@ const SocialMediaPage = () => {
             <p className="text-neutral-600 mb-4">
               Want review collection too? Get both services for less.
             </p>
-            <Link 
-              to="/reputation" 
+            <a
+              href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20the%20Complete%20Reputation%20Package"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center text-neutral-900 font-medium hover:underline"
             >
-              View Combined Package
+              Get the Complete Package (50% OFF)
               <ArrowRight className="ml-2 w-4 h-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

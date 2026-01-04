@@ -92,8 +92,8 @@ const WebDesignPage = () => {
             </h1>
 
             <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-8">
-              Get a modern, mobile-friendly website that turns visitors into customers. 
-              Delivered in 7 days, from R4,900.
+              Get a modern, mobile-friendly website that turns visitors into customers.
+              Delivered in 7 days, from R9,900.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -225,7 +225,7 @@ const WebDesignPage = () => {
               </p>
 
               <div className="mb-6">
-                <span className="text-4xl font-bold text-neutral-900">R4,900</span>
+                <span className="text-4xl font-bold text-neutral-900">R9,900</span>
                 <span className="text-neutral-500 ml-2">once-off</span>
               </div>
 
