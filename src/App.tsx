@@ -13,6 +13,7 @@ import Home4Page from './components/Home4Page';
 import Footer from './components/Footer';
 import FieldCardPage from './components/FieldCardPage';
 import ReviewCollectionPage from './components/ReviewCollectionPage';
+import ReviewCollectionPageArchive from './components/ReviewCollectionPageArchive';
 import SocialMediaPage from './components/SocialMediaPage';
 import WebDesignPage from './components/WebDesignPage';
 import AboutPage from './components/AboutPage';
@@ -54,6 +55,7 @@ const Navigation = () => {
     { name: 'Home Funnel', href: '/home-funnel' },
     { name: 'Reputation Management', href: '/reputation' },
     { name: 'Reviews', href: '/reviews' },
+    { name: 'Reviews (Old)', href: '/reviews-old' },
     { name: 'Reviews Pro', href: '/reviews-pro' },
     { name: 'Reviews Pro (Clienti)', href: '/reviews-clienti' },
     { name: 'Reviews Pro (Extreme)', href: '/reviews-extreme' },
@@ -263,7 +265,8 @@ const AppContent = () => {
           <Route path="/home4" element={<Home4Page />} />
           <Route path="/home-funnel" element={<HomeFunnelPage />} />
           <Route path="/reviews-funnel" element={<ReviewFunnelPage />} />
-          <Route path="/reviews" element={<ReviewCollectionPage />} />
+          <Route path="/reviews" element={<ReviewsProClientiPage />} />
+          <Route path="/reviews-old" element={<ReviewCollectionPageArchive />} />
           <Route path="/reviews-pro" element={<ReviewCollectionProPage />} />
           <Route path="/reviews-clienti" element={<ReviewCollectionProPage />} />
           <Route path="/reviews-extreme" element={<ReviewsProClientiPage />} />
