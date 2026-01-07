@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Check, Users, Target, Heart, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import teamImage from '../assets/images/Compressed/TinyPNG Feb 10 174841.jpg';
 import localProsImage from '../assets/images/mockups/localprospeople.jpg';
 
 const values = [
@@ -141,7 +142,7 @@ const AboutPage = () => {
 
             <div className="order-1 lg:order-2 relative">
               <img
-                src={localProsImage}
+                src={teamImage}
                 alt="Local Pros Studio team"
                 className="rounded-2xl shadow-soft-xl w-full"
                 width={600}
@@ -235,7 +236,7 @@ const AboutPage = () => {
             Let's chat about your business goals. No pressure, just a friendly 
             conversation about how we can help you grow.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
               href="https://wa.me/27832336716?text=Hi%2C%20I'd%20like%20to%20discuss%20my%20business%20needs"
               target="_blank"
@@ -251,6 +252,16 @@ const AboutPage = () => {
             >
               Email Us
             </a>
+          </div>
+          
+          <div className="max-w-2xl mx-auto">
+            <img
+              src={localProsImage}
+              alt="Local Pros Studio team working together"
+              className="rounded-2xl shadow-soft-xl w-full"
+              width={600}
+              height={400}
+            />
           </div>
         </div>
       </section>

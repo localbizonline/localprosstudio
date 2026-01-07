@@ -327,7 +327,7 @@ const GeminiFlashLandingPage = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-center md:text-left text-sm md:text-base">
             <div className="flex items-center gap-2">
               <Clock className="w-5 h-5" />
-              <span className="font-bold">Beta Pricing</span>
+              <span className="font-bold">50% OFF - First 3 Months</span>
             </div>
             <div className="hidden md:block w-px h-6 bg-red-400"></div>
             <div className="flex items-center gap-2">

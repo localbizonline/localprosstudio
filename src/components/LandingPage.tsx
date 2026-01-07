@@ -317,7 +317,7 @@ const LandingPage = () => {
               <div className="mt-6 p-4 bg-red-600/20 border border-red-500/30 rounded-xl">
                 <p className="text-red-400 font-bold flex items-center justify-center gap-2">
                   <Clock className="w-5 h-5" />
-                  Beta Pricing Ends Soon - Price Going Up To R2,500/month
+                  50% OFF First 3 Months - Then R2,500/month
                 </p>
               </div>
             </div>

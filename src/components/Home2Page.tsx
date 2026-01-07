@@ -272,7 +272,7 @@ const Home2Page = () => {
                     )}
                     {service.highlight && (
                       <span className="inline-block mt-2 text-xs font-medium text-amber-700 bg-amber-100 px-2 py-1 rounded">
-                        Beta Pricing
+                        50% OFF - First 3 Months
                       </span>
                     )}
                   </div>

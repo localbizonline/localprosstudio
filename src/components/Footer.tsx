@@ -10,6 +10,7 @@ const Footer = () => {
     { name: 'Review Collection', href: '/reviews' },
     { name: 'Social Media Posting', href: '/social-media' },
     { name: 'Web Design', href: '/web-design' },
+    { name: 'Google Ads', href: '/google-ads' },
   ];
 
   const tools = [

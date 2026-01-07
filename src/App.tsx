@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import ScrollToTop from './components/ScrollToTop';
+import HeroSection from './components/HeroSection';
+import ServicesSection from './components/ServicesSection';
+import SocialProofSection from './components/SocialProofSection';
+import LeadGenSection from './components/LeadGenSection';
+import CallToAction from './components/CallToAction';
 import Home2Page from './components/Home2Page';
 import Home3Page from './components/Home3Page';
 import Home4Page from './components/Home4Page';
@@ -18,6 +23,14 @@ import Gpt52LandingPage from './components/Gpt52LandingPage';
 import LandingPage from './components/LandingPage';
 import HomeFunnelPage from './components/HomeFunnelPage';
 import ReviewFunnelPage from './components/ReviewFunnelPage';
+import ReputationManagementPage from './components/ReputationManagementPage';
+import GoogleAdsPage from './components/GoogleAdsPage';
+import AlternativeWebDesignPage from './components/AlternativeWebDesignPage';
+import ReachMaxPage from './components/ReachMaxPage';
+import ImageGallery from './components/ImageGallery';
+import HomeServicesPage from './components/HomeServicesPage';
+import ReviewCollectionProPage from './components/ReviewCollectionProPage';
+import ReviewsProClientiPage from './components/ReviewsProClientiPage';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
 const Navigation = () => {
@@ -33,18 +46,30 @@ const Navigation = () => {
   ];
 
   const landingPages = [
-    { name: 'Home V3 (Main)', href: '/' },
-    { name: 'Home V4 (New)', href: '/home4' },
+    { name: 'Home (Original)', href: '/' },
+    { name: 'Home Services (Dec)', href: '/home-services' },
     { name: 'Home V2', href: '/home2' },
-    { name: 'Home Funnel (SMB)', href: '/home-funnel' },
+    { name: 'Home V3', href: '/home3' },
+    { name: 'Home V4', href: '/home4' },
+    { name: 'Home Funnel', href: '/home-funnel' },
+    { name: 'Reputation Management', href: '/reputation' },
+    { name: 'Reviews', href: '/reviews' },
+    { name: 'Reviews Pro', href: '/reviews-pro' },
+    { name: 'Reviews Pro (Clienti)', href: '/reviews-clienti' },
+    { name: 'Reviews Pro (Extreme)', href: '/reviews-extreme' },
     { name: 'Reviews Funnel', href: '/reviews-funnel' },
+    { name: 'Social Media', href: '/social-media' },
     { name: 'Web Design', href: '/web-design' },
+    { name: 'Web Design Alt', href: '/web-design-alt' },
+    { name: 'Google Ads', href: '/google-ads' },
     { name: 'FieldCard', href: '/fieldcard' },
+    { name: 'ReachMax', href: '/reachmax' },
+    { name: 'About', href: '/about' },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Cursor Opus', href: '/cursor-opus-landing-page' },
     { name: 'Gemini Flash', href: '/gemini-flash-landing-page' },
     { name: 'GPT 5.2', href: '/gpt-52-landing-page' },
     { name: 'Claude Code', href: '/claude-code-landing-page' },
-    { name: 'Home V4 (SMB)', href: '/home4' },
   ];
 
   const isActive = (href: string) => {
@@ -203,6 +228,17 @@ const Navigation = () => {
   );
 };
 
+// Original HomePage with Services
+const HomePage = () => (
+  <>
+    <HeroSection />
+    <ServicesSection />
+    <SocialProofSection />
+    <LeadGenSection />
+    <CallToAction />
+  </>
+);
+
 const AppContent = () => {
   const location = useLocation();
   
@@ -220,26 +256,34 @@ const AppContent = () => {
       <Navigation />
       <main className="flex-1">
         <Routes>
-          <Route path="/" element={<Home3Page />} />
-          <Route path="/home4" element={<Home4Page />} />
+          <Route path="/" element={<HomeServicesPage />} />
+          <Route path="/home-services" element={<HomeServicesPage />} />
           <Route path="/home2" element={<Home2Page />} />
+          <Route path="/home3" element={<Home3Page />} />
+          <Route path="/home4" element={<Home4Page />} />
           <Route path="/home-funnel" element={<HomeFunnelPage />} />
           <Route path="/reviews-funnel" element={<ReviewFunnelPage />} />
           <Route path="/reviews" element={<ReviewCollectionPage />} />
+          <Route path="/reviews-pro" element={<ReviewCollectionProPage />} />
+          <Route path="/reviews-clienti" element={<ReviewCollectionProPage />} />
+          <Route path="/reviews-extreme" element={<ReviewsProClientiPage />} />
           <Route path="/social-media" element={<SocialMediaPage />} />
           <Route path="/web-design" element={<WebDesignPage />} />
           <Route path="/fieldcard" element={<FieldCardPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/reputation" element={<ReputationManagementPage />} />
+          <Route path="/google-ads" element={<GoogleAdsPage />} />
+          <Route path="/web-design-alt" element={<AlternativeWebDesignPage />} />
+          <Route path="/reachmax" element={<ReachMaxPage />} />
+          <Route path="/gallery" element={<ImageGallery />} />
           
           {/* Special Landing Pages */}
           <Route path="/cursor-opus-landing-page" element={<CursorOpusLandingPage />} />
           <Route path="/gemini-flash-landing-page" element={<GeminiFlashLandingPage />} />
           <Route path="/gpt-52-landing-page" element={<Gpt52LandingPage />} />
           <Route path="/claude-code-landing-page" element={<LandingPage />} />
-          <Route path="/home4" element={<Home4Page />} />
 
-          {/* Legacy routes - redirect to home */}
-          <Route path="/reputation" element={<Home2Page />} />
+          {/* Legacy routes */}
           <Route path="/reputation/reviews" element={<ReviewCollectionPage />} />
         </Routes>
       </main>

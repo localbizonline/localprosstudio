@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import SocialProofSection from './SocialProofSection';
 
 // Import real images from main assets folder
-import heroImage from '../assets/images/hero.jpg';
+import heroImage from '../assets/images/contractor-phone-reviews.png';
 import reviewCustomer from '../assets/images/review-customer.jpg';
 import reviewContractor from '../assets/images/review-contractor-happy.jpg';
 import reviewWhatsapp from '../assets/images/review-whatsapp.jpg';
@@ -487,7 +487,7 @@ const Home3Page = () => {
                     )}
                     {service.highlight && (
                       <span className="inline-block mt-2 text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded">
-                        Beta Pricing
+                        50% OFF - First 3 Months
                       </span>
                     )}
                   </div>
