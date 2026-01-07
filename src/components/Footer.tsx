@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, LayoutGrid } from 'lucide-react';
 import logo from '../assets/images/Compressed/Local Pros Studio logo transparent.png';
 
 const Footer = () => {
@@ -115,9 +115,18 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-neutral-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-neutral-500 text-sm">
-              © {currentYear} Local Pros Studio. All rights reserved.
-            </p>
+            <div className="flex items-center gap-3">
+              <p className="text-neutral-500 text-sm">
+                © {currentYear} Local Pros Studio. All rights reserved.
+              </p>
+              <Link
+                to="/pages"
+                className="text-neutral-700 hover:text-neutral-400 transition-colors"
+                title="All Pages"
+              >
+                <LayoutGrid className="w-3.5 h-3.5" />
+              </Link>
+            </div>
             <Link
               to="/about"
               className="text-neutral-500 hover:text-white transition-colors text-sm"

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import ScrollToTop from './components/ScrollToTop';
 import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
@@ -32,11 +32,11 @@ import ImageGallery from './components/ImageGallery';
 import HomeServicesPage from './components/HomeServicesPage';
 import ReviewCollectionProPage from './components/ReviewCollectionProPage';
 import ReviewsProClientiPage from './components/ReviewsProClientiPage';
+import LandingPagesDirectory from './components/LandingPagesDirectory';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isPagesOpen, setIsPagesOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
@@ -44,34 +44,6 @@ const Navigation = () => {
     { name: 'Reviews', href: '/reviews' },
     { name: 'Social Media', href: '/social-media' },
     { name: 'About', href: '/about' },
-  ];
-
-  const landingPages = [
-    { name: 'Home (Original)', href: '/' },
-    { name: 'Home Services (Dec)', href: '/home-services' },
-    { name: 'Home V2', href: '/home2' },
-    { name: 'Home V3', href: '/home3' },
-    { name: 'Home V4', href: '/home4' },
-    { name: 'Home Funnel', href: '/home-funnel' },
-    { name: 'Reputation Management', href: '/reputation' },
-    { name: 'Reviews', href: '/reviews' },
-    { name: 'Reviews (Old)', href: '/reviews-old' },
-    { name: 'Reviews Pro', href: '/reviews-pro' },
-    { name: 'Reviews Pro (Clienti)', href: '/reviews-clienti' },
-    { name: 'Reviews Pro (Extreme)', href: '/reviews-extreme' },
-    { name: 'Reviews Funnel', href: '/reviews-funnel' },
-    { name: 'Social Media', href: '/social-media' },
-    { name: 'Web Design', href: '/web-design' },
-    { name: 'Web Design Alt', href: '/web-design-alt' },
-    { name: 'Google Ads', href: '/google-ads' },
-    { name: 'FieldCard', href: '/fieldcard' },
-    { name: 'ReachMax', href: '/reachmax' },
-    { name: 'About', href: '/about' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Cursor Opus', href: '/cursor-opus-landing-page' },
-    { name: 'Gemini Flash', href: '/gemini-flash-landing-page' },
-    { name: 'GPT 5.2', href: '/gpt-52-landing-page' },
-    { name: 'Claude Code', href: '/claude-code-landing-page' },
   ];
 
   const isActive = (href: string) => {
@@ -109,39 +81,6 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
-            
-            {/* Pages Dropdown */}
-            <div className="relative ml-2">
-              <button
-                onClick={() => setIsPagesOpen(!isPagesOpen)}
-                onBlur={() => setTimeout(() => setIsPagesOpen(false), 200)}
-                className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-neutral-800 rounded-lg transition-colors"
-              >
-                All Landing Pages
-                <ChevronDown className={`w-4 h-4 transition-transform ${isPagesOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              {isPagesOpen && (
-                <div className="absolute top-full right-0 mt-2 w-56 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl overflow-hidden py-2 animate-in fade-in slide-in-from-top-2">
-                  <div className="px-4 py-2 text-[10px] font-bold text-neutral-500 uppercase tracking-widest border-b border-neutral-800 mb-1">
-                    Versions & Landing Pages
-                  </div>
-                  {landingPages.map((page) => (
-                    <Link
-                      key={page.name}
-                      to={page.href}
-                      className={`block px-4 py-2.5 text-sm transition-colors ${
-                        isActive(page.href)
-                          ? 'text-white bg-neutral-800'
-                          : 'text-neutral-400 hover:text-white hover:bg-neutral-800'
-                      }`}
-                    >
-                      {page.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
           </div>
 
           {/* CTA Button */}
@@ -190,28 +129,6 @@ const Navigation = () => {
                 </Link>
               ))}
 
-              <div className="px-4 py-3">
-                <div className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest mb-3">
-                  All Landing Pages
-                </div>
-                <div className="grid grid-cols-1 gap-1">
-                  {landingPages.map((page) => (
-                    <Link
-                      key={page.name}
-                      to={page.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`px-3 py-2 text-sm rounded-lg transition-colors ${
-                        isActive(page.href)
-                          ? 'text-white bg-neutral-800 font-semibold'
-                          : 'text-neutral-400 hover:text-white hover:bg-neutral-800'
-                      }`}
-                    >
-                      {page.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
               <a
                 href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20getting%20more%20reviews%20and%20growing%20my%20social%20presence"
                 target="_blank"
@@ -243,13 +160,14 @@ const HomePage = () => (
 
 const AppContent = () => {
   const location = useLocation();
-  
+
   // Landing pages that should NOT show footer or mobile CTA (but we'll show Nav for switching)
   const isSpecialLandingPage = [
     '/cursor-opus-landing-page',
     '/gemini-flash-landing-page',
     '/gpt-52-landing-page',
     '/claude-code-landing-page',
+    '/pages',
   ].includes(location.pathname);
 
   return (
@@ -279,7 +197,8 @@ const AppContent = () => {
           <Route path="/web-design-alt" element={<AlternativeWebDesignPage />} />
           <Route path="/reachmax" element={<ReachMaxPage />} />
           <Route path="/gallery" element={<ImageGallery />} />
-          
+          <Route path="/pages" element={<LandingPagesDirectory />} />
+
           {/* Special Landing Pages */}
           <Route path="/cursor-opus-landing-page" element={<CursorOpusLandingPage />} />
           <Route path="/gemini-flash-landing-page" element={<GeminiFlashLandingPage />} />
