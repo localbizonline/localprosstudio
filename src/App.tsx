@@ -184,10 +184,10 @@ const AppContent = () => {
           <Route path="/home4" element={<Home4Page />} />
           <Route path="/home-funnel" element={<HomeFunnelPage />} />
           <Route path="/reviews-funnel" element={<ReviewFunnelPage />} />
-          <Route path="/reviews" element={<ReviewsProClientiPage />} />
+          <Route path="/reviews" element={<ReviewsLetterPage />} />
           <Route path="/reviews-old" element={<ReviewCollectionPageArchive />} />
           <Route path="/reviews-pro" element={<ReviewCollectionProPage />} />
-          <Route path="/reviews-clienti" element={<ReviewCollectionProPage />} />
+          <Route path="/reviews-clienti" element={<ReviewsProClientiPage />} />
           <Route path="/reviews-extreme" element={<ReviewsProClientiPage />} />
           <Route path="/reviews-letter" element={<ReviewsLetterPage />} />
           <Route path="/social-media" element={<SocialMediaPage />} />
