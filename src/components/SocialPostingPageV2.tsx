@@ -1,6 +1,14 @@
 import React from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 
+// Import social posting images - Before/After comparisons and AI overviews
+import facebookBeforeAfterFencing from '../assets/images/social-posting/facebook-before-after-fencing.webp';
+import facebookBeforeAfterGasDesktop from '../assets/images/social-posting/facebook-before-after-gas-desktop.webp';
+import facebookBeforeAfterGasTablet from '../assets/images/social-posting/facebook-before-after-gas-tablet.webp';
+import googleAiOverviewRenovations from '../assets/images/social-posting/google-ai-overview-renovations.webp';
+import googleAiOverviewRoofingPhone from '../assets/images/social-posting/google-ai-overview-roofing-phone.webp';
+import googleAiOverviewSearch from '../assets/images/social-posting/google-ai-overview-search.webp';
+
 // Reusable CTA Button with Scarcity
 const CTAWithRating = () => (
   <div className="py-8 md:py-10">
@@ -20,57 +28,10 @@ const CTAWithRating = () => (
       <p className="text-amber-400 font-bold text-sm md:text-base">
         ⚡ Limited to first 50 signups at this price
       </p>
-      <p className="text-neutral-400 text-sm">
-        Price increases to R3,500/month after
-      </p>
     </div>
   </div>
 );
 
-// IMAGE PLACEHOLDERS - Replace with actual images
-// TODO: Replace these with actual image imports
-const PLACEHOLDER_IMAGES = {
-  heroContractor: '/placeholder-hero-contractor-phone-social.jpg',
-  // Description: Contractor on job site, smiling, checking phone showing Facebook/Instagram notifications.
-  // Golden hour lighting, authentic moment. South African setting.
-
-  beforeAfterSocial: '/placeholder-before-after-social.jpg',
-  // Description: Side-by-side of Facebook page - Left: dormant page with last post 3 months ago,
-  // Right: active page with consistent weekly posts, higher engagement numbers visible.
-
-  competitorFeed: '/placeholder-competitor-feed.jpg',
-  // Description: Screenshot of a Facebook feed showing competitor contractors posting regularly -
-  // job photos, before/afters, customer testimonials. Shows what customers see.
-
-  aiContentSystem: '/placeholder-ai-content-system.jpg',
-  // Description: Visual showing the transformation: phone with job photos → AI processing →
-  // polished social post with professional caption. Clean, modern diagram style.
-
-  phoneSubmission: '/placeholder-phone-submission.jpg',
-  // Description: Close-up of contractor's hands holding phone, uploading job photos through
-  // simple form. Quick, easy, on-the-go feeling.
-
-  socialDashboard: '/placeholder-social-dashboard.jpg',
-  // Description: Dashboard screenshot showing scheduled posts, approval queue, analytics.
-  // Clean interface, posts to Facebook/Instagram/Google visible.
-
-  agencyComparison: '/placeholder-agency-vs-us.jpg',
-  // Description: Split comparison - Left side: traditional agency (expensive, slow, generic).
-  // Right side: Local Pros Studio (affordable, fast, customised). Visual cost comparison.
-
-  jobPhotoToPost: '/placeholder-job-to-post.jpg',
-  // Description: Before/after of actual job photo transformed into professional social post.
-  // Shows the raw photo, then the polished post with branded design and engaging caption.
-
-  multiPlatformPost: '/placeholder-multi-platform.jpg',
-  // Description: Same post shown on Facebook, Instagram, and Google Business Profile simultaneously.
-  // One upload = three platforms visual.
-
-  contentCalendar: '/placeholder-content-calendar.jpg',
-  // Description: Monthly calendar view showing consistent posting schedule - service posts,
-  // holiday posts, review highlights all scheduled. Never miss a week.
-};
-void PLACEHOLDER_IMAGES;
 
 const SocialPostingPageV2 = () => {
   return (
@@ -137,7 +98,7 @@ const SocialPostingPageV2 = () => {
           SECTION 1: THE PROBLEM
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-800">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -148,17 +109,17 @@ const SocialPostingPageV2 = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-black text-white leading-tight tracking-tight">
-            We know local businesses<br />hate social media.
+            You know social media matters.<br />You just don't have the time.
           </h2>
 
           <p className="text-lg md:text-xl text-neutral-300">
             You're not alone. Every local business we talk to says the same thing:
           </p>
 
-          <div className="pl-6 border-l-4 border-amber-500 space-y-3">
-            <p className="text-lg md:text-xl text-neutral-200 italic">"I know I should post more, but I never have time."</p>
-            <p className="text-lg md:text-xl text-neutral-200 italic">"I take photos of my work but never do anything with them."</p>
-            <p className="text-lg md:text-xl text-neutral-200 italic">"I don't know what to say or how to make it look professional."</p>
+          <div className="pl-6 pr-4 py-4 border-l-4 border-amber-500 bg-white rounded-r-lg space-y-3">
+            <p className="text-lg md:text-xl text-neutral-800 italic font-semibold">"I know I should post more, but I never have time."</p>
+            <p className="text-lg md:text-xl text-neutral-800 italic font-semibold">"I take photos of my work but never do anything with them."</p>
+            <p className="text-lg md:text-xl text-neutral-800 italic font-semibold">"I don't know what to say or how to make it look professional."</p>
           </div>
 
           <p className="text-lg md:text-xl text-neutral-300">
@@ -183,12 +144,11 @@ const SocialPostingPageV2 = () => {
 
           {/* Image: Before/After Social Media */}
           <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-            <div className="w-full aspect-[16/9] bg-neutral-900 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-amber-400 font-bold mb-2">IMAGE PLACEHOLDER</p>
-                <p className="text-neutral-400 text-sm max-w-md">Side-by-side: Left - dormant Facebook page, last post 3 months ago. Right - active page with consistent weekly posts and high engagement.</p>
-              </div>
-            </div>
+            <img
+              src={facebookBeforeAfterFencing}
+              alt="Before and after comparison of a Facebook business page - showing transformation from dormant to active with consistent posts"
+              className="w-full"
+            />
           </div>
 
           <p className="text-lg md:text-xl text-neutral-300">
@@ -198,11 +158,6 @@ const SocialPostingPageV2 = () => {
           <p className="text-lg md:text-xl text-neutral-300">
             When a homeowner needs a plumber, electrician, or builder — they're calling the name they've <strong className="text-amber-400">seen recently</strong>.
           </p>
-
-          <p className="text-neutral-400 italic text-base border-l-2 border-amber-500/50 pl-4 bg-neutral-900/50 py-3 pr-4 rounded-r-lg">
-            (That's not you if your last post was in November.)
-          </p>
-
           {/* CTA with Rating */}
           <CTAWithRating />
         </div>
@@ -212,7 +167,7 @@ const SocialPostingPageV2 = () => {
           SECTION 2: THE SOLUTION - OUR SYSTEM
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-950" id="how-it-works">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -243,14 +198,13 @@ const SocialPostingPageV2 = () => {
             Our system does in 15 minutes.
           </p>
 
-          {/* Image: AI System Visualization */}
+          {/* Image: AI System Visualization - Before/After Gas Business */}
           <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-            <div className="w-full aspect-[16/9] bg-neutral-800 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-amber-400 font-bold mb-2">IMAGE PLACEHOLDER</p>
-                <p className="text-neutral-400 text-sm max-w-md">Visual showing: Job photos from phone → AI processing system → Polished social post with professional caption. Clean diagram style.</p>
-              </div>
-            </div>
+            <img
+              src={facebookBeforeAfterGasTablet}
+              alt="Before and after comparison showing a gas installation business Facebook page transformation with professional posts"
+              className="w-full"
+            />
           </div>
 
           <p className="text-lg md:text-xl text-neutral-300">
@@ -280,10 +234,6 @@ const SocialPostingPageV2 = () => {
             </p>
           </div>
 
-          <p className="text-neutral-400 italic text-base border-l-2 border-amber-500/50 pl-4 bg-neutral-800/50 py-3 pr-4 rounded-r-lg">
-            (No more excuses. Professional social media is now affordable for every local business.)
-          </p>
-
           {/* CTA with Rating */}
           <CTAWithRating />
         </div>
@@ -293,7 +243,7 @@ const SocialPostingPageV2 = () => {
           SECTION 3: HOW IT WORKS
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-800">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -357,15 +307,6 @@ const SocialPostingPageV2 = () => {
               </div>
             </div>
 
-            <div className="bg-neutral-700 rounded-xl p-6 border-l-4 border-amber-500 shadow-xl">
-              <div className="flex items-start gap-4">
-                <span className="bg-amber-500 text-black font-black text-lg w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">4</span>
-                <div>
-                  <p className="text-white font-black text-lg mb-1">One tap approval</p>
-                  <p className="text-neutral-200">Get a WhatsApp notification. Preview the post. Approve, edit, or delete — you have full control.</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Image: Job Photo to Post */}
@@ -431,7 +372,7 @@ const SocialPostingPageV2 = () => {
           SECTION 4: DIY VS US
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-950">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -533,9 +474,9 @@ const SocialPostingPageV2 = () => {
             All from <strong className="text-white">one 60-second upload</strong>.
           </p>
 
-          <p className="text-neutral-400 italic text-base border-l-2 border-amber-500/50 pl-4 bg-neutral-800/50 py-3 pr-4 rounded-r-lg">
-            (The best part? We post consistently. Week after week. Even when you're slammed with work and can't think about social media.)
-          </p>
+          <div className="pl-6 pr-4 py-4 border-l-4 border-amber-500 bg-white rounded-r-lg">
+            <p className="text-lg md:text-xl text-neutral-800 italic font-semibold">The best part? We post consistently. Week after week. Even when you're slammed with work and can't think about social media.</p>
+          </div>
         </div>
       </section>
 
@@ -543,7 +484,7 @@ const SocialPostingPageV2 = () => {
           SECTION 5: WE HANDLE CONSISTENCY
           ============================================ */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-neutral-950 to-neutral-900">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -627,7 +568,7 @@ const SocialPostingPageV2 = () => {
           SECTION 5: WHY SOCIAL MATTERS - THE TRUST FACTOR
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-800">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -658,22 +599,29 @@ const SocialPostingPageV2 = () => {
             They're asking themselves three questions:
           </p>
 
-          <div className="space-y-4">
-            <div className="bg-neutral-700 rounded-xl p-6 border-l-4 border-amber-500 shadow-xl">
-              <p className="text-amber-400 font-black text-lg mb-2">1. "Are they legitimate?"</p>
-              <p className="text-neutral-200">A dormant Facebook page with no posts for 6 months? That's a red flag. An active page with recent job photos? That's proof you're a real, operating business.</p>
-            </div>
+          <p className="text-xl md:text-2xl font-bold text-amber-400">
+            1. "Are they legitimate?"
+          </p>
 
-            <div className="bg-neutral-700 rounded-xl p-6 border-l-4 border-amber-500 shadow-xl">
-              <p className="text-amber-400 font-black text-lg mb-2">2. "Do they have experience?"</p>
-              <p className="text-neutral-200">Your social media is your portfolio. Every before-and-after photo, every completed project — it's evidence that you know what you're doing.</p>
-            </div>
+          <p className="text-lg md:text-xl text-neutral-300">
+            A dormant Facebook page with no posts for 6 months? That's a red flag. An active page with recent job photos? That's proof you're a real, operating business.
+          </p>
 
-            <div className="bg-neutral-700 rounded-xl p-6 border-l-4 border-amber-500 shadow-xl">
-              <p className="text-amber-400 font-black text-lg mb-2">3. "Are they still active?"</p>
-              <p className="text-neutral-200">Recent posts show you have a heartbeat. You're working. You're busy. You're not some fly-by-night operation that might disappear after taking their deposit.</p>
-            </div>
-          </div>
+          <p className="text-xl md:text-2xl font-bold text-amber-400">
+            2. "Do they have experience?"
+          </p>
+
+          <p className="text-lg md:text-xl text-neutral-300">
+            Your social media is your portfolio. Every before-and-after photo, every completed project — it's evidence that you know what you're doing.
+          </p>
+
+          <p className="text-xl md:text-2xl font-bold text-amber-400">
+            3. "Are they still active?"
+          </p>
+
+          <p className="text-lg md:text-xl text-neutral-300">
+            Recent posts show you have a heartbeat. You're working. You're busy. You're not some fly-by-night operation that might disappear after taking their deposit.
+          </p>
 
           {/* Image: Customer researching contractors */}
           <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
@@ -721,11 +669,6 @@ const SocialPostingPageV2 = () => {
           <p className="text-xl md:text-2xl font-bold text-amber-400">
             The one who looks like they're actually in business.
           </p>
-
-          <p className="text-neutral-400 italic text-base border-l-2 border-amber-500/50 pl-4 bg-neutral-900/50 py-3 pr-4 rounded-r-lg">
-            (Your social media is your heartbeat. It shows you're alive, experienced, and trustworthy. Without it, you're invisible — and losing jobs to competitors who aren't even better than you.)
-          </p>
-
           {/* CTA with Rating */}
           <CTAWithRating />
         </div>
@@ -735,7 +678,7 @@ const SocialPostingPageV2 = () => {
           SECTION 6: AI SEARCH - THE FUTURE
           ============================================ */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-neutral-950 to-neutral-900">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -762,12 +705,29 @@ const SocialPostingPageV2 = () => {
             This is already happening. Here's what it looks like:
           </p>
 
-          {/* AI Search Image */}
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-            <div className="w-full aspect-[16/9] bg-neutral-800 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-amber-400 font-bold mb-2">IMAGE PLACEHOLDER</p>
-                <p className="text-neutral-400 text-sm max-w-md">Google AI Overview showing a local business — pulling recent social posts, reviews, and activity into a summary at the top of search results.</p>
+          {/* AI Search Images - Google AI Overview examples */}
+          <div className="space-y-4">
+            <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
+              <img
+                src={googleAiOverviewRoofingPhone}
+                alt="Google AI Overview on mobile showing Apex Roofing business with synthesized information from social posts and reviews"
+                className="w-full"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
+                <img
+                  src={googleAiOverviewSearch}
+                  alt="Google AI Overview showing synthesized Facebook posts and business summary"
+                  className="w-full"
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
+                <img
+                  src={googleAiOverviewRenovations}
+                  alt="Google AI Overview for ABC Home Renovations - showing recent activity and social presence"
+                  className="w-full"
+                />
               </div>
             </div>
           </div>
@@ -812,7 +772,7 @@ const SocialPostingPageV2 = () => {
           SECTION 7: THE COST COMPARISON
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-800">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -864,10 +824,6 @@ const SocialPostingPageV2 = () => {
               <div className="space-y-3">
                 <p className="text-neutral-200 flex items-start">
                   <span className="text-green-400 mr-3">✓</span>
-                  R2,000 per month
-                </p>
-                <p className="text-neutral-200 flex items-start">
-                  <span className="text-green-400 mr-3">✓</span>
                   Content customised for YOUR business
                 </p>
                 <p className="text-neutral-200 flex items-start">
@@ -878,17 +834,16 @@ const SocialPostingPageV2 = () => {
                   <span className="text-green-400 mr-3">✓</span>
                   No long contracts — cancel anytime
                 </p>
-              <p className="text-neutral-200 flex items-start">
-                <span className="text-green-400 mr-3">✓</span>
-                Built for local businesses
-              </p>
+                <p className="text-neutral-200 flex items-start">
+                  <span className="text-green-400 mr-3">✓</span>
+                  Built for local businesses
+                </p>
+              </div>
+              <div className="mt-6 pt-6 border-t border-green-500/30">
+                <p className="text-neutral-300">Monthly cost:</p>
+                <p className="text-3xl font-black text-green-400">R2,000</p>
+              </div>
             </div>
-          </div>
-          </div>
-
-          <div className="bg-amber-500/20 border-2 border-amber-500/50 rounded-2xl p-8 text-center shadow-lg">
-            <p className="text-amber-400 font-black text-2xl mb-2">You save R72,000+ per year</p>
-            <p className="text-neutral-300 text-lg">Same results. Smarter system.</p>
           </div>
 
           <p className="text-2xl md:text-3xl font-black text-white text-center">
@@ -908,7 +863,7 @@ const SocialPostingPageV2 = () => {
           SECTION 8: WHAT'S INCLUDED
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-950">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -1158,7 +1113,7 @@ const SocialPostingPageV2 = () => {
           SECTION 10: FINAL CTA
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-950">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           <h2 className="text-3xl md:text-4xl font-black text-white leading-tight tracking-tight text-center">
             The question isn't whether<br />

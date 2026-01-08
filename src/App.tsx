@@ -44,7 +44,7 @@ const Navigation = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Reviews', href: '/reviews' },
-    { name: 'Social Media', href: '/social-media' },
+    { name: 'Social Media', href: '/social-media-posting-service' },
     { name: 'About', href: '/about' },
   ];
 
@@ -191,7 +191,7 @@ const AppContent = () => {
           <Route path="/reviews-clienti" element={<ReviewsProClientiPage />} />
           <Route path="/reviews-extreme" element={<ReviewsProClientiPage />} />
           <Route path="/reviews-letter" element={<ReviewsLetterPage />} />
-          <Route path="/social-media" element={<SocialMediaPage />} />
+          <Route path="/social-media-posting-service" element={<SocialPostingPageV2 />} />
           <Route path="/social-posting-v2" element={<SocialPostingPageV2 />} />
           <Route path="/web-design" element={<WebDesignPage />} />
           <Route path="/fieldcard" element={<FieldCardPage />} />

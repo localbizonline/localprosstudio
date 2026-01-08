@@ -24,7 +24,7 @@ const services = [
     title: "Social Posting",
     description: "Create posts in 60 seconds. We handle consistency with weekly service posts, holiday content, and review highlights.",
     price: "R2,000",
-    link: "/social-media",
+    link: "/social-media-posting-service",
     icon: Share2,
     features: [
       "60-second posting form",

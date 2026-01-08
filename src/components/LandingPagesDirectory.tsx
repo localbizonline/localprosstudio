@@ -34,8 +34,7 @@ const LandingPagesDirectory = () => {
       title: 'Services',
       icon: Globe,
       pages: [
-        { name: 'Social Media', href: '/social-media', description: 'Social media posting service' },
-        { name: 'Social Posting V2', href: '/social-posting-v2', description: 'New AI-powered social page' },
+        { name: 'Social Media', href: '/social-media-posting-service', description: 'Social media posting service' },
         { name: 'Web Design', href: '/web-design', description: 'Web design service page' },
         { name: 'Web Design Alt', href: '/web-design-alt', description: 'Alternative web design page' },
         { name: 'Google Ads', href: '/google-ads', description: 'Google Ads service page' },

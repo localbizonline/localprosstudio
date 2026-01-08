@@ -50,7 +50,7 @@ const services = [
     description: "Create posts in 60 seconds. We handle consistency with 4 service posts/month, holiday content, and review highlights—all automatic.",
     price: "R2,000/month",
     features: ["60-second posting form", "4 posts/month included", "Holiday posts automatic", "Facebook, Instagram & Google"],
-    link: "/social-media",
+    link: "/social-media-posting-service",
     linkText: "Stay visible online",
     isNew: true,
   },

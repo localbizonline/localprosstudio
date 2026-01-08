@@ -118,7 +118,7 @@ const ReviewsLetterPage = () => {
           SECTION 1: THE GUIDE STORY
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-800">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -202,7 +202,7 @@ const ReviewsLetterPage = () => {
           SECTION 2: THE SECRET SAUCE
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-950" id="how-it-works">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -284,7 +284,7 @@ const ReviewsLetterPage = () => {
           SECTION 3: RESULTS
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-800">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -327,7 +327,7 @@ const ReviewsLetterPage = () => {
           SECTION 4: WHY NOW - URGENCY
           ============================================ */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-neutral-950 to-neutral-900">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -384,7 +384,7 @@ const ReviewsLetterPage = () => {
           SECTION 5: NEGATIVE REVIEW SAFEGUARDS
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-800">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -470,7 +470,7 @@ const ReviewsLetterPage = () => {
           SECTION 6: SOCIAL PROOF BONUS
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-950">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -506,7 +506,7 @@ const ReviewsLetterPage = () => {
           SECTION 7: PRICING
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-800">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           {/* Section Label */}
           <div className="flex items-center gap-4 mb-4">
@@ -600,7 +600,7 @@ const ReviewsLetterPage = () => {
           SECTION 8: WHAT WE NEED
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-950">
-        <div className="max-w-2xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           <h3 className="text-2xl md:text-3xl font-black text-white">
             What Do We Need From You?
