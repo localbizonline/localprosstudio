@@ -32,6 +32,7 @@ import ImageGallery from './components/ImageGallery';
 import HomeServicesPage from './components/HomeServicesPage';
 import ReviewCollectionProPage from './components/ReviewCollectionProPage';
 import ReviewsProClientiPage from './components/ReviewsProClientiPage';
+import ReviewsLetterPage from './components/ReviewsLetterPage';
 import LandingPagesDirectory from './components/LandingPagesDirectory';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
@@ -188,6 +189,7 @@ const AppContent = () => {
           <Route path="/reviews-pro" element={<ReviewCollectionProPage />} />
           <Route path="/reviews-clienti" element={<ReviewCollectionProPage />} />
           <Route path="/reviews-extreme" element={<ReviewsProClientiPage />} />
+          <Route path="/reviews-letter" element={<ReviewsLetterPage />} />
           <Route path="/social-media" element={<SocialMediaPage />} />
           <Route path="/web-design" element={<WebDesignPage />} />
           <Route path="/fieldcard" element={<FieldCardPage />} />

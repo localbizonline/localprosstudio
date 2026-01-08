@@ -112,9 +112,6 @@ const ReviewsProClientiPage = () => {
               alt="Local Pros reviews growth - from under 20 to over 700 reviews"
               className="max-w-full md:max-w-2xl mx-auto rounded-xl md:rounded-2xl shadow-2xl"
             />
-            <p className="text-neutral-500 italic text-xs md:text-sm mt-3 md:mt-4">
-              Real screenshot. Real results. Our actual Google profile.
-            </p>
           </div>
 
           <p className="text-lg md:text-xl lg:text-2xl text-neutral-300 mb-5 md:mb-6">
@@ -150,9 +147,6 @@ const ReviewsProClientiPage = () => {
               alt="Happy customer with contractor after job completion"
               className="max-w-full md:max-w-xl mx-auto rounded-xl md:rounded-2xl shadow-2xl"
             />
-            <p className="text-neutral-500 italic text-xs md:text-sm mt-3 md:mt-4">
-              That moment when your customer is thrilled — now imagine them sharing it publicly.
-            </p>
           </div>
 
           <a
@@ -202,9 +196,6 @@ const ReviewsProClientiPage = () => {
               alt="WhatsApp message leading to Google review - the complete flow"
               className="max-w-full md:max-w-3xl mx-auto rounded-xl md:rounded-2xl shadow-2xl border border-neutral-800"
             />
-            <p className="text-neutral-500 italic text-xs md:text-sm mt-3 md:mt-4">
-              From WhatsApp message → to 5-star Google review. This is how it works.
-            </p>
           </div>
 
           <div className="space-y-3 md:space-y-4 text-left max-w-xl mx-auto mb-8 md:mb-12">
@@ -326,13 +317,12 @@ const ReviewsProClientiPage = () => {
 
             {/* AI Search Examples - Stacked */}
             <div className="space-y-4 md:space-y-6 max-w-3xl mx-auto mb-8 md:mb-10">
-              <div>
+              <div className="hidden md:block">
                 <img
                   src={aiSearchNow}
                   alt="Google AI Overview on desktop - reviews featured prominently"
                   className="w-full rounded-xl md:rounded-2xl shadow-2xl border border-neutral-800"
                 />
-                <p className="text-neutral-500 text-xs md:text-sm mt-2 md:mt-3 italic">Desktop: Google's AI Overview pulls your reviews front and center</p>
               </div>
               <div>
                 <img
@@ -340,7 +330,6 @@ const ReviewsProClientiPage = () => {
                   alt="Google AI Overview on mobile - reviews featured prominently"
                   className="w-full rounded-xl md:rounded-2xl shadow-2xl border border-neutral-800"
                 />
-                <p className="text-neutral-500 text-xs md:text-sm mt-2 md:mt-3 italic">Mobile: Same AI summary — your reviews become the first impression</p>
               </div>
             </div>
 

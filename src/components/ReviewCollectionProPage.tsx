@@ -160,7 +160,7 @@ const ReviewCollectionProPage = () => {
               Done-For-You Review Collection
             </div>
             
-            <h1 className="text-white text-balance leading-tight">
+            <h1 className="text-white text-balance leading-tight text-4xl md:text-5xl lg:text-6xl font-bold">
               One bad review can cost you the next job.
               <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">
                 We get you more 5-star reviews.
@@ -173,7 +173,7 @@ const ReviewCollectionProPage = () => {
               ))}
             </div>
             
-            <p className="text-lg md:text-xl text-neutral-200 max-w-2xl leading-relaxed">
+            <p className="text-xl md:text-2xl text-neutral-200 max-w-2xl leading-relaxed">
               <strong className="text-white">Done-For-You</strong> review collection built for service businesses.
               <br /><br />
               We handle the <strong className="text-white">follow-ups</strong>, <strong className="text-white">filtering</strong>, and <strong className="text-white">responses</strong>...
@@ -236,21 +236,21 @@ const ReviewCollectionProPage = () => {
                 The Service
               </span>
               
-              <h2 className="text-white mb-6 text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="text-white mb-6 text-4xl md:text-5xl font-bold leading-tight">
                 Done-For-You<br />Review Collection
               </h2>
               
-              <p className="text-neutral-200 mb-4 text-lg leading-relaxed">
+              <p className="text-neutral-200 mb-4 text-xl leading-relaxed">
                 We effortlessly charm the <strong className="text-white">best</strong> and <strong className="text-white">most</strong> reviews from your delighted customers.
               </p>
               
-              <p className="text-neutral-300 mb-4 leading-relaxed">
+              <p className="text-neutral-300 mb-4 text-lg leading-relaxed">
                 Our clients often experience results considered "<strong className="text-white">unheard of</strong>" in the industry.
               </p>
               
-              <p className="text-yellow-300 font-semibold mb-3 text-lg">Our Secret?</p>
+              <p className="text-yellow-300 font-semibold mb-3 text-xl">Our Secret?</p>
               
-              <p className="text-neutral-100 mb-4 leading-relaxed">
+              <p className="text-neutral-100 mb-4 text-lg leading-relaxed">
                 <strong>Behavioral psychology</strong>.
                 <br />
                 <strong>Statistical precision</strong>.
@@ -258,13 +258,13 @@ const ReviewCollectionProPage = () => {
                 And a deep commitment to your customers' happiness.
               </p>
               
-              <p className="text-neutral-300 mb-3 leading-relaxed">
+              <p className="text-neutral-300 mb-3 text-lg leading-relaxed">
                 We only work with <strong className="text-white">authentic reviews</strong>.
                 <br />
                 From <strong className="text-white">your</strong> real customers.
               </p>
               
-              <p className="text-neutral-500 italic mb-6">
+              <p className="text-neutral-500 italic mb-6 text-base">
                 (No fake reviews, no purchased reviews — ever.)
               </p>
               
@@ -291,8 +291,8 @@ const ReviewCollectionProPage = () => {
         <div className="container-lg">
           <div className="text-center mb-12">
             <span className="badge mb-4">Results</span>
-            <h2 className="text-neutral-900 mb-4 text-3xl md:text-4xl font-bold">We Make Review Collection Effortless</h2>
-            <p className="text-neutral-700 max-w-2xl mx-auto text-lg leading-relaxed">
+            <h2 className="text-neutral-900 mb-4 text-4xl md:text-5xl font-bold">We Make Review Collection Effortless</h2>
+            <p className="text-neutral-700 max-w-2xl mx-auto text-xl leading-relaxed">
               Most great businesses <strong>lack the reviews they deserve</strong>...
               <br />
               ...simply because their review collection system is either <strong>ineffective</strong> or <strong>non-existent</strong>.
@@ -338,7 +338,7 @@ const ReviewCollectionProPage = () => {
           </div>
           
           <div className="text-center mt-10">
-            <p className="text-neutral-700 mb-4 text-lg">
+            <p className="text-neutral-700 mb-4 text-xl">
               Discover how <strong>outsourcing your review collection</strong> can transform your business:
             </p>
             <a
@@ -364,7 +364,7 @@ const ReviewCollectionProPage = () => {
               Important
             </span>
 
-            <h2 className="text-white mb-5 text-4xl md:text-5xl font-extrabold leading-tight">
+            <h2 className="text-white mb-5 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
               Why you need to focus on your reviews <span className="text-yellow-300">NOW</span>:
             </h2>
 
@@ -411,7 +411,7 @@ const ReviewCollectionProPage = () => {
           </div>
 
           <div className="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 mb-12">
-            <p className="text-white text-xl md:text-2xl font-bold mb-4">
+            <p className="text-white text-2xl md:text-3xl font-bold mb-4">
               When "beta" becomes the norm, your reviews will be the deciding factor...
             </p>
             
@@ -423,16 +423,16 @@ const ReviewCollectionProPage = () => {
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3">
                   <AlertTriangle className="w-5 h-5 text-yellow-300 flex-shrink-0 mt-0.5" />
-                  <span className="text-lg">{item}</span>
+                  <span className="text-xl">{item}</span>
                 </div>
               ))}
             </div>
             
             <div className="border-t border-neutral-700 pt-6">
-              <p className="text-white text-lg md:text-xl font-semibold mb-2">
+              <p className="text-white text-xl md:text-2xl font-semibold mb-2">
                 It's a <span className="text-red-400 font-bold">RISK</span> to do nothing.
               </p>
-              <p className="text-white text-lg md:text-xl font-semibold">
+              <p className="text-white text-xl md:text-2xl font-semibold">
                 And a <span className="text-green-400 font-bold">HUGE opportunity</span> if you act now.
               </p>
             </div>
@@ -440,7 +440,7 @@ const ReviewCollectionProPage = () => {
 
           {/* What you don't have to do */}
           <div className="text-center mb-8">
-            <p className="text-neutral-300 text-lg mb-6">Unlike other "solutions":</p>
+            <p className="text-neutral-300 text-xl mb-6">Unlike other "solutions":</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
               {[
                 "No figuring out",
@@ -459,7 +459,7 @@ const ReviewCollectionProPage = () => {
           </div>
 
           <div className="text-center">
-            <p className="text-neutral-200 mb-6 text-lg">
+            <p className="text-neutral-200 mb-6 text-xl">
               Our clients see results <strong className="text-white">right out the gate</strong>.
             </p>
             <a
@@ -485,10 +485,10 @@ const ReviewCollectionProPage = () => {
               Speed
               <Zap className="w-4 h-4" />
             </span>
-            <h2 className="text-white mb-4 text-3xl md:text-4xl font-bold">
+            <h2 className="text-white mb-4 text-4xl md:text-5xl font-bold">
               Want More Reviews, <span className="text-yellow-300">FASTER?</span>
             </h2>
-            <p className="text-neutral-200 text-lg md:text-xl max-w-3xl mx-auto">
+            <p className="text-neutral-200 text-xl md:text-2xl max-w-3xl mx-auto">
               On average, our clients collect reviews <strong className="text-white">9x faster</strong>.
             </p>
           </div>
@@ -545,10 +545,10 @@ const ReviewCollectionProPage = () => {
               Objection handling
               <Shield className="w-4 h-4" />
             </span>
-            <h2 className="text-white mb-4 text-3xl md:text-4xl font-bold">
+            <h2 className="text-white mb-4 text-4xl md:text-5xl font-bold">
               Worried About <span className="text-yellow-300">Negative Reviews?</span>
             </h2>
-            <p className="text-neutral-200 text-lg max-w-2xl mx-auto">
+            <p className="text-neutral-200 text-xl max-w-2xl mx-auto">
               Most business owners secretly are.
               <br />
               That's normal. We built safeguards specifically for this.
@@ -604,7 +604,7 @@ const ReviewCollectionProPage = () => {
                 </div>
               </div>
               
-              <p className="text-neutral-300 leading-relaxed">
+              <p className="text-neutral-300 text-lg leading-relaxed">
                 This is how our clients end up with <strong className="text-white">hundreds</strong> of 4-star and 5-star reviews...
                 <br />
                 <br />
@@ -648,7 +648,7 @@ const ReviewCollectionProPage = () => {
           <div className="bg-white rounded-xl p-8 md:p-12 text-center shadow-soft border border-neutral-200">
             <span className="badge mb-4">The Process</span>
             <h2 className="text-neutral-900 mb-4">How It Works</h2>
-            <p className="text-neutral-600 max-w-2xl mx-auto mb-6 leading-relaxed">
+            <p className="text-neutral-600 max-w-2xl mx-auto mb-6 text-lg leading-relaxed">
               With our Done-For-You Service we use the <strong>principles of behavioral psychology</strong> and <strong>statistical likelihoods</strong> to create spectacular results.
             </p>
             <a
@@ -672,10 +672,10 @@ const ReviewCollectionProPage = () => {
               Timeline
               <Clock className="w-4 h-4" />
             </span>
-            <h2 className="text-neutral-950 mb-4 text-3xl md:text-4xl font-bold">
+            <h2 className="text-neutral-950 mb-4 text-4xl md:text-5xl font-bold">
               How long until you see results?
             </h2>
-            <p className="text-neutral-700 text-lg max-w-3xl mx-auto">
+            <p className="text-neutral-700 text-xl max-w-3xl mx-auto">
               Real client timelines. Real outcomes. No fluff.
             </p>
           </div>
@@ -765,10 +765,10 @@ const ReviewCollectionProPage = () => {
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-yellow-300 bg-white/10 border border-white/10 px-4 py-2 rounded-full mb-6">
               Pricing & Plans
             </span>
-            <h2 className="text-white mb-4 text-3xl md:text-4xl font-bold">
+            <h2 className="text-white mb-4 text-4xl md:text-5xl font-bold">
               Done-For-You Review Collection
             </h2>
-            <p className="text-neutral-200 text-lg max-w-3xl mx-auto">
+            <p className="text-neutral-200 text-xl max-w-3xl mx-auto">
               One fixed price for <strong className="text-white">unlimited</strong> results. Always.
             </p>
           </div>
@@ -880,17 +880,17 @@ const ReviewCollectionProPage = () => {
               <Shield className="w-10 h-10 text-yellow-300" />
             </div>
             
-            <h2 className="text-white mb-4 text-2xl md:text-3xl font-bold">
+            <h2 className="text-white mb-4 text-3xl md:text-4xl font-bold">
               Results in Less Than 30 Days — <span className="text-yellow-300">Guaranteed</span>
             </h2>
             
-            <p className="text-neutral-200 max-w-2xl mx-auto mb-6 leading-relaxed">
+            <p className="text-neutral-200 max-w-2xl mx-auto mb-6 text-lg leading-relaxed">
               We guarantee that you'll get your first <strong className="text-white">"hands-off" 4-star and 5-star reviews</strong> in less than 30 days...
               <br /><br />
               ...or we will refund 100% of your money, no questions asked.
             </p>
             
-            <p className="text-neutral-400 mb-6">
+            <p className="text-neutral-400 mb-6 text-lg">
               With our clients, it has <strong className="text-white">NEVER</strong> taken longer than 30 days to see results.
             </p>
             
@@ -921,8 +921,8 @@ const ReviewCollectionProPage = () => {
         <div className="container-lg">
           <div className="text-center mb-12">
             <span className="badge mb-4">Proof</span>
-            <h2 className="text-neutral-900 mb-4 text-3xl font-bold">Before & After</h2>
-            <p className="text-neutral-600 max-w-2xl mx-auto">
+            <h2 className="text-neutral-900 mb-4 text-4xl md:text-5xl font-bold">Before & After</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto text-lg">
               Here are some of our clients' <strong>Before & After</strong> results...
             </p>
           </div>
@@ -975,8 +975,8 @@ const ReviewCollectionProPage = () => {
             ))}
           </div>
           
-          <h2 className="text-white mb-4 text-3xl md:text-4xl font-bold">Ready to Get More Reviews?</h2>
-          <p className="text-neutral-400 mb-8 max-w-xl mx-auto leading-relaxed">
+          <h2 className="text-white mb-4 text-4xl md:text-5xl font-bold">Ready to Get More Reviews?</h2>
+          <p className="text-neutral-400 mb-8 max-w-xl mx-auto text-lg leading-relaxed">
             Let's discuss how automated review collection can grow your reputation and bring in more customers.
           </p>
           
