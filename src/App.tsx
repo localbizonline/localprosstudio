@@ -34,6 +34,7 @@ import ReviewCollectionProPage from './components/ReviewCollectionProPage';
 import ReviewsProClientiPage from './components/ReviewsProClientiPage';
 import ReviewsLetterPage from './components/ReviewsLetterPage';
 import LandingPagesDirectory from './components/LandingPagesDirectory';
+import SocialPostingPageV2 from './components/SocialPostingPageV2';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
 const Navigation = () => {
@@ -191,6 +192,7 @@ const AppContent = () => {
           <Route path="/reviews-extreme" element={<ReviewsProClientiPage />} />
           <Route path="/reviews-letter" element={<ReviewsLetterPage />} />
           <Route path="/social-media" element={<SocialMediaPage />} />
+          <Route path="/social-posting-v2" element={<SocialPostingPageV2 />} />
           <Route path="/web-design" element={<WebDesignPage />} />
           <Route path="/fieldcard" element={<FieldCardPage />} />
           <Route path="/about" element={<AboutPage />} />

@@ -92,7 +92,7 @@ const ReviewsLetterPage = () => {
             </a>
 
             <p className="text-neutral-500 text-sm mt-4">
-              Join 50+ contractors already getting more reviews
+              Join 50+ local businesses already getting more reviews
             </p>
 
             {/* Trust Badges */}
@@ -133,7 +133,7 @@ const ReviewsLetterPage = () => {
           </h2>
 
           <p className="text-xl md:text-2xl font-bold text-white">
-            We're contractors who cracked the code.
+            We're local business owners who cracked the code.
           </p>
 
           <p className="text-lg md:text-xl text-neutral-300">
@@ -300,7 +300,7 @@ const ReviewsLetterPage = () => {
           </h2>
 
           <p className="text-lg md:text-xl text-neutral-300">
-            Most great contractors <strong className="text-white">lack the reviews they deserve</strong> simply because their review collection system is either <strong className="text-white">ineffective</strong> or <strong className="text-white">non-existent</strong>.
+            Most great local businesses <strong className="text-white">lack the reviews they deserve</strong> simply because their review collection system is either <strong className="text-white">ineffective</strong> or <strong className="text-white">non-existent</strong>.
           </p>
 
           {/* Transformation Image */}
@@ -400,7 +400,7 @@ const ReviewsLetterPage = () => {
           </h2>
 
           <p className="text-lg md:text-xl text-neutral-300">
-            Most contractors secretly worry about this.
+            Most local businesses secretly worry about this.
           </p>
 
           <p className="text-lg md:text-xl text-neutral-300">
