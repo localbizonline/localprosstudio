@@ -23,6 +23,8 @@ import greenbayFacebookGallery from '../assets/images/social-posting/Greenbay fe
 import postCalendar from '../assets/images/social-posting/post calender.webp';
 import oneUploadEverywhereContractors from '../assets/images/social-posting/one upload everywhere for contractors.webp';
 import socialInstagramTruck from '../assets/images/social-instagram-truck.jpg';
+import happyContractorInstagram from '../assets/images/social-posting/happy contractor with instagram mockup copy.jpg';
+import happyContractorLandscape from '../assets/images/social-posting/happy contractor with social posting landscape ratio.webp';
 
 // Reusable CTA Button with Scarcity
 const CTAWithRating = () => (
@@ -101,9 +103,18 @@ const SocialPostingPageV2 = () => {
             </a>
 
             {/* Risk Reversal */}
-            <p className="text-neutral-400 text-sm">
+            <p className="text-neutral-400 text-sm mb-8">
               No contracts. Cancel anytime. See results or don't pay.
             </p>
+
+            {/* Hero Image */}
+            <div className="max-w-2xl mx-auto">
+              <img
+                src={happyContractorInstagram}
+                alt="Happy contractor with professional Instagram social media presence"
+                className="w-full rounded-2xl border-2 border-neutral-700 shadow-2xl"
+              />
+            </div>
 
           </div>
         </div>
@@ -162,7 +173,7 @@ const SocialPostingPageV2 = () => {
             <img
               src={facebookBeforeAfterFencing}
               alt="Before and after comparison of a Facebook business page - showing transformation from dormant to active with consistent posts"
-              className="w-full"
+              className="w-full aspect-[4/3] object-cover object-top"
             />
           </div>
 
@@ -725,7 +736,7 @@ const SocialPostingPageV2 = () => {
             <img
               src={socialInstagramTruck}
               alt="Contractor's truck with social media presence - professional business image"
-              className="w-full"
+              className="w-full aspect-[16/9] object-cover object-center"
             />
           </div>
 
@@ -1211,13 +1222,9 @@ const SocialPostingPageV2 = () => {
         <div className="max-w-3xl mx-auto px-6 md:px-8 text-left space-y-8 leading-relaxed">
 
           <h2 className="text-3xl md:text-4xl font-black text-white leading-tight tracking-tight text-center">
-            The question isn't whether<br />
-            you <span className="text-amber-400">can</span> afford this.
+            While your competitors figure out what to post...<br />
+            <span className="text-amber-400">You'll already be everywhere.</span>
           </h2>
-
-          <p className="text-xl md:text-2xl text-neutral-300 text-center">
-            It's whether you can afford to stay invisible while your competitors post every week.
-          </p>
 
           <p className="text-2xl md:text-3xl font-black text-white text-center">
             <span className="text-neutral-500 line-through text-xl md:text-2xl">R3,500</span>{' '}
@@ -1230,6 +1237,15 @@ const SocialPostingPageV2 = () => {
           <p className="text-neutral-500 text-center italic">
             Questions? WhatsApp us anytime — we're real people, not bots.
           </p>
+
+          {/* Footer Image */}
+          <div className="rounded-xl overflow-hidden border border-neutral-700 shadow-2xl">
+            <img
+              src={happyContractorLandscape}
+              alt="Happy contractor with professional social media presence"
+              className="w-full aspect-[16/9] md:aspect-auto object-cover object-center"
+            />
+          </div>
         </div>
       </section>
 
