@@ -1,6 +1,67 @@
 import React from 'react';
 import { ArrowRight, Check, Star } from 'lucide-react';
 
+// Scrolling faces images (South African focused)
+import reviewContractorHappy from '../assets/images/review-contractor-happy.jpg';
+import contractorPhoneCallSA from '../assets/images/Reviews/contractor-phone-call-sa.jpg';
+import happyContractorInstagram from '../assets/images/social-posting/happy contractor with instagram mockup copy.jpg';
+import reviewCustomer from '../assets/images/review-customer.jpg';
+import teamPhoto from '../assets/images/team.jpg';
+import happyBusinessOwner from '../assets/images/reviews-pro/happy-business-owner.jpg';
+import heroContractorHandshake from '../assets/images/Reviews/hero-contractor-handshake.jpg';
+import contractorConfidentReviews from '../assets/images/Reviews/contractor-confident-reviews.jpg';
+
+// Scrolling Faces Data
+const scrollingFaces = [
+  { src: reviewContractorHappy, alt: 'SA contractor checking reviews' },
+  { src: contractorPhoneCallSA, alt: 'Cape Town contractor on phone' },
+  { src: happyContractorInstagram, alt: 'Construction worker with phone' },
+  { src: reviewCustomer, alt: 'Happy customer leaving review' },
+  { src: teamPhoto, alt: 'Local Pros team' },
+  { src: happyBusinessOwner, alt: 'Happy business owner' },
+  { src: heroContractorHandshake, alt: 'Contractor meeting customer' },
+  { src: contractorConfidentReviews, alt: 'Confident business owner' },
+];
+
+// Scrolling Faces Component
+const ScrollingFaces = () => (
+  <div className="relative w-full overflow-hidden py-6">
+    {/* Gradient overlays for fade effect */}
+    <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-neutral-950 to-transparent z-10 pointer-events-none"></div>
+    <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-neutral-950 to-transparent z-10 pointer-events-none"></div>
+    
+    {/* Scrolling container */}
+    <div className="flex animate-scroll-left">
+      {/* First set of images */}
+      {scrollingFaces.map((face, index) => (
+        <div
+          key={`first-${index}`}
+          className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 mx-2 md:mx-3 rounded-full overflow-hidden border-2 border-neutral-700 hover:border-amber-500 transition-colors"
+        >
+          <img
+            src={face.src}
+            alt={face.alt}
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
+      ))}
+      {/* Duplicate set for seamless loop */}
+      {scrollingFaces.map((face, index) => (
+        <div
+          key={`second-${index}`}
+          className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 mx-2 md:mx-3 rounded-full overflow-hidden border-2 border-neutral-700 hover:border-amber-500 transition-colors"
+        >
+          <img
+            src={face.src}
+            alt={face.alt}
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 // Reusable CTA Button with Star Rating
 const CTAWithRating = () => (
   <div className="py-8 md:py-10">
@@ -109,6 +170,12 @@ const ReviewsLetterPage = () => {
                 <Check className="w-5 h-5 text-green-500" />
                 <span>7-Day Setup</span>
               </div>
+            </div>
+
+            {/* Scrolling Faces Section */}
+            <div className="mt-10 pt-8 border-t border-neutral-800">
+              <p className="text-neutral-500 text-xs text-center mb-2 uppercase tracking-widest">Trusted by SA business owners</p>
+              <ScrollingFaces />
             </div>
           </div>
         </div>

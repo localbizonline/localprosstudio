@@ -62,6 +62,7 @@ export default {
         'fade-in': 'fadeIn 0.5s ease-out forwards',
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
         'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
+        'scroll-left': 'scrollLeft 30s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -75,6 +76,10 @@ export default {
         fadeInDown: {
           '0%': { opacity: '0', transform: 'translateY(-20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        scrollLeft: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },

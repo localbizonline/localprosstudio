@@ -35,6 +35,9 @@ import ReviewsProClientiPage from './components/ReviewsProClientiPage';
 import ReviewsLetterPage from './components/ReviewsLetterPage';
 import LandingPagesDirectory from './components/LandingPagesDirectory';
 import SocialPostingPageV2 from './components/SocialPostingPageV2';
+import HomeCodexPage from './components/HomeCodexPage';
+import HomeGeminiPage from './components/HomeGeminiPage';
+import HomeSalesLetterPage from './components/HomeSalesLetterPage';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
 const Navigation = () => {
@@ -45,6 +48,7 @@ const Navigation = () => {
     { name: 'Home', href: '/' },
     { name: 'Reviews', href: '/reviews' },
     { name: 'Social Media', href: '/social-media-posting-service' },
+    { name: 'Web Design', href: '/web-design' },
     { name: 'About', href: '/about' },
   ];
 
@@ -178,7 +182,7 @@ const AppContent = () => {
       <Navigation />
       <main className="flex-1">
         <Routes>
-          <Route path="/" element={<HomeServicesPage />} />
+          <Route path="/" element={<HomeGeminiPage />} />
           <Route path="/home-services" element={<HomeServicesPage />} />
           <Route path="/home2" element={<Home2Page />} />
           <Route path="/home3" element={<Home3Page />} />
@@ -193,6 +197,9 @@ const AppContent = () => {
           <Route path="/reviews-letter" element={<ReviewsLetterPage />} />
           <Route path="/social-media-posting-service" element={<SocialPostingPageV2 />} />
           <Route path="/social-posting-v2" element={<SocialPostingPageV2 />} />
+          <Route path="/home-codex" element={<HomeCodexPage />} />
+          <Route path="/homegemini" element={<HomeGeminiPage />} />
+          <Route path="/sales" element={<HomeSalesLetterPage />} />
           <Route path="/web-design" element={<WebDesignPage />} />
           <Route path="/fieldcard" element={<FieldCardPage />} />
           <Route path="/about" element={<AboutPage />} />

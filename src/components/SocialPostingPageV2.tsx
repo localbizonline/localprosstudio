@@ -27,6 +27,66 @@ import happyContractorInstagram from '../assets/images/social-posting/happy cont
 import happyContractorLandscape from '../assets/images/social-posting/happy contractor with social posting landscape ratio.webp';
 import deadBusinessNoSocials from '../assets/images/social-posting/dead business if no socials since 2021.jpg';
 
+// Scrolling faces images (South African focused)
+import reviewContractorHappy from '../assets/images/review-contractor-happy.jpg';
+import contractorPhoneCallSA from '../assets/images/Reviews/contractor-phone-call-sa.jpg';
+import reviewCustomer from '../assets/images/review-customer.jpg';
+import teamPhoto from '../assets/images/team.jpg';
+import happyBusinessOwner from '../assets/images/reviews-pro/happy-business-owner.jpg';
+import heroContractorHandshake from '../assets/images/Reviews/hero-contractor-handshake.jpg';
+import contractorConfident from '../assets/images/Reviews/contractor-confident-reviews.jpg';
+
+// Scrolling Faces Data
+const scrollingFaces = [
+  { src: reviewContractorHappy, alt: 'SA contractor checking reviews' },
+  { src: contractorPhoneCallSA, alt: 'Cape Town contractor on phone' },
+  { src: happyContractorInstagram, alt: 'Construction worker with phone' },
+  { src: reviewCustomer, alt: 'Happy customer leaving review' },
+  { src: teamPhoto, alt: 'Local Pros team' },
+  { src: happyBusinessOwner, alt: 'Happy business owner' },
+  { src: heroContractorHandshake, alt: 'Contractor meeting customer' },
+  { src: contractorConfident, alt: 'Confident business owner' },
+];
+
+// Scrolling Faces Component
+const ScrollingFaces = () => (
+  <div className="relative w-full overflow-hidden py-6">
+    {/* Gradient overlays for fade effect */}
+    <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-neutral-950 to-transparent z-10 pointer-events-none"></div>
+    <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-neutral-950 to-transparent z-10 pointer-events-none"></div>
+    
+    {/* Scrolling container */}
+    <div className="flex animate-scroll-left">
+      {/* First set of images */}
+      {scrollingFaces.map((face, index) => (
+        <div
+          key={`first-${index}`}
+          className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 mx-2 md:mx-3 rounded-full overflow-hidden border-2 border-neutral-700 hover:border-amber-500 transition-colors"
+        >
+          <img
+            src={face.src}
+            alt={face.alt}
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
+      ))}
+      {/* Duplicate set for seamless loop */}
+      {scrollingFaces.map((face, index) => (
+        <div
+          key={`second-${index}`}
+          className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 mx-2 md:mx-3 rounded-full overflow-hidden border-2 border-neutral-700 hover:border-amber-500 transition-colors"
+        >
+          <img
+            src={face.src}
+            alt={face.alt}
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 // Reusable CTA Button with Scarcity
 const CTAWithRating = () => (
   <div className="py-8 md:py-10">
@@ -104,9 +164,15 @@ const SocialPostingPageV2 = () => {
             </a>
 
             {/* Risk Reversal */}
-            <p className="text-neutral-400 text-sm mb-8">
+            <p className="text-neutral-400 text-sm mb-6">
               No contracts. Cancel anytime. See results or don't pay.
             </p>
+
+            {/* Scrolling Faces Section */}
+            <div className="mb-8">
+              <p className="text-neutral-500 text-xs text-center mb-2 uppercase tracking-widest">Trusted by SA business owners</p>
+              <ScrollingFaces />
+            </div>
 
             {/* Hero Image */}
             <div className="max-w-2xl mx-auto">
@@ -1203,8 +1269,8 @@ const SocialPostingPageV2 = () => {
             </div>
           </div>
 
-          <p className="text-neutral-500 text-sm italic text-center">
-            Setup fee: R2,500 (waived with 6-month commitment)
+          <p className="text-neutral-400 text-sm text-center">
+            Setup fee: R2,500 <span className="text-amber-400 font-medium">(waived with 6-month commitment)</span>
           </p>
         </div>
       </section>
