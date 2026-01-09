@@ -9,6 +9,21 @@ import googleAiOverviewRenovations from '../assets/images/social-posting/google-
 import googleAiOverviewRoofingPhone from '../assets/images/social-posting/google-ai-overview-roofing-phone.webp';
 import googleAiOverviewSearch from '../assets/images/social-posting/google-ai-overview-search.webp';
 
+// Gallery images - Real client post examples
+import socialPostFencingCarportJob from '../assets/images/social-posting/social-post-fencing-carport-job.webp';
+import socialPostFencingGallery from '../assets/images/social-posting/social-post-fencing-gallery.webp';
+import socialPostGasGeyserService from '../assets/images/social-posting/social-post-gas-geyser-service.webp';
+import socialPostGasHobsService from '../assets/images/social-posting/social-post-gas-hobs-service.webp';
+import socialPostFencingHoliday from '../assets/images/social-posting/social-post-fencing-holiday.webp';
+import socialPostFencingNewYear from '../assets/images/social-posting/social-post-fencing-new-year.webp';
+import closeupPhonePostCreator from '../assets/images/social-posting/Closeup phone using post creator.webp';
+import sideBySide3Platforms from '../assets/images/social-posting/side by side 3 platforms with lable.webp';
+import oneUploadPostEverywhere from '../assets/images/social-posting/one-upload post everywhere.webp';
+import greenbayFacebookGallery from '../assets/images/social-posting/Greenbay fencing Facebook gallery.png';
+import postCalendar from '../assets/images/social-posting/post calender.webp';
+import oneUploadEverywhereContractors from '../assets/images/social-posting/one upload everywhere for contractors.webp';
+import socialInstagramTruck from '../assets/images/social-instagram-truck.jpg';
+
 // Reusable CTA Button with Scarcity
 const CTAWithRating = () => (
   <div className="py-8 md:py-10">
@@ -53,7 +68,7 @@ const SocialPostingPageV2 = () => {
             </p>
 
             {/* Big Promise Headline */}
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
               Get <span className="text-yellow-400">Professional Social Media Posts</span><br />
               Without Lifting a Finger
             </h1>
@@ -240,6 +255,114 @@ const SocialPostingPageV2 = () => {
       </section>
 
       {/* ============================================
+          SECTION: GALLERY - REAL CLIENT EXAMPLES
+          ============================================ */}
+      <section className="py-16 md:py-24 bg-neutral-800">
+        <div className="max-w-5xl mx-auto px-6 md:px-8 space-y-8 leading-relaxed">
+
+          {/* Section Label */}
+          <div className="flex items-center gap-4 mb-4">
+            <div className="h-px bg-gradient-to-r from-amber-500 to-transparent flex-1 max-w-[60px]"></div>
+            <p className="text-amber-400 text-xs tracking-[0.3em] uppercase font-black">
+              Real Results
+            </p>
+          </div>
+
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black text-white leading-tight tracking-tight mb-4">
+              This Is What Your Feed<br />
+              <span className="text-amber-400">Could Look Like</span>
+            </h2>
+
+            <p className="text-lg md:text-xl text-neutral-300 mb-2">
+              Real posts. Real clients. <strong className="text-white">Created in minutes.</strong>
+            </p>
+
+            <p className="text-base text-neutral-400">
+              While you're on the job site, we're turning your photos into scroll-stopping content that makes your business look like a million bucks.
+            </p>
+          </div>
+
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            {/* Job Completion Post */}
+            <div className="group relative rounded-xl overflow-hidden shadow-xl border border-neutral-700 hover:border-amber-500/50 transition-all hover:scale-[1.02]">
+              <img
+                src={socialPostFencingCarportJob}
+                alt="Carport fencing job completion post - professional social media content"
+                className="w-full aspect-square object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                <p className="text-white text-xs md:text-sm font-medium p-3">Job Completion Post</p>
+              </div>
+            </div>
+
+            {/* Portfolio Gallery */}
+            <div className="group relative rounded-xl overflow-hidden shadow-xl border border-neutral-700 hover:border-amber-500/50 transition-all hover:scale-[1.02]">
+              <img
+                src={socialPostFencingGallery}
+                alt="Fencing gallery portfolio post - showcasing recent work"
+                className="w-full aspect-square object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                <p className="text-white text-xs md:text-sm font-medium p-3">Portfolio Gallery</p>
+              </div>
+            </div>
+
+            {/* Service Promotion - Geyser */}
+            <div className="group relative rounded-xl overflow-hidden shadow-xl border border-neutral-700 hover:border-amber-500/50 transition-all hover:scale-[1.02]">
+              <img
+                src={socialPostGasGeyserService}
+                alt="Gas geyser service promotion post - professional service highlight"
+                className="w-full aspect-square object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                <p className="text-white text-xs md:text-sm font-medium p-3">Service Promotion</p>
+              </div>
+            </div>
+
+            {/* Service Promotion - Hobs */}
+            <div className="group relative rounded-xl overflow-hidden shadow-xl border border-neutral-700 hover:border-amber-500/50 transition-all hover:scale-[1.02]">
+              <img
+                src={socialPostGasHobsService}
+                alt="Gas hobs installation service post - driving awareness"
+                className="w-full aspect-square object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                <p className="text-white text-xs md:text-sm font-medium p-3">Service Highlight</p>
+              </div>
+            </div>
+
+            {/* Holiday Post */}
+            <div className="group relative rounded-xl overflow-hidden shadow-xl border border-neutral-700 hover:border-amber-500/50 transition-all hover:scale-[1.02]">
+              <img
+                src={socialPostFencingHoliday}
+                alt="Holiday greeting post - automated seasonal content"
+                className="w-full aspect-square object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                <p className="text-white text-xs md:text-sm font-medium p-3">Holiday Post (Automatic)</p>
+              </div>
+            </div>
+
+            {/* New Year Post */}
+            <div className="group relative rounded-xl overflow-hidden shadow-xl border border-neutral-700 hover:border-amber-500/50 transition-all hover:scale-[1.02]">
+              <img
+                src={socialPostFencingNewYear}
+                alt="New Year post - seasonal greeting content"
+                className="w-full aspect-square object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                <p className="text-white text-xs md:text-sm font-medium p-3">Seasonal Content</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+
+      {/* ============================================
           SECTION 3: HOW IT WORKS
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-800">
@@ -266,15 +389,6 @@ const SocialPostingPageV2 = () => {
             Here's your entire workflow:
           </p>
 
-          {/* Image: Phone Submission */}
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-            <div className="w-full aspect-[4/3] bg-neutral-900 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-amber-400 font-bold mb-2">IMAGE PLACEHOLDER</p>
-                <p className="text-neutral-400 text-sm max-w-md">Close-up of business owner's hands on phone, uploading job photos through simple form. Quick, easy, on-the-go feeling.</p>
-              </div>
-            </div>
-          </div>
 
           <div className="space-y-4">
             <div className="bg-neutral-700 rounded-xl p-6 border-l-4 border-amber-500 shadow-xl">
@@ -311,12 +425,11 @@ const SocialPostingPageV2 = () => {
 
           {/* Image: Job Photo to Post */}
           <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-            <div className="w-full aspect-[16/9] bg-neutral-800 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-amber-400 font-bold mb-2">IMAGE PLACEHOLDER</p>
-                <p className="text-neutral-400 text-sm max-w-md">Before/after: Raw job photo on left → Polished social post with branded design and engaging caption on right.</p>
-              </div>
-            </div>
+            <img
+              src={closeupPhonePostCreator}
+              alt="Close-up of business owner's hands on phone, uploading job photos through simple form"
+              className="w-full"
+            />
           </div>
 
           <p className="text-2xl md:text-3xl font-black text-white">
@@ -325,12 +438,11 @@ const SocialPostingPageV2 = () => {
 
           {/* Image: Multi-platform */}
           <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-            <div className="w-full aspect-[16/9] bg-neutral-900 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-amber-400 font-bold mb-2">IMAGE PLACEHOLDER</p>
-                <p className="text-neutral-400 text-sm max-w-md">Same post shown on Facebook, Instagram, and Google Business Profile. One upload = three platforms visual.</p>
-              </div>
-            </div>
+            <img
+              src={sideBySide3Platforms}
+              alt="Same post shown on Facebook, Instagram, and Google Business Profile - one upload to three platforms"
+              className="w-full"
+            />
           </div>
 
           <div className="space-y-4 bg-neutral-700 border-2 border-neutral-600 rounded-2xl p-6 shadow-xl">
@@ -454,12 +566,11 @@ const SocialPostingPageV2 = () => {
 
           {/* Image: Multi-platform spread */}
           <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-            <div className="w-full aspect-[16/9] bg-neutral-800 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-amber-400 font-bold mb-2">IMAGE PLACEHOLDER</p>
-                <p className="text-neutral-400 text-sm max-w-md">Visual showing one photo submission spreading to Facebook post + Instagram post + Instagram reel + Google Business post. "One upload → everywhere" concept.</p>
-              </div>
-            </div>
+            <img
+              src={oneUploadPostEverywhere}
+              alt="One photo upload spreading to Facebook, Instagram, Instagram Reel, and Google Business - one upload posts everywhere"
+              className="w-full"
+            />
           </div>
 
           <p className="text-xl md:text-2xl font-bold text-white">
@@ -537,27 +648,13 @@ const SocialPostingPageV2 = () => {
 
           {/* Image: Content Calendar */}
           <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-            <div className="w-full aspect-[16/9] bg-neutral-800 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-amber-400 font-bold mb-2">IMAGE PLACEHOLDER</p>
-                <p className="text-neutral-400 text-sm max-w-md">Monthly calendar showing consistent posting: service posts, holiday posts, review highlights — all scheduled. Never miss a week.</p>
-              </div>
-            </div>
+            <img
+              src={postCalendar}
+              alt="Monthly post calendar showing consistent posting schedule with service posts, holiday posts, and review highlights"
+              className="w-full"
+            />
           </div>
 
-          {/* Simple Box */}
-          <div className="bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-2xl p-8 md:p-10 border border-neutral-700">
-            <p className="text-amber-400 font-black text-xl mb-4">Here's the truth:</p>
-            <p className="text-neutral-200 text-lg md:text-xl mb-4">
-              Your job photos are <strong className="text-white">bonus content</strong> — the best content, actually.
-            </p>
-            <p className="text-neutral-200 text-lg md:text-xl mb-4">
-              But even if you never send us a single photo...
-            </p>
-            <p className="text-2xl md:text-3xl font-black text-white">
-              You'll <span className="text-amber-400">never go silent</span>.
-            </p>
-          </div>
 
           {/* CTA with Rating */}
           <CTAWithRating />
@@ -625,12 +722,11 @@ const SocialPostingPageV2 = () => {
 
           {/* Image: Customer researching contractors */}
           <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-            <div className="w-full aspect-[16/9] bg-neutral-900 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-amber-400 font-bold mb-2">IMAGE PLACEHOLDER</p>
-                <p className="text-neutral-400 text-sm max-w-md">Customer on phone/laptop researching local businesses — multiple browser tabs open showing different Facebook pages. One active, one dormant.</p>
-              </div>
-            </div>
+            <img
+              src={socialInstagramTruck}
+              alt="Contractor's truck with social media presence - professional business image"
+              className="w-full"
+            />
           </div>
 
           <p className="text-lg md:text-xl text-neutral-300">
@@ -935,12 +1031,11 @@ const SocialPostingPageV2 = () => {
 
           {/* Dashboard Image */}
           <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-            <div className="w-full aspect-[16/9] bg-neutral-900 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-amber-400 font-bold mb-2">IMAGE PLACEHOLDER</p>
-                <p className="text-neutral-400 text-sm max-w-md">Dashboard screenshot: scheduled posts, approval queue, analytics. Clean interface showing posts across Facebook/Instagram/Google.</p>
-              </div>
-            </div>
+            <img
+              src={oneUploadEverywhereContractors}
+              alt="One upload posts everywhere - contractor dashboard showing scheduled posts across Facebook, Instagram, and Google"
+              className="w-full"
+            />
           </div>
         </div>
       </section>
