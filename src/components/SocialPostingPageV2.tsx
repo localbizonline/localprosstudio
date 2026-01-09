@@ -232,7 +232,7 @@ const SocialPostingPageV2 = () => {
             <img
               src={facebookBeforeAfterGasTablet}
               alt="Before and after comparison showing a gas installation business Facebook page transformation with professional posts"
-              className="w-full"
+              className="w-full aspect-[4/3] object-cover object-top"
             />
           </div>
 
@@ -442,7 +442,7 @@ const SocialPostingPageV2 = () => {
             <img
               src={closeupPhonePostCreator}
               alt="Close-up of business owner's hands on phone, uploading job photos through simple form"
-              className="w-full"
+              className="w-full aspect-[4/3] object-cover object-top"
             />
           </div>
 
@@ -824,21 +824,12 @@ const SocialPostingPageV2 = () => {
                 className="w-full"
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-                <img
-                  src={googleAiOverviewSearch}
-                  alt="Google AI Overview showing synthesized Facebook posts and business summary"
-                  className="w-full"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-                <img
-                  src={googleAiOverviewRenovations}
-                  alt="Google AI Overview for ABC Home Renovations - showing recent activity and social presence"
-                  className="w-full"
-                />
-              </div>
+            <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
+              <img
+                src={googleAiOverviewRenovations}
+                alt="Google AI Overview for ABC Home Renovations - showing recent activity and social presence"
+                className="w-full aspect-[4/3] object-cover object-top"
+              />
             </div>
           </div>
 
