@@ -25,6 +25,7 @@ import oneUploadEverywhereContractors from '../assets/images/social-posting/one 
 import socialInstagramTruck from '../assets/images/social-instagram-truck.jpg';
 import happyContractorInstagram from '../assets/images/social-posting/happy contractor with instagram mockup copy.jpg';
 import happyContractorLandscape from '../assets/images/social-posting/happy contractor with social posting landscape ratio.webp';
+import deadBusinessNoSocials from '../assets/images/social-posting/dead business if no socials since 2021.jpg';
 
 // Reusable CTA Button with Scarcity
 const CTAWithRating = () => (
@@ -149,15 +150,15 @@ const SocialPostingPageV2 = () => {
           </div>
 
           <p className="text-lg md:text-xl text-neutral-300">
-            And when you look at what marketing agencies charge?
+            And hiring a marketing agency? <span className="text-red-400 font-bold">Forget it.</span>
           </p>
 
-          <p className="text-2xl md:text-3xl font-black text-white">
+          <p className="text-lg md:text-xl text-neutral-400 line-through">
             R8,000 to R15,000 per month.
           </p>
 
           <p className="text-lg md:text-xl text-neutral-300">
-            For most local businesses, that's <strong className="text-white">impossible to justify</strong>.
+            For most local businesses, that's <strong className="text-white">completely out of reach</strong>.
           </p>
 
           <p className="text-lg md:text-xl text-neutral-300">
@@ -168,24 +169,26 @@ const SocialPostingPageV2 = () => {
             You go silent. Weeks turn into months. Your last post was... when exactly?
           </p>
 
-          {/* Image: Before/After Social Media */}
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
-            <img
-              src={facebookBeforeAfterFencing}
-              alt="Before and after comparison of a Facebook business page - showing transformation from dormant to active with consistent posts"
-              className="w-full aspect-[4/3] object-cover object-top"
-            />
-          </div>
-
           <p className="text-lg md:text-xl text-neutral-300">
             Meanwhile, your competitors are showing up in people's feeds <strong className="text-white">every single week</strong>.
           </p>
 
           <p className="text-lg md:text-xl text-neutral-300">
-            When a homeowner needs a plumber, electrician, or builder — they're calling the name they've <strong className="text-amber-400">seen recently</strong>.
+            When a homeowner gets a quote, the first thing they do is <strong className="text-white">look you up</strong>. They check your Facebook. Your Instagram. Your Google listing.
           </p>
-          {/* CTA with Rating */}
-          <CTAWithRating />
+
+          <p className="text-lg md:text-xl text-neutral-300">
+            And if your last post was <strong className="text-red-400">6 months ago</strong>? They assume you're out of business — or worse, not worth calling.
+          </p>
+
+          {/* Image: Dead business with no socials */}
+          <div className="rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
+            <img
+              src={deadBusinessNoSocials}
+              alt="Business appears dead when social media hasn't been updated since 2021"
+              className="w-full"
+            />
+          </div>
         </div>
       </section>
 
