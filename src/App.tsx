@@ -96,6 +96,15 @@ const Navigation = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'cta_click', {
+                    event_category: 'engagement',
+                    event_label: 'header_get_started',
+                    value: 1
+                  });
+                }
+              }}
             >
               Get Started
               <ArrowRight className="ml-2 w-4 h-4" />
@@ -140,7 +149,16 @@ const Navigation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary mt-4 mx-4"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'cta_click', {
+                      event_category: 'engagement',
+                      event_label: 'mobile_menu_get_started',
+                      value: 1
+                    });
+                  }
+                }}
               >
                 Get Started
                 <ArrowRight className="ml-2 w-4 h-4" />
