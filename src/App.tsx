@@ -38,6 +38,9 @@ import SocialPostingPageV2 from './components/SocialPostingPageV2';
 import HomeCodexPage from './components/HomeCodexPage';
 import HomeGeminiPage from './components/HomeGeminiPage';
 import HomeSalesLetterPage from './components/HomeSalesLetterPage';
+import SpecialOfferGeminiProPage from './components/SpecialOfferGeminiProPage';
+import SpecialOfferOpusPage from './components/SpecialOfferOpusPage';
+import SpecialOfferGpt52Page from './components/SpecialOfferGpt52Page';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
 const Navigation = () => {
@@ -45,11 +48,10 @@ const Navigation = () => {
   const location = useLocation();
 
   const navLinks = [
-    { name: 'Home', href: '/' },
     { name: 'Reviews', href: '/reviews' },
     { name: 'Social Media', href: '/social-media-posting-service' },
     { name: 'Web Design', href: '/web-design' },
-    { name: 'About', href: '/about' },
+    { name: 'Special Offer', href: '/special-offer-opus' },
   ];
 
   const isActive = (href: string) => {
@@ -191,6 +193,8 @@ const AppContent = () => {
     '/gemini-flash-landing-page',
     '/gpt-52-landing-page',
     '/claude-code-landing-page',
+    '/special-offer-gemini-pro',
+    '/special-offer-opus',
     '/pages',
   ].includes(location.pathname);
 
@@ -233,6 +237,10 @@ const AppContent = () => {
           <Route path="/gemini-flash-landing-page" element={<GeminiFlashLandingPage />} />
           <Route path="/gpt-52-landing-page" element={<Gpt52LandingPage />} />
           <Route path="/claude-code-landing-page" element={<LandingPage />} />
+          <Route path="/special-offer-gemini-pro" element={<SpecialOfferGeminiProPage />} />
+          <Route path="/special-offer-opus" element={<SpecialOfferOpusPage />} />
+          <Route path="/special-offer-gpt.5.2" element={<SpecialOfferGpt52Page />} />
+          <Route path="/special-offer-gpt.5.2/" element={<SpecialOfferGpt52Page />} />
 
           {/* Legacy routes */}
           <Route path="/reputation/reviews" element={<ReviewCollectionPage />} />
