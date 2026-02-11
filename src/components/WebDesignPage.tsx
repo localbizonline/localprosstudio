@@ -236,7 +236,7 @@ const WebDesignPage = () => {
               <ul className="space-y-3 mb-8">
                 {[
                   "Pre-built template customised to your brand",
-                  "Up to 4 dedicated service pages",
+                  "Up to 10 pages depending on your services",
                   "Mobile responsive design",
                   "Professional copywriting & image selection",
                   "WhatsApp click-to-chat & click-to-call",
@@ -366,7 +366,7 @@ const WebDesignPage = () => {
                 <div>
                   <h4 className="font-semibold text-neutral-800 mb-2">Website</h4>
                   <ul className="space-y-1.5 list-disc list-inside">
-                    <li>Professional website design and development with up to 4 dedicated service pages</li>
+                    <li>Professional website design and development with up to 10 pages depending on the number of services you offer</li>
                     <li>Domain registration and website hosting for the duration of your contract</li>
                     <li>Responsive design ensuring your website looks great on all devices (desktop, tablet, and mobile)</li>
                     <li>Professional branding incorporating your logo, colour scheme, and branding elements</li>
