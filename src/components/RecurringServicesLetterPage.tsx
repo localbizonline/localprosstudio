@@ -237,7 +237,7 @@ const RecurringServicesLetterPage = () => {
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[85%] md:max-w-[70%] shadow-lg border border-red-200">
                   <p className="text-[11px] text-red-500 font-bold mb-0.5">Missed Rebooking</p>
                   <p className="text-neutral-800 text-sm md:text-base">Aircon service was due 3 months ago — customer called a competitor 😔</p>
-                  <p className="text-[10px] text-neutral-400 text-right mt-1">R1,800 lost</p>
+                  <p className="text-[10px] text-neutral-400 text-right mt-1">4 jobs lost this year</p>
                 </div>
               </div>
               {/* Missed booking - solar */}
@@ -245,7 +245,7 @@ const RecurringServicesLetterPage = () => {
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[85%] md:max-w-[70%] shadow-lg border border-red-200">
                   <p className="text-[11px] text-red-500 font-bold mb-0.5">Missed Rebooking</p>
                   <p className="text-neutral-800 text-sm md:text-base">Solar panel clean overdue by 5 months — customer forgot your number</p>
-                  <p className="text-[10px] text-neutral-400 text-right mt-1">R2,200 lost</p>
+                  <p className="text-[10px] text-neutral-400 text-right mt-1">2 jobs lost this year</p>
                 </div>
               </div>
               {/* Missed booking - window cleaning */}
@@ -253,7 +253,7 @@ const RecurringServicesLetterPage = () => {
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[85%] md:max-w-[70%] shadow-lg border border-red-200">
                   <p className="text-[11px] text-red-500 font-bold mb-0.5">Missed Rebooking</p>
                   <p className="text-neutral-800 text-sm md:text-base">Window cleaning — customer Googled "window cleaner near me" instead 🔍</p>
-                  <p className="text-[10px] text-neutral-400 text-right mt-1">R950 lost</p>
+                  <p className="text-[10px] text-neutral-400 text-right mt-1">6 jobs lost this year</p>
                 </div>
               </div>
             </div>
