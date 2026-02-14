@@ -53,7 +53,7 @@ const Navigation = () => {
     { name: 'Social Media', href: '/social-media-posting-service' },
     { name: 'Web Design', href: '/web-design' },
     { name: 'Recurring Services', href: '/recurring-service-booking-system' },
-    { name: 'Special Offer', href: '/special-offer-opus' },
+    { name: 'Special Offer', href: '/special-offer-bundle' },
   ];
 
   const isActive = (href: string) => {
@@ -241,6 +241,7 @@ const AppContent = () => {
           <Route path="/gpt-52-landing-page" element={<Gpt52LandingPage />} />
           <Route path="/claude-code-landing-page" element={<LandingPage />} />
           <Route path="/special-offer-gemini-pro" element={<SpecialOfferGeminiProPage />} />
+          <Route path="/special-offer-bundle" element={<SpecialOfferOpusPage />} />
           <Route path="/special-offer-opus" element={<SpecialOfferOpusPage />} />
           <Route path="/special-offer-gpt.5.2" element={<SpecialOfferGpt52Page />} />
           <Route path="/special-offer-gpt.5.2/" element={<SpecialOfferGpt52Page />} />
