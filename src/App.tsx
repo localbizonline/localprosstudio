@@ -42,6 +42,7 @@ import SpecialOfferGeminiProPage from './components/SpecialOfferGeminiProPage';
 import SpecialOfferOpusPage from './components/SpecialOfferOpusPage';
 import SpecialOfferGpt52Page from './components/SpecialOfferGpt52Page';
 import RecurringServicesPage from './components/RecurringServicesPage';
+import RecurringServicesLetterPage from './components/RecurringServicesLetterPage';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
 const Navigation = () => {
@@ -228,6 +229,7 @@ const AppContent = () => {
           <Route path="/fieldcard" element={<FieldCardPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/recurring-services" element={<RecurringServicesPage />} />
+          <Route path="/recurring-service-booking-system" element={<RecurringServicesLetterPage />} />
           <Route path="/reputation" element={<ReputationManagementPage />} />
           <Route path="/google-ads" element={<GoogleAdsPage />} />
           <Route path="/web-design-alt" element={<AlternativeWebDesignPage />} />
