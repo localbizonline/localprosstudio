@@ -11,12 +11,13 @@ import happyBusinessOwner from '../assets/images/reviews-pro/happy-business-owne
 import heroContractorHandshake from '../assets/images/Reviews/hero-contractor-handshake.jpg';
 import contractorConfidentReviews from '../assets/images/Reviews/contractor-confident-reviews.jpg';
 
-// Content images
-import reviewContractor from '../assets/images/review-contractor-happy.jpg';
-import heroContractor from '../assets/images/Reviews/hero-contractor-handshake.jpg';
-import contractorConfident from '../assets/images/Reviews/contractor-confident-reviews.jpg';
-import contractorPhoneReviews from '../assets/images/contractor-phone-reviews.png';
-import creatingQuote from '../assets/images/createing a quote for customer (1).jpg';
+// Content images — unique recurring services images
+import recurringHeroContractor from '../assets/images/recurring-services/recurring-hero-contractor-calendar.jpg';
+import recurringHomeownerForgot from '../assets/images/recurring-services/recurring-homeowner-forgot.jpg';
+import recurringContractorLogging from '../assets/images/recurring-services/recurring-contractor-logging-job.jpg';
+import recurringWhatsappPhone from '../assets/images/recurring-services/recurring-whatsapp-phone-closeup.jpg';
+import recurringWindowCleaner from '../assets/images/recurring-services/recurring-window-cleaner-working.jpg';
+import recurringContractorTablet from '../assets/images/recurring-services/recurring-contractor-tablet-schedule.jpg';
 
 // Scrolling Faces Data
 const scrollingFaces = [
@@ -112,8 +113,8 @@ const RecurringServicesLetterPage = () => {
             {/* Hero Image */}
             <div className="relative max-w-2xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-2xl shadow-yellow-500/20 border-4 border-yellow-400/60">
               <img
-                src={reviewContractor}
-                alt="Happy contractor with a full booking calendar on his phone"
+                src={recurringHeroContractor}
+                alt="SA contractor checking his booking calendar on phone outside suburban home"
                 className="w-full object-cover"
               />
             </div>
@@ -199,8 +200,8 @@ const RecurringServicesLetterPage = () => {
 
           {/* Image */}
           <img
-            src={heroContractor}
-            alt="Contractor finishing a job, ready to secure the repeat booking"
+            src={recurringHomeownerForgot}
+            alt="Homeowner looking out window, forgetting to rebook her service"
             className="w-full rounded-xl shadow-2xl"
           />
 
@@ -272,8 +273,8 @@ const RecurringServicesLetterPage = () => {
 
           {/* Image */}
           <img
-            src={contractorPhoneReviews}
-            alt="Contractor checking phone with new booking confirmation"
+            src={recurringContractorLogging}
+            alt="Contractor leaning against van, logging a job on his phone"
             className="w-full rounded-xl shadow-2xl border border-neutral-800"
           />
 
@@ -328,6 +329,13 @@ const RecurringServicesLetterPage = () => {
           <p className="text-2xl md:text-3xl font-black text-white">
             WhatsApp gets <span className="text-amber-400">opened</span>. WhatsApp gets <span className="text-amber-400">answered</span>.
           </p>
+
+          {/* WhatsApp Phone Image */}
+          <img
+            src={recurringWhatsappPhone}
+            alt="Hands holding phone with WhatsApp booking conversation"
+            className="w-full rounded-xl shadow-2xl"
+          />
 
           {/* WhatsApp Conversation Mock */}
           <div className="bg-neutral-900 rounded-2xl p-6 md:p-8 border border-neutral-700 space-y-5">
@@ -417,8 +425,8 @@ const RecurringServicesLetterPage = () => {
 
           {/* Image */}
           <img
-            src={creatingQuote}
-            alt="Contractor creating a job quote for a recurring service customer"
+            src={recurringWindowCleaner}
+            alt="Professional window cleaner working at a suburban South African home"
             className="w-full rounded-xl shadow-2xl"
           />
         </div>
@@ -477,8 +485,8 @@ const RecurringServicesLetterPage = () => {
 
           {/* Image */}
           <img
-            src={contractorConfident}
-            alt="Confident contractor with full schedule of recurring jobs"
+            src={recurringContractorTablet}
+            alt="Smiling contractor in van checking her booking schedule on tablet"
             className="w-full rounded-xl shadow-2xl border border-neutral-700"
           />
 
