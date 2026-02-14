@@ -12,8 +12,8 @@ import heroContractorHandshake from '../assets/images/Reviews/hero-contractor-ha
 import contractorConfidentReviews from '../assets/images/Reviews/contractor-confident-reviews.jpg';
 
 // Content images — unique recurring services images
-import recurringHeroWhatsapp from '../assets/images/recurring-services/recurring-hero-whatsapp-booking.jpg';
-import recurringMissedRebookings from '../assets/images/recurring-services/recurring-missed-rebookings.jpg';
+import recurringHeroContractor from '../assets/images/recurring-services/recurring-hero-contractor-calendar.jpg';
+import recurringHomeownerForgot from '../assets/images/recurring-services/recurring-homeowner-forgot.jpg';
 import recurringContractorLogging from '../assets/images/recurring-services/recurring-contractor-logging-job.jpg';
 import recurringWhatsappPhone from '../assets/images/recurring-services/recurring-whatsapp-phone-closeup.jpg';
 import recurringWindowCleaner from '../assets/images/recurring-services/recurring-window-cleaner-working.jpg';
@@ -110,13 +110,28 @@ const RecurringServicesLetterPage = () => {
               The "Set & Forget" Rebooking System That Fills Your Calendar While You Work
             </p>
 
-            {/* Hero Image - WhatsApp booking conversation on phone */}
-            <div className="max-w-2xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-2xl shadow-yellow-500/20 border-4 border-yellow-400/60">
+            {/* Hero Image with floating WhatsApp bubbles */}
+            <div className="relative max-w-2xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-2xl shadow-yellow-500/20 border-4 border-yellow-400/60">
               <img
-                src={recurringHeroWhatsapp}
-                alt="Contractor holding phone showing WhatsApp booking conversation for window cleaning"
+                src={recurringHeroContractor}
+                alt="SA contractor holding phone with WhatsApp booking messages floating around him"
                 className="w-full object-cover"
               />
+              {/* Floating WhatsApp bubbles - positioned around edges, not on face */}
+              <div className="absolute top-3 left-3 md:top-5 md:left-4 bg-white rounded-2xl rounded-tl-md px-3 py-2 md:px-4 md:py-2.5 max-w-[55%] md:max-w-[50%] shadow-xl animate-fade-in-up">
+                <p className="text-[10px] md:text-[11px] text-green-600 font-bold mb-0.5">Window Cleaning</p>
+                <p className="text-neutral-800 text-xs md:text-sm">Hi! Your window clean is due next week. Book Johan for Tuesday 9am? 🪟</p>
+              </div>
+              <div className="absolute top-3 right-3 md:top-16 md:right-4 bg-[#dcf8c6] rounded-2xl rounded-tr-md px-3 py-2 md:px-4 md:py-2.5 max-w-[40%] md:max-w-[38%] shadow-xl animate-fade-in-up" style={{animationDelay: '0.15s'}}>
+                <p className="text-neutral-800 text-xs md:text-sm">Yes please! Same time works ✅</p>
+              </div>
+              <div className="absolute bottom-12 left-3 md:bottom-16 md:left-4 bg-white rounded-2xl rounded-bl-md px-3 py-2 md:px-4 md:py-2.5 max-w-[52%] md:max-w-[48%] shadow-xl animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+                <p className="text-[10px] md:text-[11px] text-green-600 font-bold mb-0.5">Aircon Service</p>
+                <p className="text-neutral-800 text-xs md:text-sm">Time for your 6-month aircon service! Shall I book you in? ❄️</p>
+              </div>
+              <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 bg-[#dcf8c6] rounded-2xl rounded-br-md px-3 py-2 md:px-4 md:py-2.5 max-w-[45%] md:max-w-[40%] shadow-xl animate-fade-in-up" style={{animationDelay: '0.45s'}}>
+                <p className="text-neutral-800 text-xs md:text-sm">Perfect, Thursday morning works 👍</p>
+              </div>
             </div>
 
             {/* CTA Button */}
@@ -198,12 +213,30 @@ const RecurringServicesLetterPage = () => {
             You're losing <span className="text-amber-400">thousands</span> in repeat work every month.
           </p>
 
-          {/* Image - missed WhatsApp notifications on phone */}
-          <img
-            src={recurringMissedRebookings}
-            alt="Phone on table showing missed WhatsApp service reminder notifications"
-            className="w-full rounded-xl shadow-2xl"
-          />
+          {/* Image with floating missed rebooking bubbles */}
+          <div className="relative w-full rounded-xl overflow-hidden shadow-2xl">
+            <img
+              src={recurringHomeownerForgot}
+              alt="Homeowner looking out dirty window with missed rebooking notifications floating around"
+              className="w-full object-cover"
+            />
+            {/* Floating missed booking bubbles - red tinted, scattered around edges */}
+            <div className="absolute top-3 right-3 md:top-4 md:right-4 bg-white/95 backdrop-blur-sm rounded-2xl rounded-tr-md px-3 py-2 md:px-4 md:py-2.5 max-w-[55%] md:max-w-[48%] shadow-xl border border-red-200">
+              <p className="text-[10px] md:text-[11px] text-red-500 font-bold mb-0.5">Aircon Service — Missed</p>
+              <p className="text-neutral-700 text-xs md:text-sm">Due 3 months ago. Customer called a competitor 😔</p>
+              <p className="text-[9px] md:text-[10px] text-red-400 text-right mt-1">4 jobs lost this year</p>
+            </div>
+            <div className="absolute bottom-14 left-3 md:bottom-20 md:left-4 bg-white/95 backdrop-blur-sm rounded-2xl rounded-bl-md px-3 py-2 md:px-4 md:py-2.5 max-w-[58%] md:max-w-[50%] shadow-xl border border-red-200">
+              <p className="text-[10px] md:text-[11px] text-red-500 font-bold mb-0.5">Solar Panel Clean — Overdue</p>
+              <p className="text-neutral-700 text-xs md:text-sm">5 months late. Customer forgot your number</p>
+              <p className="text-[9px] md:text-[10px] text-red-400 text-right mt-1">2 jobs lost this year</p>
+            </div>
+            <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 bg-white/95 backdrop-blur-sm rounded-2xl rounded-br-md px-3 py-2 md:px-4 md:py-2.5 max-w-[52%] md:max-w-[45%] shadow-xl border border-red-200">
+              <p className="text-[10px] md:text-[11px] text-red-500 font-bold mb-0.5">Window Cleaning — Lost</p>
+              <p className="text-neutral-700 text-xs md:text-sm">Customer Googled "window cleaner near me" instead 🔍</p>
+              <p className="text-[9px] md:text-[10px] text-red-400 text-right mt-1">6 jobs lost this year</p>
+            </div>
+          </div>
 
           <p className="text-lg md:text-xl text-neutral-300">
             The customers are there. The demand is there. They <strong className="text-white">want</strong> your service again.
