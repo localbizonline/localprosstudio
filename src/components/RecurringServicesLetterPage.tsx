@@ -110,13 +110,39 @@ const RecurringServicesLetterPage = () => {
               The "Set & Forget" Rebooking System That Fills Your Calendar While You Work
             </p>
 
-            {/* Hero Image */}
+            {/* Hero Image with WhatsApp Bubbles */}
             <div className="relative max-w-2xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-2xl shadow-yellow-500/20 border-4 border-yellow-400/60">
               <img
                 src={recurringHeroContractor}
                 alt="SA contractor checking his booking calendar on phone outside suburban home"
                 className="w-full object-cover"
               />
+              {/* WhatsApp bubble overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10 flex flex-col justify-end p-4 md:p-6 gap-2.5 md:gap-3">
+                {/* Incoming bubble - system */}
+                <div className="flex justify-start">
+                  <div className="bg-white rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[85%] md:max-w-[70%] shadow-lg">
+                    <p className="text-[11px] text-green-600 font-bold mb-0.5">Local Pros Booking</p>
+                    <p className="text-neutral-800 text-sm md:text-base">Hi Mrs. van der Merwe! Your window cleaning is due next week. Shall I book Johan for Tuesday 9am? 🪟</p>
+                    <p className="text-[10px] text-neutral-400 text-right mt-1">09:02</p>
+                  </div>
+                </div>
+                {/* Reply bubble - customer */}
+                <div className="flex justify-end">
+                  <div className="bg-[#dcf8c6] rounded-2xl rounded-br-md px-4 py-2.5 max-w-[75%] md:max-w-[60%] shadow-lg">
+                    <p className="text-neutral-800 text-sm md:text-base">Yes please! Same time works perfectly ✅</p>
+                    <p className="text-[10px] text-neutral-500 text-right mt-1">09:04</p>
+                  </div>
+                </div>
+                {/* Confirmation bubble */}
+                <div className="flex justify-start">
+                  <div className="bg-white rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[85%] md:max-w-[70%] shadow-lg">
+                    <p className="text-[11px] text-green-600 font-bold mb-0.5">Local Pros Booking</p>
+                    <p className="text-neutral-800 text-sm md:text-base">Done! ✅ Johan is booked for Tue 18 Feb, 9:00 AM. You'll get a reminder the day before.</p>
+                    <p className="text-[10px] text-neutral-400 text-right mt-1">09:04</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* CTA Button */}
@@ -198,12 +224,40 @@ const RecurringServicesLetterPage = () => {
             You're losing <span className="text-amber-400">thousands</span> in repeat work every month.
           </p>
 
-          {/* Image */}
-          <img
-            src={recurringHomeownerForgot}
-            alt="Homeowner looking out window, forgetting to rebook her service"
-            className="w-full rounded-xl shadow-2xl"
-          />
+          {/* Image with WhatsApp bubbles showing lost bookings */}
+          <div className="relative w-full rounded-xl overflow-hidden shadow-2xl">
+            <img
+              src={recurringHomeownerForgot}
+              alt="Homeowner forgetting to rebook her service"
+              className="w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/15 flex flex-col justify-end p-4 md:p-6 gap-2.5 md:gap-3">
+              {/* Missed booking - aircon */}
+              <div className="flex justify-start">
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[85%] md:max-w-[70%] shadow-lg border border-red-200">
+                  <p className="text-[11px] text-red-500 font-bold mb-0.5">Missed Rebooking</p>
+                  <p className="text-neutral-800 text-sm md:text-base">Aircon service was due 3 months ago — customer called a competitor 😔</p>
+                  <p className="text-[10px] text-neutral-400 text-right mt-1">R1,800 lost</p>
+                </div>
+              </div>
+              {/* Missed booking - solar */}
+              <div className="flex justify-start">
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[85%] md:max-w-[70%] shadow-lg border border-red-200">
+                  <p className="text-[11px] text-red-500 font-bold mb-0.5">Missed Rebooking</p>
+                  <p className="text-neutral-800 text-sm md:text-base">Solar panel clean overdue by 5 months — customer forgot your number</p>
+                  <p className="text-[10px] text-neutral-400 text-right mt-1">R2,200 lost</p>
+                </div>
+              </div>
+              {/* Missed booking - window cleaning */}
+              <div className="flex justify-start">
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[85%] md:max-w-[70%] shadow-lg border border-red-200">
+                  <p className="text-[11px] text-red-500 font-bold mb-0.5">Missed Rebooking</p>
+                  <p className="text-neutral-800 text-sm md:text-base">Window cleaning — customer Googled "window cleaner near me" instead 🔍</p>
+                  <p className="text-[10px] text-neutral-400 text-right mt-1">R950 lost</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <p className="text-lg md:text-xl text-neutral-300">
             The customers are there. The demand is there. They <strong className="text-white">want</strong> your service again.
