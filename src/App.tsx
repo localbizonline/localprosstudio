@@ -41,7 +41,6 @@ import HomeSalesLetterPage from './components/HomeSalesLetterPage';
 import SpecialOfferGeminiProPage from './components/SpecialOfferGeminiProPage';
 import SpecialOfferOpusPage from './components/SpecialOfferOpusPage';
 import SpecialOfferGpt52Page from './components/SpecialOfferGpt52Page';
-import RecurringServicesPage from './components/RecurringServicesPage';
 import RecurringServicesLetterPage from './components/RecurringServicesLetterPage';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
@@ -53,7 +52,7 @@ const Navigation = () => {
     { name: 'Reviews', href: '/reviews' },
     { name: 'Social Media', href: '/social-media-posting-service' },
     { name: 'Web Design', href: '/web-design' },
-    { name: 'Recurring Services', href: '/recurring-services' },
+    { name: 'Recurring Services', href: '/recurring-service-booking-system' },
     { name: 'Special Offer', href: '/special-offer-opus' },
   ];
 
@@ -228,7 +227,6 @@ const AppContent = () => {
           <Route path="/web-design" element={<WebDesignPage />} />
           <Route path="/fieldcard" element={<FieldCardPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/recurring-services" element={<RecurringServicesPage />} />
           <Route path="/recurring-service-booking-system" element={<RecurringServicesLetterPage />} />
           <Route path="/reputation" element={<ReputationManagementPage />} />
           <Route path="/google-ads" element={<GoogleAdsPage />} />
