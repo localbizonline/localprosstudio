@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewsGrid from './ReviewsGrid';
+import ReputationReviewWidget from './ReputationReviewWidget';
 
 const SocialProofSection = () => {
   return (
@@ -15,7 +15,7 @@ const SocialProofSection = () => {
           </p>
         </div>
 
-        <ReviewsGrid />
+        <ReputationReviewWidget />
       </div>
     </section>
   );

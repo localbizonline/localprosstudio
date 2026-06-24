@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check, Star, ChevronDown, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ReputationReviewWidget from './ReputationReviewWidget';
 
 // Import images
 import reviewContractor from '../assets/images/review-contractor-happy.jpg';
@@ -431,6 +432,13 @@ const HomeGeminiPage = () => {
                 <p className="text-3xl md:text-4xl font-black text-white mb-2">350+</p>
                 <p className="text-neutral-400 text-sm uppercase tracking-wide">active clients</p>
              </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto mb-12">
+            <h3 className="text-2xl md:text-3xl font-black text-white text-center mb-8">
+              What Our Customers Say
+            </h3>
+            <ReputationReviewWidget />
           </div>
 
           <div className="max-w-4xl mx-auto">
