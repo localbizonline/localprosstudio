@@ -826,14 +826,14 @@ const HomeGeminiPage = () => {
           SECTION 11: CUSTOMER REVIEWS
           ============================================ */}
       <section className="py-16 md:py-24 bg-neutral-800">
-        <div className="max-w-4xl mx-auto px-6 md:px-8">
+        <div className="max-w-6xl mx-auto px-6 md:px-8">
           <div className="text-center mb-12">
             <p className="text-amber-400 text-xs tracking-[0.3em] uppercase font-black mb-4">CUSTOMER REVIEWS</p>
             <h2 className="text-3xl md:text-5xl font-black text-white">
               What Our Customers Say
             </h2>
           </div>
-          <ReputationReviewWidget />
+          <ReputationReviewWidget variant="dark" />
         </div>
       </section>
 
