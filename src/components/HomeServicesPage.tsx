@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Check, Globe, BarChart2, Shield, Zap, FileText, Star, Share2, MessageSquare } from 'lucide-react';
+import { ArrowRight, Check, Globe, BarChart2, Zap, FileText, Star, Share2, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SocialProofSection from './SocialProofSection';
 import localProsImage from '../assets/images/mockups/localprospeople.jpg';
@@ -23,16 +23,6 @@ const services = [
     features: ["Campaign setup & management", "Keyword targeting", "Conversion tracking", "Monthly reports"],
     link: "/google-ads",
     linkText: "Start getting leads",
-  },
-  {
-    icon: Shield,
-    title: "Reputation Management",
-    description: "Complete online reputation solution. Automated reviews + consistent social posting in one discounted package.",
-    price: "From R1,250/month (first 3 months)",
-    features: ["Review collection", "Social posting", "Save R950/month combined", "Priority support"],
-    link: "/reputation",
-    linkText: "See reputation packages",
-    isNew: true,
   },
   {
     icon: Star,

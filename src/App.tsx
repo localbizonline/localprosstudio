@@ -24,7 +24,6 @@ import Gpt52LandingPage from './components/Gpt52LandingPage';
 import LandingPage from './components/LandingPage';
 import HomeFunnelPage from './components/HomeFunnelPage';
 import ReviewFunnelPage from './components/ReviewFunnelPage';
-import ReputationManagementPage from './components/ReputationManagementPage';
 import GoogleAdsPage from './components/GoogleAdsPage';
 import AlternativeWebDesignPage from './components/AlternativeWebDesignPage';
 import ReachMaxPage from './components/ReachMaxPage';
@@ -232,7 +231,6 @@ const AppContent = () => {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/refunds-cancellations" element={<RefundsCancellationsPage />} />
-          <Route path="/reputation" element={<ReputationManagementPage />} />
           <Route path="/google-ads" element={<GoogleAdsPage />} />
           <Route path="/web-design-alt" element={<AlternativeWebDesignPage />} />
           <Route path="/reachmax" element={<ReachMaxPage />} />

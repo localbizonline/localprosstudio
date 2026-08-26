@@ -37,7 +37,6 @@ const milestones = [
 const services = [
   { name: "Website Design", href: "/web-design", description: "Modern, mobile-friendly websites delivered in 5-7 days" },
   { name: "Google Ads", href: "/google-ads", description: "Targeted advertising that puts you in front of ready buyers" },
-  { name: "Reputation Management", href: "/reputation", description: "Build trust with automated reviews and social posting" },
   { name: "Social Media", href: "/social-media-posting-service", description: "Stay visible with consistent, professional posting" },
 ];
 
@@ -270,4 +269,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-
