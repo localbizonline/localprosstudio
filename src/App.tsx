@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import FieldCardPage from './components/FieldCardPage';
 import SocialMediaPage from './components/SocialMediaPage';
 import WebDesignPage from './components/WebDesignPage';
+import WebDesignPageV2 from './components/WebDesignPageV2';
 import AboutPage from './components/AboutPage';
 import MobileCTA from './components/MobileCTA';
 import GoogleAdsPage from './components/GoogleAdsPage';
@@ -26,12 +27,14 @@ import HomeGeminiPage from './components/HomeGeminiPage';
 import HomeSalesLetterPage from './components/HomeSalesLetterPage';
 import SpecialOfferOpusPage from './components/SpecialOfferOpusPage';
 import RecurringServicesLetterPage from './components/RecurringServicesLetterPage';
+import AutopilotLandingPage from './components/AutopilotLandingPage';
 import { PrivacyPage, RefundsCancellationsPage, TermsPage } from './components/LegalPages';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const isWebDesignPreview = location.pathname === '/web-design-v2';
 
   const navLinks = [
     { name: 'Reviews', href: '/reviews' },
@@ -81,7 +84,9 @@ const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
             <a
-              href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20getting%20more%20reviews%20and%20growing%20my%20social%20presence"
+              href={isWebDesignPreview
+                ? "https://wa.me/27832336716?text=Hi%2C%20I%20want%20a%20website%20that%20helps%20my%20business%20win%20more%20enquiries"
+                : "https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20getting%20more%20reviews%20and%20growing%20my%20social%20presence"}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
@@ -95,7 +100,7 @@ const Navigation = () => {
                 }
               }}
             >
-              Get Started
+              {isWebDesignPreview ? 'Build My Website' : 'Get Started'}
               <ArrowRight className="ml-2 w-4 h-4" />
             </a>
           </div>
@@ -134,7 +139,9 @@ const Navigation = () => {
               ))}
 
               <a
-                href="https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20getting%20more%20reviews%20and%20growing%20my%20social%20presence"
+                href={isWebDesignPreview
+                  ? "https://wa.me/27832336716?text=Hi%2C%20I%20want%20a%20website%20that%20helps%20my%20business%20win%20more%20enquiries"
+                  : "https://wa.me/27832336716?text=Hi%2C%20I'm%20interested%20in%20getting%20more%20reviews%20and%20growing%20my%20social%20presence"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary mt-4 mx-4"
@@ -149,7 +156,7 @@ const Navigation = () => {
                   }
                 }}
               >
-                Get Started
+                {isWebDesignPreview ? 'Build My Website' : 'Get Started'}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </a>
             </div>
@@ -179,10 +186,13 @@ const AppContent = () => {
     '/pages',
   ].includes(location.pathname);
 
+  // Standalone pages that ship their own navigation, footer and type system
+  const isStandalonePage = ['/autopilot'].includes(location.pathname);
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <ScrollToTop />
-      <Navigation />
+      {!isStandalonePage && <Navigation />}
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<HomeGeminiPage />} />
@@ -193,9 +203,11 @@ const AppContent = () => {
           <Route path="/social-posting-v2" element={<SocialPostingPageV2 />} />
           <Route path="/sales" element={<HomeSalesLetterPage />} />
           <Route path="/web-design" element={<WebDesignPage />} />
+          <Route path="/web-design-v2" element={<WebDesignPageV2 />} />
           <Route path="/fieldcard" element={<FieldCardPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/recurring-service-booking-system" element={<RecurringServicesLetterPage />} />
+          <Route path="/autopilot" element={<AutopilotLandingPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/refunds-cancellations" element={<RefundsCancellationsPage />} />
@@ -211,8 +223,8 @@ const AppContent = () => {
           {/* Legacy routes */}
         </Routes>
       </main>
-      {!isSpecialLandingPage && <Footer />}
-      {!isSpecialLandingPage && <MobileCTA />}
+      {!isSpecialLandingPage && !isStandalonePage && <Footer />}
+      {!isSpecialLandingPage && !isStandalonePage && <MobileCTA />}
     </div>
   );
 };

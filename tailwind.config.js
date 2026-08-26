@@ -63,6 +63,13 @@ export default {
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
         'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
         'scroll-left': 'scrollLeft 30s linear infinite',
+        'scroll-slow': 'scrollLeft 48s linear infinite',
+        'scroll-slow-reverse': 'scrollRight 48s linear infinite',
+        // Local Pros mascot rig
+        'mascot-wave': 'mascotWave 4.4s ease-in-out infinite',
+        'mascot-bob': 'mascotBob 3.6s ease-in-out infinite',
+        'mascot-blink': 'mascotBlink 5.2s steps(1, end) infinite',
+        'star-pop': 'starPop 4s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -80,6 +87,35 @@ export default {
         scrollLeft: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        scrollRight: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        // A burst of waves, then the arm rests for the rest of the cycle
+        mascotWave: {
+          '0%, 6%': { transform: 'rotate(0deg)' },
+          '11%': { transform: 'rotate(-15deg)' },
+          '17%': { transform: 'rotate(13deg)' },
+          '23%': { transform: 'rotate(-13deg)' },
+          '29%': { transform: 'rotate(11deg)' },
+          '35%': { transform: 'rotate(-6deg)' },
+          '41%, 100%': { transform: 'rotate(0deg)' },
+        },
+        mascotBob: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-9px)' },
+        },
+        // Eyelids sit collapsed, then snap shut and open again
+        mascotBlink: {
+          '0%, 90%': { transform: 'scaleY(0)' },
+          '92%, 95%': { transform: 'scaleY(1)' },
+          '97%, 100%': { transform: 'scaleY(0)' },
+        },
+        starPop: {
+          '0%, 4%': { transform: 'scale(0)', opacity: '0' },
+          '12%, 78%': { transform: 'scale(1)', opacity: '1' },
+          '88%, 100%': { transform: 'scale(0)', opacity: '0' },
         },
       },
     },
