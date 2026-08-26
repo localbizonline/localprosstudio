@@ -10,5 +10,12 @@
 /reviews-letter /reviews 301!
 /reviews-funnel /reviews 301!
 /reputation/reviews /reviews 301!
+/cursor-opus-landing-page / 301!
+/gemini-flash-landing-page / 301!
+/gpt-52-landing-page / 301!
+/claude-code-landing-page / 301!
+/special-offer-opus /special-offer-bundle 301!
+/special-offer-gemini-pro /special-offer-bundle 301!
+/special-offer-gpt.5.2 /special-offer-bundle 301!
 /reputation / 301!
 /* /index.html 200

@@ -13,10 +13,6 @@ import SocialMediaPage from './components/SocialMediaPage';
 import WebDesignPage from './components/WebDesignPage';
 import AboutPage from './components/AboutPage';
 import MobileCTA from './components/MobileCTA';
-import CursorOpusLandingPage from './components/CursorOpusLandingPage';
-import GeminiFlashLandingPage from './components/GeminiFlashLandingPage';
-import Gpt52LandingPage from './components/Gpt52LandingPage';
-import LandingPage from './components/LandingPage';
 import GoogleAdsPage from './components/GoogleAdsPage';
 import AlternativeWebDesignPage from './components/AlternativeWebDesignPage';
 import ReachMaxPage from './components/ReachMaxPage';
@@ -28,9 +24,7 @@ import LandingPagesDirectory from './components/LandingPagesDirectory';
 import SocialPostingPageV2 from './components/SocialPostingPageV2';
 import HomeGeminiPage from './components/HomeGeminiPage';
 import HomeSalesLetterPage from './components/HomeSalesLetterPage';
-import SpecialOfferGeminiProPage from './components/SpecialOfferGeminiProPage';
 import SpecialOfferOpusPage from './components/SpecialOfferOpusPage';
-import SpecialOfferGpt52Page from './components/SpecialOfferGpt52Page';
 import RecurringServicesLetterPage from './components/RecurringServicesLetterPage';
 import { PrivacyPage, RefundsCancellationsPage, TermsPage } from './components/LegalPages';
 import logo from './assets/images/Compressed/Local Pros Studio logo transparent.png';
@@ -182,12 +176,6 @@ const AppContent = () => {
 
   // Landing pages that should NOT show footer or mobile CTA (but we'll show Nav for switching)
   const isSpecialLandingPage = [
-    '/cursor-opus-landing-page',
-    '/gemini-flash-landing-page',
-    '/gpt-52-landing-page',
-    '/claude-code-landing-page',
-    '/special-offer-gemini-pro',
-    '/special-offer-opus',
     '/pages',
   ].includes(location.pathname);
 
@@ -218,15 +206,7 @@ const AppContent = () => {
           <Route path="/pages" element={<LandingPagesDirectory />} />
 
           {/* Special Landing Pages */}
-          <Route path="/cursor-opus-landing-page" element={<CursorOpusLandingPage />} />
-          <Route path="/gemini-flash-landing-page" element={<GeminiFlashLandingPage />} />
-          <Route path="/gpt-52-landing-page" element={<Gpt52LandingPage />} />
-          <Route path="/claude-code-landing-page" element={<LandingPage />} />
-          <Route path="/special-offer-gemini-pro" element={<SpecialOfferGeminiProPage />} />
           <Route path="/special-offer-bundle" element={<SpecialOfferOpusPage />} />
-          <Route path="/special-offer-opus" element={<SpecialOfferOpusPage />} />
-          <Route path="/special-offer-gpt.5.2" element={<SpecialOfferGpt52Page />} />
-          <Route path="/special-offer-gpt.5.2/" element={<SpecialOfferGpt52Page />} />
 
           {/* Legacy routes */}
         </Routes>

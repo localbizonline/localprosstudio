@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Home, Star, Share2, Globe, Megaphone, Users, Layout, Image, Sparkles } from 'lucide-react';
+import { ArrowRight, Home, Star, Share2, Globe, Megaphone, Users, Layout, Image } from 'lucide-react';
 
 const LandingPagesDirectory = () => {
   const pageCategories = [
@@ -44,16 +44,6 @@ const LandingPagesDirectory = () => {
       pages: [
         { name: 'About', href: '/about', description: 'About Local Pros Studio' },
         { name: 'Gallery', href: '/gallery', description: 'Image gallery' },
-      ]
-    },
-    {
-      title: 'AI Landing Pages',
-      icon: Sparkles,
-      pages: [
-        { name: 'Cursor Opus', href: '/cursor-opus-landing-page', description: 'Cursor Opus AI landing page' },
-        { name: 'Gemini Flash', href: '/gemini-flash-landing-page', description: 'Gemini Flash AI landing page' },
-        { name: 'GPT 5.2', href: '/gpt-52-landing-page', description: 'GPT 5.2 AI landing page' },
-        { name: 'Claude Code', href: '/claude-code-landing-page', description: 'Claude Code AI landing page' },
       ]
     },
   ];
