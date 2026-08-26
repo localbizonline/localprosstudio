@@ -7,9 +7,6 @@ import ServicesSection from './components/ServicesSection';
 import SocialProofSection from './components/SocialProofSection';
 import LeadGenSection from './components/LeadGenSection';
 import CallToAction from './components/CallToAction';
-import Home2Page from './components/Home2Page';
-import Home3Page from './components/Home3Page';
-import Home4Page from './components/Home4Page';
 import Footer from './components/Footer';
 import FieldCardPage from './components/FieldCardPage';
 import ReviewCollectionPage from './components/ReviewCollectionPage';
@@ -22,19 +19,16 @@ import CursorOpusLandingPage from './components/CursorOpusLandingPage';
 import GeminiFlashLandingPage from './components/GeminiFlashLandingPage';
 import Gpt52LandingPage from './components/Gpt52LandingPage';
 import LandingPage from './components/LandingPage';
-import HomeFunnelPage from './components/HomeFunnelPage';
 import ReviewFunnelPage from './components/ReviewFunnelPage';
 import GoogleAdsPage from './components/GoogleAdsPage';
 import AlternativeWebDesignPage from './components/AlternativeWebDesignPage';
 import ReachMaxPage from './components/ReachMaxPage';
 import ImageGallery from './components/ImageGallery';
-import HomeServicesPage from './components/HomeServicesPage';
 import ReviewCollectionProPage from './components/ReviewCollectionProPage';
 import ReviewsProClientiPage from './components/ReviewsProClientiPage';
 import ReviewsLetterPage from './components/ReviewsLetterPage';
 import LandingPagesDirectory from './components/LandingPagesDirectory';
 import SocialPostingPageV2 from './components/SocialPostingPageV2';
-import HomeCodexPage from './components/HomeCodexPage';
 import HomeGeminiPage from './components/HomeGeminiPage';
 import HomeSalesLetterPage from './components/HomeSalesLetterPage';
 import SpecialOfferGeminiProPage from './components/SpecialOfferGeminiProPage';
@@ -207,11 +201,6 @@ const AppContent = () => {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<HomeGeminiPage />} />
-          <Route path="/home-services" element={<HomeServicesPage />} />
-          <Route path="/home2" element={<Home2Page />} />
-          <Route path="/home3" element={<Home3Page />} />
-          <Route path="/home4" element={<Home4Page />} />
-          <Route path="/home-funnel" element={<HomeFunnelPage />} />
           <Route path="/reviews-funnel" element={<ReviewFunnelPage />} />
           <Route path="/reviews" element={<ReviewsLetterPage />} />
           <Route path="/reviews-old" element={<ReviewCollectionPageArchive />} />
@@ -221,8 +210,6 @@ const AppContent = () => {
           <Route path="/reviews-letter" element={<ReviewsLetterPage />} />
           <Route path="/social-media-posting-service" element={<SocialPostingPageV2 />} />
           <Route path="/social-posting-v2" element={<SocialPostingPageV2 />} />
-          <Route path="/home-codex" element={<HomeCodexPage />} />
-          <Route path="/homegemini" element={<HomeGeminiPage />} />
           <Route path="/sales" element={<HomeSalesLetterPage />} />
           <Route path="/web-design" element={<WebDesignPage />} />
           <Route path="/fieldcard" element={<FieldCardPage />} />

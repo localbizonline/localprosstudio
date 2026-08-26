@@ -373,7 +373,7 @@ const HomeGeminiPage = () => {
                 <p className="text-neutral-400 mb-6 leading-relaxed">
                     Mobile-first. Fast-loading. Built to convert visitors into customers. Delivered in 5-7 days with proven templates.
                 </p>
-                <Link to="/home-services" className="text-white font-bold text-sm uppercase tracking-wide border-b border-amber-500 pb-1 hover:text-amber-400 transition-colors">
+                <Link to="/web-design" className="text-white font-bold text-sm uppercase tracking-wide border-b border-amber-500 pb-1 hover:text-amber-400 transition-colors">
                     See Website Packages →
                 </Link>
             </div>

@@ -9,11 +9,6 @@ const LandingPagesDirectory = () => {
       icon: Home,
       pages: [
         { name: 'Home (Original)', href: '/', description: 'Main homepage with services' },
-        { name: 'Home Services (Dec)', href: '/home-services', description: 'December home services version' },
-        { name: 'Home V2', href: '/home2', description: 'Alternative homepage design' },
-        { name: 'Home V3', href: '/home3', description: 'Third homepage variation' },
-        { name: 'Home V4', href: '/home4', description: 'Fourth homepage variation' },
-        { name: 'Home Funnel', href: '/home-funnel', description: 'Funnel-style homepage' },
       ]
     },
     {
