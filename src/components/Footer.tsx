@@ -17,10 +17,16 @@ const Footer = () => {
     { name: 'FieldCard', href: '/fieldcard', description: 'Job management for contractors' },
   ];
 
+  const legal = [
+    { name: 'Terms & Conditions', href: '/terms' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Refunds & Cancellations', href: '/refunds-cancellations' },
+  ];
+
   return (
     <footer className="bg-neutral-950 text-white">
       <div className="container-lg section-sm">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
@@ -73,6 +79,25 @@ const Footer = () => {
                   {item.description && (
                     <p className="text-neutral-500 text-xs mt-1">{item.description}</p>
                   )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              Legal
+            </h4>
+            <ul className="space-y-3">
+              {legal.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.href}
+                    className="text-neutral-400 hover:text-white transition-colors text-sm"
+                  >
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
