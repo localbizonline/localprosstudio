@@ -9,8 +9,6 @@ import LeadGenSection from './components/LeadGenSection';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import FieldCardPage from './components/FieldCardPage';
-import ReviewCollectionPage from './components/ReviewCollectionPage';
-import ReviewCollectionPageArchive from './components/ReviewCollectionPageArchive';
 import SocialMediaPage from './components/SocialMediaPage';
 import WebDesignPage from './components/WebDesignPage';
 import AboutPage from './components/AboutPage';
@@ -19,7 +17,6 @@ import CursorOpusLandingPage from './components/CursorOpusLandingPage';
 import GeminiFlashLandingPage from './components/GeminiFlashLandingPage';
 import Gpt52LandingPage from './components/Gpt52LandingPage';
 import LandingPage from './components/LandingPage';
-import ReviewFunnelPage from './components/ReviewFunnelPage';
 import GoogleAdsPage from './components/GoogleAdsPage';
 import AlternativeWebDesignPage from './components/AlternativeWebDesignPage';
 import ReachMaxPage from './components/ReachMaxPage';
@@ -201,13 +198,9 @@ const AppContent = () => {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<HomeGeminiPage />} />
-          <Route path="/reviews-funnel" element={<ReviewFunnelPage />} />
           <Route path="/reviews" element={<ReviewsLetterPage />} />
-          <Route path="/reviews-old" element={<ReviewCollectionPageArchive />} />
           <Route path="/reviews-pro" element={<ReviewCollectionProPage />} />
           <Route path="/reviews-clienti" element={<ReviewsProClientiPage />} />
-          <Route path="/reviews-extreme" element={<ReviewsProClientiPage />} />
-          <Route path="/reviews-letter" element={<ReviewsLetterPage />} />
           <Route path="/social-media-posting-service" element={<SocialPostingPageV2 />} />
           <Route path="/social-posting-v2" element={<SocialPostingPageV2 />} />
           <Route path="/sales" element={<HomeSalesLetterPage />} />
@@ -236,7 +229,6 @@ const AppContent = () => {
           <Route path="/special-offer-gpt.5.2/" element={<SpecialOfferGpt52Page />} />
 
           {/* Legacy routes */}
-          <Route path="/reputation/reviews" element={<ReviewCollectionPage />} />
         </Routes>
       </main>
       {!isSpecialLandingPage && <Footer />}

@@ -16,12 +16,8 @@ const LandingPagesDirectory = () => {
       icon: Star,
       pages: [
         { name: 'Reviews', href: '/reviews', description: 'Main review collection page' },
-        { name: 'Reviews (Old)', href: '/reviews-old', description: 'Archived original reviews page' },
         { name: 'Reviews Pro', href: '/reviews-pro', description: 'Pro version of reviews page' },
         { name: 'Reviews Pro (Clienti)', href: '/reviews-clienti', description: 'Clienti-style reviews page' },
-        { name: 'Reviews Pro (Extreme)', href: '/reviews-extreme', description: 'Extreme sales funnel version' },
-        { name: 'Reviews Letter', href: '/reviews-letter', description: 'Sales letter style page' },
-        { name: 'Reviews Funnel', href: '/reviews-funnel', description: 'Funnel-style reviews page' },
       ]
     },
     {
